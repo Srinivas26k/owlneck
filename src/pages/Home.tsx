@@ -8,30 +8,43 @@ import { Link } from 'react-router-dom';
 
 // --- Components ---
 
-const SphereAnimation = () => (
-  <div className="relative w-[300px] h-[300px] md:w-[500px] md:h-[500px] animate-float">
-    {/* Core Gradient Sphere */}
-    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-electric via-primary to-sunset opacity-80 blur-3xl animate-pulse" />
+const SphereAnimation = () => {
+  const [scrollY, setScrollY] = useState(0);
 
-    {/* Rotating Rings */}
-    <div className="absolute inset-0 border-2 border-electric/40 rounded-full animate-[spin_10s_linear_infinite]" style={{ transform: 'rotateX(70deg)' }} />
-    <div className="absolute inset-0 border-2 border-sunset/40 rounded-full animate-[spin_15s_linear_infinite_reverse]" style={{ transform: 'rotateY(70deg)' }} />
-    <div className="absolute inset-8 border border-white/30 rounded-full animate-[spin_20s_linear_infinite]" />
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-    {/* Floating Particles - Increased Count */}
-    {[...Array(12)].map((_, i) => (
-      <div
-        key={i}
-        className="absolute w-3 h-3 bg-sunset rounded-full shadow-[0_0_15px_#FF8040] opacity-80"
-        style={{
-          top: `${Math.random() * 80 + 10}%`,
-          left: `${Math.random() * 80 + 10}%`,
-          animation: `float ${2 + i * 0.5}s ease-in-out infinite alternate ${i * 0.2}s`
-        }}
-      />
-    ))}
-  </div>
-);
+  return (
+    <div
+      className="relative w-[300px] h-[300px] md:w-[500px] md:h-[500px] animate-float transition-transform duration-100 ease-out"
+      style={{ transform: `translateY(${scrollY * 0.2}px)` }} // Parallax Effect
+    >
+      {/* Core Gradient Sphere */}
+      <div className="absolute inset-0 rounded-full bg-gradient-to-br from-electric via-primary to-sunset opacity-80 blur-3xl animate-pulse" />
+
+      {/* Rotating Rings */}
+      <div className="absolute inset-0 border-2 border-electric/40 rounded-full animate-[spin_10s_linear_infinite]" style={{ transform: 'rotateX(70deg)' }} />
+      <div className="absolute inset-0 border-2 border-sunset/40 rounded-full animate-[spin_15s_linear_infinite_reverse]" style={{ transform: 'rotateY(70deg)' }} />
+      <div className="absolute inset-8 border border-white/30 rounded-full animate-[spin_20s_linear_infinite]" />
+
+      {/* Floating Particles - Increased Count */}
+      {[...Array(12)].map((_, i) => (
+        <div
+          key={i}
+          className="absolute w-3 h-3 bg-sunset rounded-full shadow-[0_0_15px_#FF8040] opacity-80"
+          style={{
+            top: `${Math.random() * 80 + 10}%`,
+            left: `${Math.random() * 80 + 10}%`,
+            animation: `float ${2 + i * 0.5}s ease-in-out infinite alternate ${i * 0.2}s`
+          }}
+        />
+      ))}
+    </div>
+  );
+};
 
 const CountUp: React.FC<{ end: number; suffix?: string; duration?: number }> = ({ end, suffix = '', duration = 2000 }) => {
   const [count, setCount] = useState(0);
@@ -123,14 +136,15 @@ const Home: React.FC = () => {
             <div className="flex flex-wrap gap-6 pt-4">
               <Link
                 to="/contact"
-                className="group relative px-10 py-5 bg-primary text-white text-lg font-bold rounded-full overflow-hidden shadow-2xl shadow-primary/40 transition-all hover:scale-105 hover:shadow-primary/60"
+                className="group relative px-10 py-5 bg-primary text-white text-lg font-bold rounded-full overflow-hidden shadow-2xl shadow-primary/40 transition-all active:scale-95 duration-200"
               >
                 <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-electric to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out"></span>
                 <span className="relative z-10 flex items-center">Get Started <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" /></span>
+                <span className="absolute inset-0 rounded-full ring-2 ring-white/30 opacity-0 group-active:opacity-100 animate-ping" />
               </Link>
               <Link
                 to="/services"
-                className="px-10 py-5 bg-white border-2 border-gray-200 text-primary text-lg font-bold rounded-full hover:border-primary hover:bg-primary/5 transition-all hover:scale-105 hover:-translate-y-1"
+                className="px-10 py-5 bg-white border-2 border-gray-200 text-primary text-lg font-bold rounded-full hover:border-primary hover:bg-primary/5 transition-all active:scale-95 hover:-translate-y-1 duration-200"
               >
                 View Services
               </Link>
@@ -149,20 +163,21 @@ const Home: React.FC = () => {
             <h2 className="text-h2-mobile md:text-h2-desktop font-bold text-navy mb-8 tracking-tight leading-none">Our Services</h2>
             <p className="text-muted text-lg tracking-wide max-w-xl">Comprehensive digital solutions engineered for the modern enterprise.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 perspective-1000">
             {services.map((service, idx) => (
               <div
                 key={idx}
-                className="group relative p-10 rounded-3xl border border-gray-200 bg-white transition-all duration-500 hover:shadow-2xl hover:shadow-electric/10 hover:-translate-y-2 overflow-hidden"
+                className="group relative p-10 rounded-3xl border border-gray-200 bg-white transition-all duration-500 hover:shadow-[0_30px_60px_-15px_rgba(0,27,183,0.3)] hover:-translate-y-2 overflow-hidden preserve-3d hover:rotate-x-12 hover:bg-gradient-to-br hover:from-cream/30 hover:to-white"
+                style={{ animationDelay: `${idx * 50}ms` }}
               >
                 {/* Top Border Accent */}
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-electric scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
 
-                <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-8 bg-gradient-to-br from-cream to-white group-hover:from-primary/10 group-hover:to-electric/10 transition-colors duration-500 text-primary group-hover:text-electric">
+                <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-8 bg-gradient-to-br from-cream to-white group-hover:from-primary/10 group-hover:to-electric/10 transition-all duration-500 text-primary group-hover:text-electric group-hover:rotate-6 shadow-sm group-hover:shadow-md">
                   <service.icon size={32} />
                 </div>
-                <h3 className="text-2xl font-bold mb-4 text-navy group-hover:text-electric transition-colors tracking-tight">{service.title}</h3>
-                <p className="text-muted text-base leading-relaxed group-hover:text-navy/80 transition-colors">{service.desc}</p>
+                <h3 className="text-2xl font-bold mb-4 text-navy group-hover:text-electric transition-colors tracking-tight backface-hidden">{service.title}</h3>
+                <p className="text-muted text-base leading-relaxed group-hover:text-navy/80 transition-colors backface-hidden">{service.desc}</p>
               </div>
             ))}
           </div>
@@ -192,18 +207,16 @@ const Home: React.FC = () => {
 
       {/* Partners Marquee */}
       <section className="py-32 bg-white overflow-hidden" ref={el => sectionsRef.current[2] = el}>
-        <div className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
-          <ul className="flex items-center justify-center md:justify-start [&_li]:mx-12 [&_img]:max-w-none animate-marquee hover:[animation-play-state:paused]">
-            {['OneAldo', 'Trench', 'Plumsoft', 'Align', 'Bank K', 'Fortune Cloud', 'ArmiSys', 'Cloud N Cluster'].map((partner, i) => (
-              <li key={i} className="text-4xl font-bold text-gray-300 uppercase hover:text-electric transition-colors cursor-default select-none whitespace-nowrap tracking-tighter">
-                {partner}
-              </li>
-            ))}
-            {/* Duplicate for infinite loop */}
-            {['OneAldo', 'Trench', 'Plumsoft', 'Align', 'Bank K', 'Fortune Cloud', 'ArmiSys', 'Cloud N Cluster'].map((partner, i) => (
-              <li key={`d-${i}`} className="text-4xl font-bold text-gray-300 uppercase hover:text-electric transition-colors cursor-default select-none whitespace-nowrap tracking-tighter">
-                {partner}
-              </li>
+        <div className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_200px,_black_calc(100%-200px),transparent_100%)]">
+          <ul className="flex items-center justify-center md:justify-start [&_li]:mx-12 [&_img]:max-w-none animate-marquee hover:[animation-play-state:paused] group">
+            {[...Array(2)].map((_, listIdx) => (
+              <React.Fragment key={listIdx}>
+                {['OneAldo', 'Trench', 'Plumsoft', 'Align', 'Bank K', 'Fortune Cloud', 'ArmiSys', 'Cloud N Cluster'].map((partner, i) => (
+                  <li key={`${listIdx}-${i}`} className="text-4xl font-bold text-gray-300 uppercase hover:text-electric transition-all duration-300 cursor-default select-none whitespace-nowrap tracking-tighter hover:scale-110 hover:rotate-1">
+                    {partner}
+                  </li>
+                ))}
+              </React.Fragment>
             ))}
           </ul>
         </div>
@@ -220,7 +233,7 @@ const Home: React.FC = () => {
           </p>
           <Link
             to="/contact"
-            className="inline-flex items-center px-12 py-6 bg-white text-primary text-2xl font-bold rounded-full hover:bg-sunset hover:text-white transition-all transform hover:scale-110 shadow-2xl shadow-black/20"
+            className="inline-flex items-center px-12 py-6 bg-white text-primary text-2xl font-bold rounded-full hover:bg-sunset hover:text-white transition-all transform hover:scale-110 active:scale-95 shadow-2xl shadow-black/20"
           >
             Start Your Journey <ArrowRight className="ml-3 w-6 h-6" />
           </Link>

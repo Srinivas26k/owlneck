@@ -9,12 +9,19 @@ const About: React.FC = () => {
             (entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add('animate-scroll-reveal');
+                        // Check direction data attribute if available, or alternating logic class
+                        if (entry.target.classList.contains('slide-left-target')) {
+                            entry.target.classList.add('animate-slide-in-left');
+                        } else if (entry.target.classList.contains('slide-right-target')) {
+                            entry.target.classList.add('animate-slide-in-right');
+                        } else {
+                            entry.target.classList.add('animate-scroll-reveal');
+                        }
                         observer.unobserve(entry.target);
                     }
                 });
             },
-            { threshold: 0.1 }
+            { threshold: 0.15 }
         );
 
         sectionsRef.current.forEach((section) => {
@@ -46,7 +53,7 @@ const About: React.FC = () => {
             {/* Mission Section */}
             <section className="py-40 bg-white" ref={el => sectionsRef.current[0] = el}>
                 <div className="container mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center gap-24">
-                    <div className="md:w-3/5 space-y-12">
+                    <div className="md:w-3/5 space-y-12 opacity-0 slide-left-target" ref={el => sectionsRef.current[3] = el}>
                         <h2 className="text-h2-mobile md:text-h2-desktop font-bold text-navy tracking-tight leading-none">Our Mission</h2>
                         <div className="w-32 h-1.5 bg-gradient-to-r from-sunset to-primary rounded-full" />
                         <p className="text-xl md:text-2xl text-muted leading-relaxed font-light">
@@ -56,7 +63,7 @@ const About: React.FC = () => {
                             We strive to bridge the gap between complex technical challenges and business goals, ensuring that every line of code and every server configuration contributes directly to your bottom line.
                         </p>
                     </div>
-                    <div className="md:w-2/5 flex justify-center">
+                    <div className="md:w-2/5 flex justify-center opacity-0 slide-right-target" ref={el => sectionsRef.current[4] = el}>
                         <div className="relative w-[400px] h-[400px]">
                             <div className="absolute inset-0 bg-gradient-to-tr from-electric to-sunset rounded-full opacity-20 animate-pulse blur-3xl" />
                             <div className="absolute inset-4 border-2 border-primary/20 rounded-full animate-[spin_8s_linear_infinite]" />
@@ -74,14 +81,14 @@ const About: React.FC = () => {
                 <div className="container mx-auto px-6 md:px-12 space-y-32">
                     {/* Row 1 */}
                     <div className="flex flex-col md:flex-row items-center gap-24">
-                        <div className="md:w-1/2 rounded-[2.5rem] overflow-hidden shadow-2xl shadow-primary/20 transform hover:scale-[1.02] transition-transform duration-700">
+                        <div className="md:w-1/2 rounded-[2.5rem] overflow-hidden shadow-2xl shadow-primary/20 transform hover:scale-[1.02] transition-transform duration-700 opacity-0 slide-left-target" ref={el => sectionsRef.current[5] = el}>
                             <img
                                 src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&q=80"
                                 alt="Data Analytics"
                                 className="w-full h-[500px] object-cover scale-105 hover:scale-110 transition-transform duration-1000"
                             />
                         </div>
-                        <div className="md:w-1/2 space-y-8">
+                        <div className="md:w-1/2 space-y-8 opacity-0 slide-right-target" ref={el => sectionsRef.current[6] = el}>
                             <div className="inline-block p-4 bg-white rounded-2xl shadow-lg shadow-electric/10 mb-4">
                                 <TrendingUp className="text-electric" size={40} />
                             </div>
@@ -94,14 +101,14 @@ const About: React.FC = () => {
 
                     {/* Row 2 */}
                     <div className="flex flex-col md:flex-row-reverse items-center gap-24">
-                        <div className="md:w-1/2 rounded-[2.5rem] overflow-hidden shadow-2xl shadow-sunset/20 transform hover:scale-[1.02] transition-transform duration-700">
+                        <div className="md:w-1/2 rounded-[2.5rem] overflow-hidden shadow-2xl shadow-sunset/20 transform hover:scale-[1.02] transition-transform duration-700 opacity-0 slide-right-target" ref={el => sectionsRef.current[7] = el}>
                             <img
                                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&q=80"
                                 alt="Team Collaboration"
                                 className="w-full h-[500px] object-cover scale-105 hover:scale-110 transition-transform duration-1000"
                             />
                         </div>
-                        <div className="md:w-1/2 space-y-8">
+                        <div className="md:w-1/2 space-y-8 opacity-0 slide-left-target" ref={el => sectionsRef.current[8] = el}>
                             <div className="inline-block p-4 bg-white rounded-2xl shadow-lg shadow-sunset/10 mb-4">
                                 <Users className="text-sunset" size={40} />
                             </div>

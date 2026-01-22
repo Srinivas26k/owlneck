@@ -64,16 +64,17 @@ const Services: React.FC = () => {
             {/* Industries Grid */}
             <section className="py-40 bg-white">
                 <div className="container mx-auto px-6 md:px-12">
-                    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-12">
+                    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-12 perspective-1000">
                         {industryIcons.map((item, idx) => (
                             <div
                                 key={idx}
-                                className="group p-10 border border-gray-200 rounded-[2rem] hover:bg-white hover:border-electric transition-all duration-500 flex flex-col items-start gap-8 hover:-translate-y-2 hover:shadow-2xl hover:shadow-electric/10 bg-white"
+                                className="group relative p-10 border border-gray-200 rounded-[2rem] bg-white transition-all duration-500 flex flex-col items-start gap-8 hover:-translate-y-2 hover:shadow-[0_30px_60px_-15px_rgba(0,27,183,0.3)] preserve-3d hover:rotate-x-12 hover:bg-gradient-to-br hover:from-cream/30 hover:to-white"
+                                style={{ animationDelay: `${idx * 50}ms` }}
                             >
-                                <div className="p-5 bg-cream/50 rounded-2xl group-hover:bg-gradient-to-br group-hover:from-primary/10 group-hover:to-electric/10 text-muted group-hover:text-electric transition-colors">
+                                <div className="p-5 bg-cream/50 rounded-2xl group-hover:bg-gradient-to-br group-hover:from-primary/10 group-hover:to-electric/10 text-muted group-hover:text-electric transition-colors shadow-sm group-hover:shadow-md group-hover:rotate-6 duration-500">
                                     <item.icon size={36} />
                                 </div>
-                                <div>
+                                <div className="backface-hidden">
                                     <h3 className="font-bold text-navy text-xl leading-tight group-hover:text-electric transition-colors mb-2 tracking-tight">
                                         {item.name}
                                     </h3>

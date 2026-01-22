@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Phone, Mail, MapPin, Send, ArrowRight } from 'lucide-react';
+import { Phone, Mail, MapPin, Send, ArrowRight, CheckCircle2 } from 'lucide-react';
 
 const Contact: React.FC = () => {
     const [formData, setFormData] = useState({
@@ -35,93 +35,135 @@ const Contact: React.FC = () => {
                         {/* Contact Form */}
                         <div className="lg:w-1/2">
                             <form onSubmit={handleSubmit} className="space-y-12">
-                                <div className="group">
-                                    <label className="block text-base font-semibold text-muted mb-4 tracking-wide uppercase text-xs">Name</label>
+
+                                <div className="relative group">
                                     <input
                                         type="text"
                                         name="name"
+                                        id="name"
                                         value={formData.name}
                                         onChange={handleChange}
-                                        className="w-full border-b-2 border-gray-200 py-4 text-xl focus:outline-none focus:border-electric transition-colors bg-transparent font-medium text-navy placeholder-gray-300"
-                                        placeholder="John Doe"
+                                        className="block py-4 px-0 w-full text-xl text-navy bg-transparent border-0 border-b-2 border-gray-200 appearance-none focus:outline-none focus:ring-0 focus:border-electric peer transition-colors"
+                                        placeholder=" "
                                         required
                                     />
+                                    <label
+                                        htmlFor="name"
+                                        className="absolute text-muted duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-electric peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 text-xl tracking-wide font-light"
+                                    >
+                                        Name
+                                    </label>
+                                    <div className={`absolute right-0 top-4 text-green-500 transition-all duration-500 ${formData.name.length > 2 ? 'opacity-100 scale-100' : 'opacity-0 scale-50'}`}>
+                                        <CheckCircle2 size={24} />
+                                    </div>
                                 </div>
 
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                                    <div className="group">
-                                        <label className="block text-base font-semibold text-muted mb-4 tracking-wide uppercase text-xs">Business Email</label>
+                                    <div className="relative group">
                                         <input
                                             type="email"
                                             name="email"
+                                            id="email"
                                             value={formData.email}
                                             onChange={handleChange}
-                                            className="w-full border-b-2 border-gray-200 py-4 text-xl focus:outline-none focus:border-electric transition-colors bg-transparent font-medium text-navy placeholder-gray-300"
-                                            placeholder="john@company.com"
+                                            className="block py-4 px-0 w-full text-xl text-navy bg-transparent border-0 border-b-2 border-gray-200 appearance-none focus:outline-none focus:ring-0 focus:border-electric peer transition-colors"
+                                            placeholder=" "
                                             required
                                         />
+                                        <label
+                                            htmlFor="email"
+                                            className="absolute text-muted duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-electric peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 text-xl tracking-wide font-light"
+                                        >
+                                            Business Email
+                                        </label>
+                                        <div className={`absolute right-0 top-4 text-green-500 transition-all duration-500 ${formData.email.includes('@') ? 'opacity-100 scale-100' : 'opacity-0 scale-50'}`}>
+                                            <CheckCircle2 size={24} />
+                                        </div>
                                     </div>
-                                    <div className="group">
-                                        <label className="block text-base font-semibold text-muted mb-4 tracking-wide uppercase text-xs">Phone</label>
+
+                                    <div className="relative group">
                                         <input
                                             type="tel"
                                             name="phone"
+                                            id="phone"
                                             value={formData.phone}
                                             onChange={handleChange}
-                                            className="w-full border-b-2 border-gray-200 py-4 text-xl focus:outline-none focus:border-electric transition-colors bg-transparent font-medium text-navy placeholder-gray-300"
-                                            placeholder="+1 (555) 000-0000"
+                                            className="block py-4 px-0 w-full text-xl text-navy bg-transparent border-0 border-b-2 border-gray-200 appearance-none focus:outline-none focus:ring-0 focus:border-electric peer transition-colors"
+                                            placeholder=" "
                                         />
-                                    </div>
-                                </div>
-
-                                <div className="group">
-                                    <label className="block text-base font-semibold text-muted mb-4 tracking-wide uppercase text-xs">Subject</label>
-                                    <div className="relative">
-                                        <select
-                                            name="subject"
-                                            value={formData.subject}
-                                            onChange={handleChange}
-                                            className="w-full border-b-2 border-gray-200 py-4 text-xl focus:outline-none focus:border-electric transition-colors bg-transparent appearance-none font-medium text-navy"
+                                        <label
+                                            htmlFor="phone"
+                                            className="absolute text-muted duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-electric peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 text-xl tracking-wide font-light"
                                         >
-                                            <option>General Inquiry</option>
-                                            <option>Project Proposal</option>
-                                            <option>Careers</option>
-                                            <option>Support</option>
-                                        </select>
-                                        <div className="absolute right-0 top-1/2 transform -translate-y-1/2 pointer-events-none">
-                                            <ArrowRight className="rotate-90 text-gray-400" size={20} />
-                                        </div>
+                                            Phone
+                                        </label>
                                     </div>
                                 </div>
 
-                                <div className="group">
-                                    <label className="block text-base font-semibold text-muted mb-4 tracking-wide uppercase text-xs">Message</label>
+                                <div className="relative group">
+                                    <select
+                                        name="subject"
+                                        id="subject"
+                                        value={formData.subject}
+                                        onChange={handleChange}
+                                        className="block py-4 px-0 w-full text-xl text-navy bg-transparent border-0 border-b-2 border-gray-200 appearance-none focus:outline-none focus:ring-0 focus:border-electric peer transition-colors font-medium cursor-pointer"
+                                    >
+                                        <option>General Inquiry</option>
+                                        <option>Project Proposal</option>
+                                        <option>Careers</option>
+                                        <option>Support</option>
+                                    </select>
+                                    <label
+                                        htmlFor="subject"
+                                        className="absolute text-muted duration-300 transform -translate-y-8 scale-75 top-0 -z-10 origin-[0] text-xl tracking-wide font-light uppercase text-xs"
+                                    >
+                                        Subject
+                                    </label>
+                                    <div className="absolute right-0 top-1/2 transform -translate-y-1/2 pointer-events-none">
+                                        <ArrowRight className="rotate-90 text-gray-400 group-hover:text-electric transition-colors" size={20} />
+                                    </div>
+                                </div>
+
+                                <div className="relative group">
                                     <textarea
                                         name="message"
+                                        id="message"
                                         value={formData.message}
                                         onChange={handleChange}
                                         rows={4}
-                                        className="w-full border-b-2 border-gray-200 py-4 text-xl focus:outline-none focus:border-electric transition-colors bg-transparent resize-none font-medium text-navy placeholder-gray-300"
-                                        placeholder="Tell us about your project..."
+                                        className="block py-4 px-0 w-full text-xl text-navy bg-transparent border-0 border-b-2 border-gray-200 appearance-none focus:outline-none focus:ring-0 focus:border-electric peer transition-colors resize-none"
+                                        placeholder=" "
                                         required
                                     />
+                                    <label
+                                        htmlFor="message"
+                                        className="absolute text-muted duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-electric peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 text-xl tracking-wide font-light"
+                                    >
+                                        Message
+                                    </label>
                                 </div>
 
                                 <button
                                     type="submit"
-                                    className="bg-gradient-to-r from-primary to-electric text-white px-12 py-6 rounded-full font-bold text-xl hover:shadow-2xl hover:shadow-primary/40 transform hover:-translate-y-1 hover:scale-105 transition-all flex items-center justify-center w-full md:w-auto"
+                                    className="group relative bg-gradient-to-r from-primary to-electric text-white px-12 py-6 rounded-full font-bold text-xl hover:shadow-2xl hover:shadow-primary/40 transform transition-all active:scale-95 flex items-center justify-center w-full md:w-auto overflow-hidden"
                                 >
-                                    Send Message <Send className="ml-3" size={20} />
+                                    <span className="absolute inset-0 w-full h-full bg-gradient-to-l from-electric to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out" />
+                                    <span className="relative flex items-center gap-3">
+                                        Send Message
+                                        <Send className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" size={20} />
+                                    </span>
+                                    {/* Ripple effect container (simplified as a pulse on active for now) */}
+                                    <span className="absolute inset-0 rounded-full ring-2 ring-white/30 opacity-0 group-active:opacity-100 animate-ping" />
                                 </button>
                             </form>
                         </div>
 
                         {/* Contact Info Card */}
                         <div className="lg:w-1/2">
-                            <div className="bg-cream/50 rounded-[3rem] p-16 h-full flex flex-col justify-center space-y-16 border border-white shadow-xl shadow-cream">
+                            <div className="bg-cream/50 rounded-[3rem] p-16 h-full flex flex-col justify-center space-y-16 border border-white shadow-xl shadow-cream hover:shadow-2xl hover:shadow-cream/50 transition-shadow duration-500">
                                 <div className="space-y-10">
                                     <div className="flex items-start gap-8 group">
-                                        <div className="p-5 bg-white rounded-2xl text-sunset shadow-lg shadow-sunset/10 group-hover:scale-110 transition-transform duration-300">
+                                        <div className="p-5 bg-white rounded-2xl text-sunset shadow-lg shadow-sunset/10 group-hover:scale-110 group-hover:bg-sunset group-hover:text-white transition-all duration-300">
                                             <Phone size={32} />
                                         </div>
                                         <div>
@@ -132,7 +174,7 @@ const Contact: React.FC = () => {
                                     </div>
 
                                     <div className="flex items-start gap-8 group">
-                                        <div className="p-5 bg-white rounded-2xl text-sunset shadow-lg shadow-sunset/10 group-hover:scale-110 transition-transform duration-300">
+                                        <div className="p-5 bg-white rounded-2xl text-sunset shadow-lg shadow-sunset/10 group-hover:scale-110 group-hover:bg-sunset group-hover:text-white transition-all duration-300">
                                             <Mail size={32} />
                                         </div>
                                         <div>
@@ -143,7 +185,7 @@ const Contact: React.FC = () => {
                                     </div>
 
                                     <div className="flex items-start gap-8 group">
-                                        <div className="p-5 bg-white rounded-2xl text-sunset shadow-lg shadow-sunset/10 group-hover:scale-110 transition-transform duration-300">
+                                        <div className="p-5 bg-white rounded-2xl text-sunset shadow-lg shadow-sunset/10 group-hover:scale-110 group-hover:bg-sunset group-hover:text-white transition-all duration-300">
                                             <MapPin size={32} />
                                         </div>
                                         <div>
