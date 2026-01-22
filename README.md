@@ -1,20 +1,39 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# OWLNECK - Enterprise IT Services
 
-# Run and deploy your AI Studio app
+A high-performance, single-page React application for an enterprise IT services company.
 
-This contains everything you need to run your app locally.
+## Design
+- **Style**: Hand-crafted, premium aesthetic (No templates).
+- **Colors**: Custom palette (Primary Blue #001BB7, Electric Blue #0046FF).
+- **Typography**: Inter (Google Fonts).
+- **Effects**: Custom cursor, Scroll reveal, Parallax, Glassmorphism.
 
-View your app in AI Studio: https://ai.studio/apps/drive/1EnCpxihWU72h34Nxl0uuPwWxaNpo2YVL
+## Tech Stack
+- **Framework**: React 18+ (Vite)
+- **Styling**: CMP (Tailwind CSS) - pure utility classes.
+- **Routing**: HashRouter (react-router-dom).
+- **Icons**: Lucide React.
+- **Animations**: CSS Keyframes + Intersection Observer.
 
-## Run Locally
+## Getting Started
 
-**Prerequisites:**  Node.js
+1. **Install Dependencies**
+   ```bash
+   bun install
+   ```
 
+2. **Run Development Server**
+   ```bash
+   bun run dev
+   ```
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+3. **Build for Production**
+   ```bash
+   bun run build
+   ```
+
+## Structure
+- `src/components`: Global UI components (Header, Footer, Cursor).
+- `src/pages`: Page views (Home, About, Services, Contact).
+- `src/App.tsx`: Main entry with Routing.
+- `tailwind.config.js`: Design tokens and strict theming.
