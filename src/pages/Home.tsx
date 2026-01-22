@@ -5,6 +5,7 @@ import {
   ArrowRight
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 
 // --- Components ---
 
@@ -12,29 +13,31 @@ const SphereAnimation = () => {
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
+    const handleScroll = () => {
+      requestAnimationFrame(() => setScrollY(window.scrollY));
+    };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
     <div
-      className="relative w-[300px] h-[300px] md:w-[500px] md:h-[500px] animate-float transition-transform duration-100 ease-out"
+      className="relative w-[300px] h-[300px] md:w-[500px] md:h-[500px] animate-float transition-transform duration-100 ease-out will-change-transform"
       style={{ transform: `translateY(${scrollY * 0.2}px)` }} // Parallax Effect
     >
       {/* Core Gradient Sphere */}
       <div className="absolute inset-0 rounded-full bg-gradient-to-br from-electric via-primary to-sunset opacity-80 blur-3xl animate-pulse" />
 
       {/* Rotating Rings */}
-      <div className="absolute inset-0 border-2 border-electric/40 rounded-full animate-[spin_10s_linear_infinite]" style={{ transform: 'rotateX(70deg)' }} />
-      <div className="absolute inset-0 border-2 border-sunset/40 rounded-full animate-[spin_15s_linear_infinite_reverse]" style={{ transform: 'rotateY(70deg)' }} />
-      <div className="absolute inset-8 border border-white/30 rounded-full animate-[spin_20s_linear_infinite]" />
+      <div className="absolute inset-0 border-2 border-electric/40 rounded-full animate-[spin_10s_linear_infinite] will-change-transform" style={{ transform: 'rotateX(70deg)' }} />
+      <div className="absolute inset-0 border-2 border-sunset/40 rounded-full animate-[spin_15s_linear_infinite_reverse] will-change-transform" style={{ transform: 'rotateY(70deg)' }} />
+      <div className="absolute inset-8 border border-white/30 rounded-full animate-[spin_20s_linear_infinite] will-change-transform" />
 
       {/* Floating Particles - Increased Count */}
       {[...Array(12)].map((_, i) => (
         <div
           key={i}
-          className="absolute w-3 h-3 bg-sunset rounded-full shadow-[0_0_15px_#FF8040] opacity-80"
+          className="absolute w-3 h-3 bg-sunset rounded-full shadow-[0_0_15px_#FF8040] opacity-80 will-change-transform"
           style={{
             top: `${Math.random() * 80 + 10}%`,
             left: `${Math.random() * 80 + 10}%`,
@@ -46,7 +49,7 @@ const SphereAnimation = () => {
   );
 };
 
-const CountUp: React.FC<{ end: number; suffix?: string; duration?: number }> = ({ end, suffix = '', duration = 2000 }) => {
+const CountUp: React.FC<{ end: number; suffix?: string; duration?: number }> = ({ end, suffix = '', duration = 1500 }) => {
   const [count, setCount] = useState(0);
   const nodeRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -119,11 +122,17 @@ const Home: React.FC = () => {
 
   return (
     <div className="w-full overflow-hidden">
+      <SEO
+        title="Home"
+        description="OWLNECK provides secure, scalable IT managed services, cybersecurity, and AI integration for modern enterprises."
+        canonical="https://owlneck.com/"
+      />
+
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden bg-white">
         {/* Animated Gradient Mesh Background */}
-        <div className="absolute top-[-20%] right-[-10%] w-[70vw] h-[70vw] bg-gradient-to-br from-cream via-white to-electric/5 rounded-full blur-[100px] animate-pulse -z-10 mix-blend-multiply opacity-60" />
-        <div className="absolute bottom-[-20%] left-[-10%] w-[60vw] h-[60vw] bg-gradient-to-tr from-cream via-white to-sunset/5 rounded-full blur-[100px] animate-float -z-10 mix-blend-multiply opacity-60" />
+        <div className="absolute top-[-20%] right-[-10%] w-[70vw] h-[70vw] bg-gradient-to-br from-cream via-white to-electric/5 rounded-full blur-[100px] animate-pulse -z-10 mix-blend-multiply opacity-60 will-change-transform" />
+        <div className="absolute bottom-[-20%] left-[-10%] w-[60vw] h-[60vw] bg-gradient-to-tr from-cream via-white to-sunset/5 rounded-full blur-[100px] animate-float -z-10 mix-blend-multiply opacity-60 will-change-transform" />
 
         <div className="container mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center gap-16 md:gap-0">
           <div className="md:w-3/5 space-y-10 z-10 opacity-0 animate-[scroll-reveal_0.8s_ease-out_forwards]">
@@ -136,7 +145,8 @@ const Home: React.FC = () => {
             <div className="flex flex-wrap gap-6 pt-4">
               <Link
                 to="/contact"
-                className="group relative px-10 py-5 bg-primary text-white text-lg font-bold rounded-full overflow-hidden shadow-2xl shadow-primary/40 transition-all active:scale-95 duration-200"
+                className="group relative px-10 py-5 bg-primary text-white text-lg font-bold rounded-full overflow-hidden shadow-2xl shadow-primary/40 transition-all active:scale-95 duration-200 focus:outline-none focus:ring-4 focus:ring-electric/50"
+                aria-label="Get Started with OWLNECK"
               >
                 <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-electric to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out"></span>
                 <span className="relative z-10 flex items-center">Get Started <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" /></span>
@@ -144,7 +154,8 @@ const Home: React.FC = () => {
               </Link>
               <Link
                 to="/services"
-                className="px-10 py-5 bg-white border-2 border-gray-200 text-primary text-lg font-bold rounded-full hover:border-primary hover:bg-primary/5 transition-all active:scale-95 hover:-translate-y-1 duration-200"
+                className="px-10 py-5 bg-white border-2 border-gray-200 text-primary text-lg font-bold rounded-full hover:border-primary hover:bg-primary/5 transition-all active:scale-95 hover:-translate-y-1 duration-200 focus:outline-none focus:ring-4 focus:ring-electric/50"
+                aria-label="View our Services"
               >
                 View Services
               </Link>
@@ -167,7 +178,7 @@ const Home: React.FC = () => {
             {services.map((service, idx) => (
               <div
                 key={idx}
-                className="group relative p-10 rounded-3xl border border-gray-200 bg-white transition-all duration-500 hover:shadow-[0_30px_60px_-15px_rgba(0,27,183,0.3)] hover:-translate-y-2 overflow-hidden preserve-3d hover:rotate-x-12 hover:bg-gradient-to-br hover:from-cream/30 hover:to-white"
+                className="group relative p-10 rounded-3xl border border-gray-200 bg-white transition-all duration-500 hover:shadow-[0_30px_60px_-15px_rgba(0,27,183,0.3)] hover:-translate-y-2 overflow-hidden preserve-3d hover:rotate-x-12 hover:bg-gradient-to-br hover:from-cream/30 hover:to-white will-change-transform"
                 style={{ animationDelay: `${idx * 50}ms` }}
               >
                 {/* Top Border Accent */}
@@ -208,7 +219,7 @@ const Home: React.FC = () => {
       {/* Partners Marquee */}
       <section className="py-32 bg-white overflow-hidden" ref={el => sectionsRef.current[2] = el}>
         <div className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_200px,_black_calc(100%-200px),transparent_100%)]">
-          <ul className="flex items-center justify-center md:justify-start [&_li]:mx-12 [&_img]:max-w-none animate-marquee hover:[animation-play-state:paused] group">
+          <ul className="flex items-center justify-center md:justify-start [&_li]:mx-12 [&_img]:max-w-none animate-marquee hover:[animation-play-state:paused] group will-change-transform">
             {[...Array(2)].map((_, listIdx) => (
               <React.Fragment key={listIdx}>
                 {['OneAldo', 'Trench', 'Plumsoft', 'Align', 'Bank K', 'Fortune Cloud', 'ArmiSys', 'Cloud N Cluster'].map((partner, i) => (
@@ -233,7 +244,8 @@ const Home: React.FC = () => {
           </p>
           <Link
             to="/contact"
-            className="inline-flex items-center px-12 py-6 bg-white text-primary text-2xl font-bold rounded-full hover:bg-sunset hover:text-white transition-all transform hover:scale-110 active:scale-95 shadow-2xl shadow-black/20"
+            className="inline-flex items-center px-12 py-6 bg-white text-primary text-2xl font-bold rounded-full hover:bg-sunset hover:text-white transition-all transform hover:scale-110 active:scale-95 shadow-2xl shadow-black/20 focus:outline-none focus:ring-4 focus:ring-white/50"
+            aria-label="Start Your Journey"
           >
             Start Your Journey <ArrowRight className="ml-3 w-6 h-6" />
           </Link>

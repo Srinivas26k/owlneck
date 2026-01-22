@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Target, TrendingUp, Users, Shield, Lightbulb, Heart, Lock, Quote } from 'lucide-react';
+import SEO from '../components/SEO';
+import LazyImage from '../components/LazyImage';
 
 const About: React.FC = () => {
     const sectionsRef = useRef<(HTMLDivElement | null)[]>([]);
@@ -7,7 +9,7 @@ const About: React.FC = () => {
     const [scrollY, setScrollY] = useState(0);
 
     useEffect(() => {
-        const handleScroll = () => setScrollY(window.scrollY);
+        const handleScroll = () => requestAnimationFrame(() => setScrollY(window.scrollY));
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
@@ -40,11 +42,18 @@ const About: React.FC = () => {
 
     return (
         <div className="pt-20 overflow-hidden">
+            <SEO
+                title="About Us"
+                description="Learn about OWLNECK's mission to democratize secure, scalable IT infrastructure. We combine AI-driven insights with a human-centric approach."
+                canonical="https://owlneck.com/about"
+            />
+
             {/* Hero with Ken Burns Effect */}
             <section className="relative h-[85vh] min-h-[700px] flex items-center justify-center overflow-hidden">
                 <div
-                    className="absolute inset-0 bg-cover bg-center z-0 animate-ken-burns transform origin-center"
+                    className="absolute inset-0 bg-cover bg-center z-0 animate-ken-burns transform origin-center will-change-transform"
                     style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&q=80")' }}
+                    aria-hidden="true"
                 />
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-primary/60 to-primary/40 mix-blend-multiply z-10" />
@@ -76,7 +85,7 @@ const About: React.FC = () => {
                             <p className="text-xl md:text-2xl text-muted leading-relaxed font-light">
                                 At OWLNECK, we believe that technology should be an enabler, not a bottleneck. Our mission is to democratize prompt, secure, and scalable IT infrastructure for enterprises of all sizes.
                             </p>
-                            <div className={`overflow-hidden transition-all duration-500 ${isExpanded ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}>
+                            <div className={`overflow-hidden transition-all duration-500 ${isExpanded ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`} style={{ willChange: isExpanded ? 'max-height, opacity' : 'auto' }}>
                                 <p className="text-xl md:text-2xl text-muted leading-relaxed font-light pt-4">
                                     We strive to bridge the gap between complex technical challenges and business goals, ensuring that every line of code and every server configuration contributes directly to your bottom line. Our team operates with a relentless focus on efficiency, stripping away the unnecessary to reveal the essential power of your digital systems.
                                 </p>
@@ -85,7 +94,9 @@ const About: React.FC = () => {
 
                         <button
                             onClick={() => setIsExpanded(!isExpanded)}
-                            className="text-primary font-bold text-lg hover:text-electric transition-colors flex items-center gap-2 uppercase tracking-widest border-b-2 border-primary/20 hover:border-primary pb-1"
+                            className="text-primary font-bold text-lg hover:text-electric transition-colors flex items-center gap-2 uppercase tracking-widest border-b-2 border-primary/20 hover:border-primary pb-1 focus:outline-none focus:ring-4 focus:ring-electric/50 rounded-sm"
+                            aria-expanded={isExpanded}
+                            aria-controls="mission-details"
                         >
                             {isExpanded ? 'Read Less' : 'Read More'}
                         </button>
@@ -117,17 +128,17 @@ const About: React.FC = () => {
                 <div className="container mx-auto px-6 md:px-12 space-y-40">
                     {/* Row 1 */}
                     <div className="flex flex-col md:flex-row items-center gap-24 relative">
-                        <div className="absolute -top-32 -left-20 text-[20rem] font-bold text-white/80 select-none z-0 pointer-events-none drop-shadow-md" style={{ WebkitTextStroke: '2px #E5E7EB' }}>
+                        <div className="absolute -top-32 -left-20 text-[20rem] font-bold text-white/80 select-none z-0 pointer-events-none drop-shadow-md" style={{ WebkitTextStroke: '2px #E5E7EB' }} aria-hidden="true">
                             01
                         </div>
 
                         <div className="md:w-1/2 rounded-[3rem] overflow-hidden shadow-2xl shadow-primary/20 transform z-10 opacity-0 slide-left-target" ref={el => sectionsRef.current[5] = el}>
                             <div className="overflow-hidden h-[600px]">
-                                <img
+                                <LazyImage
                                     src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&q=80"
-                                    alt="Data Analytics"
-                                    className="w-full h-full object-cover scale-110 transition-transform duration-100 ease-out"
-                                    style={{ transform: `translateY(${(scrollY - 1800) * 0.1}px) scale(1.1)` }} // Parallax
+                                    alt="Data Analytics Dashboard showing optimize IT spend"
+                                    className="w-full h-full object-cover scale-110 transition-transform duration-100 ease-out will-change-transform"
+                                    style={{ transform: `translateY(${(scrollY - 1800) * 0.1}px) scale(1.1)` }}
                                 />
                             </div>
                         </div>
@@ -138,7 +149,7 @@ const About: React.FC = () => {
                             </div>
                             <h3 className="text-5xl md:text-6xl font-bold text-navy tracking-tight leading-[1.1]">AI-Driven Financial Support</h3>
                             <div className="relative">
-                                <Quote className="absolute -top-6 -left-8 text-primary/10 fill-current w-16 h-16" />
+                                <Quote className="absolute -top-6 -left-8 text-primary/10 fill-current w-16 h-16" aria-hidden="true" />
                                 <p className="text-xl md:text-2xl text-muted leading-relaxed relative z-10">
                                     We don't just fix computers. We analyze your IT spend and optimize it using our proprietary AI models, often saving our clients up to <span className="text-primary font-bold">30%</span> on infrastructure costs in the first year.
                                 </p>
@@ -148,17 +159,17 @@ const About: React.FC = () => {
 
                     {/* Row 2 */}
                     <div className="flex flex-col md:flex-row-reverse items-center gap-24 relative">
-                        <div className="absolute -top-32 -right-20 text-[20rem] font-bold text-white/80 select-none z-0 pointer-events-none drop-shadow-md" style={{ WebkitTextStroke: '2px #E5E7EB' }}>
+                        <div className="absolute -top-32 -right-20 text-[20rem] font-bold text-white/80 select-none z-0 pointer-events-none drop-shadow-md" style={{ WebkitTextStroke: '2px #E5E7EB' }} aria-hidden="true">
                             02
                         </div>
 
                         <div className="md:w-1/2 rounded-[3rem] overflow-hidden shadow-2xl shadow-sunset/20 transform z-10 opacity-0 slide-right-target" ref={el => sectionsRef.current[7] = el}>
                             <div className="overflow-hidden h-[600px]">
-                                <img
+                                <LazyImage
                                     src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&q=80"
-                                    alt="Team Collaboration"
-                                    className="w-full h-full object-cover scale-110 transition-transform duration-100 ease-out"
-                                    style={{ transform: `translateY(${(scrollY - 2600) * 0.1}px) scale(1.1)` }} // Parallax
+                                    alt="Owlneck Team collaborating in a modern office"
+                                    className="w-full h-full object-cover scale-110 transition-transform duration-100 ease-out will-change-transform"
+                                    style={{ transform: `translateY(${(scrollY - 2600) * 0.1}px) scale(1.1)` }}
                                 />
                             </div>
                         </div>
@@ -169,7 +180,7 @@ const About: React.FC = () => {
                             </div>
                             <h3 className="text-5xl md:text-6xl font-bold text-navy tracking-tight leading-[1.1]">Human-Centric Approach</h3>
                             <div className="relative">
-                                <Quote className="absolute -top-6 -left-8 text-sunset/10 fill-current w-16 h-16" />
+                                <Quote className="absolute -top-6 -left-8 text-sunset/10 fill-current w-16 h-16" aria-hidden="true" />
                                 <p className="text-xl md:text-2xl text-muted leading-relaxed relative z-10">
                                     Technology is useless without the people who wield it. We prioritize user training and experience, ensuring your team feels <span className="text-sunset font-bold">empowered</span>, not overwhelmed, by new tools.
                                 </p>

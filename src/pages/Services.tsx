@@ -5,6 +5,7 @@ import {
     Landmark, Pill, ChevronDown, Lock, Cloud, Cpu, ArrowRight, CheckCircle2, Filter
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 
 const industryIcons = [
     { icon: GraduationCap, name: 'Education', desc: 'LMS management & Campus Wi-Fi', category: 'Public' },
@@ -58,9 +59,15 @@ const Services: React.FC = () => {
 
     return (
         <div className="pt-20">
+            <SEO
+                title="Services"
+                description="Explore OWLNECK's specialized IT services including Cybersecurity, Cloud Computing, and AI/ML integration across 15+ industries."
+                canonical="https://owlneck.com/services"
+            />
+
             {/* Hero */}
             <section className="bg-cream/50 py-40 text-center relative overflow-hidden">
-                <div className="absolute inset-0 opacity-30 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] mix-blend-multiply" />
+                <div className="absolute inset-0 opacity-30 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] mix-blend-multiply" aria-hidden="true" />
                 <div className="container mx-auto px-6 relative z-10">
                     <h1 className="text-display-mobile md:text-display-desktop font-bold text-navy mb-8 tracking-tight leading-[0.95]">Our Industries</h1>
                     <p className="text-2xl md:text-3xl font-light text-muted max-w-3xl mx-auto leading-relaxed">
@@ -72,14 +79,16 @@ const Services: React.FC = () => {
             {/* Filters */}
             <section className="bg-white pt-24 pb-12 sticky top-20 z-40 border-b border-gray-100 shadow-sm backdrop-blur-md bg-white/90">
                 <div className="container mx-auto px-6 md:px-12 flex items-center justify-center">
-                    <div className="flex flex-wrap gap-4 justify-center">
+                    <div className="flex flex-wrap gap-4 justify-center" role="tablist" aria-label="Industry Filters">
                         {categories.map((cat) => (
                             <button
                                 key={cat}
                                 onClick={() => setFilter(cat)}
-                                className={`px-8 py-3 rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 ${filter === cat
-                                        ? 'bg-electric text-white shadow-lg shadow-electric/30 scale-105'
-                                        : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+                                role="tab"
+                                aria-selected={filter === cat}
+                                className={`px-8 py-3 rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-electric/50 ${filter === cat
+                                    ? 'bg-electric text-white shadow-lg shadow-electric/30 scale-105'
+                                    : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
                                     }`}
                             >
                                 {cat}
@@ -96,7 +105,7 @@ const Services: React.FC = () => {
                         {filteredIndustries.map((item, idx) => (
                             <div
                                 key={item.name}
-                                className="group relative p-10 border border-gray-200 rounded-[2rem] bg-white transition-all duration-500 flex flex-col items-start gap-8 hover:-translate-y-2 hover:shadow-[0_30px_60px_-15px_rgba(0,27,183,0.3)] preserve-3d hover:rotate-x-12 hover:bg-gradient-to-br hover:from-cream/30 hover:to-white overflow-hidden animate-slide-in-left"
+                                className="group relative p-10 border border-gray-200 rounded-[2rem] bg-white transition-all duration-500 flex flex-col items-start gap-8 hover:-translate-y-2 hover:shadow-[0_30px_60px_-15px_rgba(0,27,183,0.3)] preserve-3d hover:rotate-x-12 hover:bg-gradient-to-br hover:from-cream/30 hover:to-white overflow-hidden animate-slide-in-left will-change-transform"
                                 style={{ animationDelay: `${idx * 50}ms`, animationFillMode: 'both' }}
                             >
                                 {/* Animated drawing border on hover */}
@@ -115,7 +124,7 @@ const Services: React.FC = () => {
 
                                     {/* View Details Button that appears on hover */}
                                     <div className="opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-                                        <button className="text-electric font-bold text-sm uppercase tracking-wider flex items-center gap-2 group/btn">
+                                        <button className="text-electric font-bold text-sm uppercase tracking-wider flex items-center gap-2 group/btn focus:outline-none focus:ring-2 focus:ring-electric rounded">
                                             View Details <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
                                         </button>
                                     </div>
@@ -132,7 +141,7 @@ const Services: React.FC = () => {
                     <h2 className="text-h2-mobile md:text-h2-desktop font-bold text-center mb-24 tracking-tight">Deep Dive</h2>
 
                     {/* Progress Bar (Conceptual - indicating active step) */}
-                    <div className="flex gap-2 mb-12 justify-center">
+                    <div className="flex gap-2 mb-12 justify-center" aria-hidden="true">
                         {accordions.map((item) => (
                             <div
                                 key={item.id}
@@ -146,18 +155,20 @@ const Services: React.FC = () => {
                             <div
                                 key={item.id}
                                 className={`border border-gray-200 rounded-[2rem] overflow-hidden transition-all duration-500 ${openAccordion === item.id
-                                        ? 'border-electric bg-cream/20 shadow-2xl shadow-electric/10 scale-[1.02]'
-                                        : 'bg-white hover:border-gray-300 opacity-80 hover:opacity-100'
+                                    ? 'border-electric bg-cream/20 shadow-2xl shadow-electric/10 scale-[1.02]'
+                                    : 'bg-white hover:border-gray-300 opacity-80 hover:opacity-100'
                                     }`}
                             >
                                 <button
                                     onClick={() => setOpenAccordion(openAccordion === item.id ? null : item.id)}
-                                    className="w-full flex items-center justify-between p-8 md:p-12 text-left focus:outline-none"
+                                    aria-expanded={openAccordion === item.id}
+                                    aria-controls={`accordion-content-${item.id}`}
+                                    className="w-full flex items-center justify-between p-8 md:p-12 text-left focus:outline-none focus:ring-4 focus:ring-electric/50 rounded-[2rem]"
                                 >
                                     <div className="flex items-center gap-8">
                                         <div className={`p-4 rounded-2xl transition-all duration-500 ${openAccordion === item.id
-                                                ? 'bg-electric text-white scale-110 shadow-lg shadow-electric/30'
-                                                : 'bg-gray-100 text-gray-500'
+                                            ? 'bg-electric text-white scale-110 shadow-lg shadow-electric/30'
+                                            : 'bg-gray-100 text-gray-500'
                                             }`}>
                                             <item.icon size={32} className={`transition-transform duration-500 ${openAccordion === item.id ? 'rotate-[360deg]' : ''}`} />
                                         </div>
@@ -173,8 +184,10 @@ const Services: React.FC = () => {
                                 </button>
 
                                 <div
+                                    id={`accordion-content-${item.id}`}
                                     className={`overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] ${openAccordion === item.id ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
                                         }`}
+                                    style={{ willChange: openAccordion === item.id ? 'max-height, opacity' : 'auto' }}
                                 >
                                     <div className="p-8 md:p-12 pt-0 text-muted leading-loose text-xl pl-[8rem] pr-12">
                                         {item.content.split('. ').map((sentence, sIdx) => (
@@ -205,7 +218,8 @@ const Services: React.FC = () => {
                     </p>
                     <Link
                         to="/contact"
-                        className="inline-flex items-center px-12 py-6 bg-white text-primary text-2xl font-bold rounded-full hover:bg-sunset hover:text-white transition-all transform hover:scale-110 active:scale-95 shadow-2xl shadow-black/20"
+                        className="inline-flex items-center px-12 py-6 bg-white text-primary text-2xl font-bold rounded-full hover:bg-sunset hover:text-white transition-all transform hover:scale-110 active:scale-95 shadow-2xl shadow-black/20 focus:outline-none focus:ring-4 focus:ring-white/50"
+                        aria-label="Start Your Journey"
                     >
                         Start Your Journey <ArrowRight className="ml-3 w-6 h-6" />
                     </Link>

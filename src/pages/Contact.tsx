@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Phone, Mail, MapPin, Send, ArrowRight, CheckCircle2, Copy, X, Loader2, ShieldCheck, Clock } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const SuccessModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpen, onClose }) => {
     if (!isOpen) return null;
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-            <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={onClose} />
-            <div className="relative bg-white rounded-3xl p-10 max-w-md w-full text-center shadow-2xl animate-scroll-reveal">
-                <button onClick={onClose} className="absolute top-6 right-6 text-gray-400 hover:text-navy transition-colors">
+            <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={onClose} aria-hidden="true" />
+            <div role="dialog" aria-modal="true" className="relative bg-white rounded-3xl p-10 max-w-md w-full text-center shadow-2xl animate-scroll-reveal">
+                <button onClick={onClose} className="absolute top-6 right-6 text-gray-400 hover:text-navy transition-colors" aria-label="Close modal">
                     <X size={24} />
                 </button>
                 <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -19,7 +20,7 @@ const SuccessModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOp
                 </p>
                 <button
                     onClick={onClose}
-                    className="w-full py-4 bg-primary text-white rounded-xl font-bold hover:bg-electric transition-colors"
+                    className="w-full py-4 bg-primary text-white rounded-xl font-bold hover:bg-electric transition-colors focus:outline-none focus:ring-4 focus:ring-electric/50"
                 >
                     Close
                 </button>
@@ -84,6 +85,11 @@ const Contact: React.FC = () => {
 
     return (
         <div className="pt-20">
+            <SEO
+                title="Contact Us"
+                description="Get in touch with OWLNECK - 24/7 Support, Strategic IT Consulting, and Enterprise Solutions. We respond within 2 hours."
+                canonical="https://owlneck.com/contact"
+            />
             <SuccessModal isOpen={showSuccess} onClose={() => setShowSuccess(false)} />
 
             {/* Hero */}
@@ -95,15 +101,15 @@ const Contact: React.FC = () => {
                     {/* Social Proof Bar */}
                     <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16 py-8 border-y border-gray-100 bg-gray-50/50 max-w-5xl mx-auto rounded-2xl">
                         <div className="flex items-center gap-3">
-                            <ShieldCheck className="text-green-600" size={24} />
+                            <ShieldCheck className="text-green-600" size={24} aria-hidden="true" />
                             <span className="font-bold text-navy text-lg">Trusted by 5000+ Businesses</span>
                         </div>
-                        <div className="h-8 w-[1px] bg-gray-300 hidden md:block" />
+                        <div className="h-8 w-[1px] bg-gray-300 hidden md:block" role="presentation" />
                         <div className="flex items-center gap-3">
-                            <Clock className="text-electric" size={24} />
+                            <Clock className="text-electric" size={24} aria-hidden="true" />
                             <span className="font-bold text-navy text-lg">Response within 2 Hours</span>
                         </div>
-                        <div className="h-8 w-[1px] bg-gray-300 hidden md:block" />
+                        <div className="h-8 w-[1px] bg-gray-300 hidden md:block" role="presentation" />
                         <div className="text-muted italic">"Best IT partner we've worked with"</div>
                     </div>
                 </div>
@@ -116,7 +122,7 @@ const Contact: React.FC = () => {
 
                         {/* Contact Form */}
                         <div className="lg:w-1/2">
-                            <form onSubmit={handleSubmit} className="space-y-12">
+                            <form onSubmit={handleSubmit} className="space-y-12" noValidate>
 
                                 <div className="relative group">
                                     <input
@@ -129,6 +135,8 @@ const Contact: React.FC = () => {
                                             }`}
                                         placeholder=" "
                                         required
+                                        aria-invalid={errors.name}
+                                        aria-describedby={errors.name ? "name-error" : undefined}
                                     />
                                     <label
                                         htmlFor="name"
@@ -140,6 +148,7 @@ const Contact: React.FC = () => {
                                     <div className={`absolute right-0 top-4 transition-all duration-500 ${formData.name.length > 2 && !errors.name ? 'opacity-100 scale-100 text-green-500' : 'opacity-0 scale-50'}`}>
                                         <CheckCircle2 size={24} />
                                     </div>
+                                    {errors.name && <p id="name-error" className="text-red-500 text-sm mt-1">Name must be at least 3 characters.</p>}
                                 </div>
 
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -154,6 +163,8 @@ const Contact: React.FC = () => {
                                                 }`}
                                             placeholder=" "
                                             required
+                                            aria-invalid={errors.email}
+                                            aria-describedby={errors.email ? "email-error" : undefined}
                                         />
                                         <label
                                             htmlFor="email"
@@ -165,6 +176,7 @@ const Contact: React.FC = () => {
                                         <div className={`absolute right-0 top-4 transition-all duration-500 ${formData.email && !errors.email ? 'opacity-100 scale-100 text-green-500' : 'opacity-0 scale-50'}`}>
                                             <CheckCircle2 size={24} />
                                         </div>
+                                        {errors.email && <p id="email-error" className="text-red-500 text-sm mt-1">Please enter a valid email address.</p>}
                                     </div>
 
                                     <div className="relative group">
@@ -222,6 +234,8 @@ const Contact: React.FC = () => {
                                             }`}
                                         placeholder=" "
                                         required
+                                        aria-invalid={errors.message}
+                                        aria-describedby={errors.message ? "message-error" : undefined}
                                     />
                                     <label
                                         htmlFor="message"
@@ -233,12 +247,13 @@ const Contact: React.FC = () => {
                                     <div className="absolute bottom-4 right-0 text-sm text-gray-400">
                                         {formData.message.length}/500
                                     </div>
+                                    {errors.message && <p id="message-error" className="text-red-500 text-sm mt-1">Message must be at least 10 characters.</p>}
                                 </div>
 
                                 <button
                                     type="submit"
                                     disabled={isSubmitting}
-                                    className="group relative bg-gradient-to-r from-primary to-electric text-white px-12 py-6 rounded-full font-bold text-xl hover:shadow-2xl hover:shadow-primary/40 transform transition-all active:scale-95 flex items-center justify-center w-full md:w-auto overflow-hidden disabled:opacity-70 disabled:cursor-not-allowed"
+                                    className="group relative bg-gradient-to-r from-primary to-electric text-white px-12 py-6 rounded-full font-bold text-xl hover:shadow-2xl hover:shadow-primary/40 transform transition-all active:scale-95 flex items-center justify-center w-full md:w-auto overflow-hidden disabled:opacity-70 disabled:cursor-not-allowed focus:outline-none focus:ring-4 focus:ring-electric/50"
                                 >
                                     <span className="absolute inset-0 w-full h-full bg-gradient-to-l from-electric to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out" />
                                     <span className="relative flex items-center gap-3">
@@ -260,10 +275,11 @@ const Contact: React.FC = () => {
 
                                 <div className="space-y-12 relative z-10">
                                     {/* Phone */}
-                                    <div
+                                    <button
                                         onClick={() => copyToClipboard('+18001234567', 'phone')}
-                                        className="flex items-start gap-8 group cursor-pointer p-6 rounded-2xl hover:bg-white/60 transition-all duration-300 hover:scale-102 hover:shadow-lg animate-slide-in-right"
+                                        className="flex items-start gap-8 group cursor-pointer p-6 rounded-2xl hover:bg-white/60 transition-all duration-300 hover:scale-102 hover:shadow-lg animate-slide-in-right w-full text-left focus:outline-none focus:ring-4 focus:ring-electric/50"
                                         style={{ animationDelay: '0ms' }}
+                                        aria-label="Copy phone number"
                                     >
                                         <div className="p-5 bg-white rounded-2xl text-sunset shadow-lg shadow-sunset/10 group-hover:bg-sunset group-hover:text-white transition-all duration-300">
                                             <Phone size={32} />
@@ -277,13 +293,14 @@ const Contact: React.FC = () => {
                                             <p className="text-muted text-xl font-light leading-relaxed">+1 800 123 4567</p>
                                             <p className="text-muted text-sm mt-1">Mon-Fri, 9am - 6pm EST</p>
                                         </div>
-                                    </div>
+                                    </button>
 
                                     {/* Email */}
-                                    <div
+                                    <button
                                         onClick={() => copyToClipboard('hello@owlneck.com', 'email')}
-                                        className="flex items-start gap-8 group cursor-pointer p-6 rounded-2xl hover:bg-white/60 transition-all duration-300 hover:scale-102 hover:shadow-lg animate-slide-in-right"
+                                        className="flex items-start gap-8 group cursor-pointer p-6 rounded-2xl hover:bg-white/60 transition-all duration-300 hover:scale-102 hover:shadow-lg animate-slide-in-right w-full text-left focus:outline-none focus:ring-4 focus:ring-electric/50"
                                         style={{ animationDelay: '100ms' }}
+                                        aria-label="Copy email address"
                                     >
                                         <div className="p-5 bg-white rounded-2xl text-sunset shadow-lg shadow-sunset/10 group-hover:bg-sunset group-hover:text-white transition-all duration-300">
                                             <Mail size={32} />
@@ -297,7 +314,7 @@ const Contact: React.FC = () => {
                                             <p className="text-muted text-xl font-light leading-relaxed">hello@owlneck.com</p>
                                             <p className="text-muted text-sm mt-1">24/7 Support available</p>
                                         </div>
-                                    </div>
+                                    </button>
 
                                     {/* Location */}
                                     <div
@@ -339,7 +356,7 @@ const Contact: React.FC = () => {
                         allowFullScreen={true}
                         loading="lazy"
                         referrerPolicy="no-referrer-when-downgrade"
-                        title="Hyderabad Map"
+                        title="OWLNECK Headquarters Location Map"
                         className="w-full h-full transform group-hover:scale-110 transition-transform duration-[2s]"
                     />
                 </div>
