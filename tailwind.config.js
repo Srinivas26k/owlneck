@@ -17,14 +17,17 @@ export default {
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
-        display: ['Inter', 'sans-serif'], // Or SF Pro Display if available locally, fallback to Inter
+        display: ['Inter', 'sans-serif'],
       },
       fontSize: {
-        'display-desktop': ['72px', '1.1'],
-        'display-mobile': ['48px', '1.1'],
-        'h2-desktop': ['56px', '1.2'],
-        'h2-mobile': ['36px', '1.2'],
-        'body': ['18px', '1.7'],
+        'display-desktop': ['clamp(3rem, 8vw, 5.5rem)', { lineHeight: '0.95', letterSpacing: '-0.02em' }],
+        'display-mobile': ['3rem', { lineHeight: '0.95', letterSpacing: '-0.02em' }],
+        'h2-desktop': ['56px', { lineHeight: '1.2', letterSpacing: '-0.02em' }],
+        'h2-mobile': ['36px', { lineHeight: '1.2', letterSpacing: '-0.02em' }],
+        'body': ['18px', { lineHeight: '1.75', letterSpacing: '0' }],
+      },
+      scale: {
+        '102': '1.02',
       },
       keyframes: {
         float: {
@@ -36,14 +39,18 @@ export default {
           '100%': { transform: 'translateX(-50%)' },
         },
         'scroll-reveal': {
-          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '0%': { opacity: '0', transform: 'translateY(40px)' }, // Increased distance
           '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        'count-up': {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' }
         }
       },
       animation: {
         float: 'float 6s ease-in-out infinite',
         marquee: 'marquee 40s linear infinite',
-        'scroll-reveal': 'scroll-reveal 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards',
+        'scroll-reveal': 'scroll-reveal 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards', // Smoother easing
       },
     },
   },
