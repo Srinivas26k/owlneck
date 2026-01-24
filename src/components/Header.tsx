@@ -30,17 +30,16 @@ const Header: React.FC = () => {
                 : 'bg-transparent py-6 border-transparent'
                 }`}
         >
-            <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
+            <div className="container mx-auto px-4 sm:px-6 md:px-12 flex justify-between items-center">
 
                 {/* Logo */}
-                {/* Logo */}
-                <Link to="/" className="text-2xl font-bold tracking-tight text-navy animate-slide-in-left group flex items-center gap-2">
-                    <img src={logo} alt="CyberArcMSP Logo" className="h-8 w-auto md:h-10 transition-transform duration-300 group-hover:scale-105" />
-                    <span>CYBERARC<span className="text-electric group-hover:text-sunset transition-colors duration-300">MSP</span></span>
+                <Link to="/" className="text-xl sm:text-2xl font-bold tracking-tight text-navy animate-slide-in-left group flex items-center gap-2">
+                    <img src={logo} alt="CyberArcMSP Logo" className="h-6 w-auto sm:h-8 md:h-10 transition-transform duration-300 group-hover:scale-105" />
+                    <span className="text-sm sm:text-base md:text-lg">CYBERARC<span className="text-electric group-hover:text-sunset transition-colors duration-300">MSP</span></span>
                 </Link>
 
                 {/* Desktop Nav */}
-                <nav className="hidden md:flex gap-10 items-center">
+                <nav className="hidden md:flex gap-10 items-center" aria-label="Main navigation">
                     {navLinks.map((link) => {
                         const isActive = location.pathname === link.path;
                         return (
@@ -49,6 +48,7 @@ const Header: React.FC = () => {
                                 to={link.path}
                                 className={`relative text-sm font-medium uppercase tracking-widest transition-colors hover:text-electric flex flex-col items-center group ${isActive ? 'text-navy' : 'text-gray-500'
                                     }`}
+                                aria-current={isActive ? "page" : undefined}
                             >
                                 {link.name}
                                 {/* Active Indicator (Thick Line) */}
@@ -56,7 +56,7 @@ const Header: React.FC = () => {
                                     }`} />
                                 {/* Glowing Dot for Active */}
                                 {isActive && (
-                                    <span className="absolute -bottom-3 w-1.5 h-1.5 bg-electric rounded-full shadow-[0_0_8px_#0046FF]" />
+                                    <span className="absolute -bottom-3 w-1.5 h-1.5 bg-electric rounded-full shadow-[0_0_8px_#0046FF]" aria-hidden="true" />
                                 )}
                             </Link>
                         )
@@ -82,8 +82,15 @@ const Header: React.FC = () => {
             </div>
 
             {/* Mobile Menu */}
-            <div className={`fixed inset-0 bg-white/95 backdrop-blur-xl z-40 transition-transform duration-500 ease-in-out md:hidden flex flex-col items-center justify-center gap-12 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'
-                }`}>
+            <div
+                className={`fixed inset-0 bg-white/95 backdrop-blur-xl z-40 transition-transform duration-500 ease-in-out md:hidden flex flex-col items-center justify-center gap-12 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+                }`}
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="mobile-menu-title"
+                aria-hidden={!isMenuOpen}
+            >
+                <h2 id="mobile-menu-title" className="sr-only">Navigation Menu</h2>
                 {navLinks.map((link, idx) => (
                     <Link
                         key={link.name}
@@ -91,11 +98,18 @@ const Header: React.FC = () => {
                         onClick={() => setIsMenuOpen(false)}
                         className={`text-4xl font-light text-navy hover:text-electric transition-transform duration-300 ${isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-20 opacity-0'}`}
                         style={{ transitionDelay: `${idx * 100}ms` }}
+                        aria-label={`${link.name} page`}
                     >
                         {link.name}
                     </Link>
                 ))}
-                <Link to="/contact" onClick={() => setIsMenuOpen(false)} className={`mt-8 px-12 py-4 bg-electric text-white rounded-full text-xl font-bold shadow-xl shadow-electric/30 active:scale-95 transition-all ${isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`} style={{ transitionDelay: '400ms' }}>
+                <Link
+                    to="/contact"
+                    onClick={() => setIsMenuOpen(false)}
+                    className={`mt-8 px-12 py-4 bg-electric text-white rounded-full text-xl font-bold shadow-xl shadow-electric/30 active:scale-95 transition-all ${isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
+                    style={{ transitionDelay: '400ms' }}
+                    aria-label="Contact us"
+                >
                     Get Started <ArrowRight className="inline ml-2" />
                 </Link>
             </div>

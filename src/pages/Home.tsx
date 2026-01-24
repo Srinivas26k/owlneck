@@ -14,6 +14,7 @@ const SphereAnimation = () => {
 
   useEffect(() => {
     let ticking = false;
+
     const handleScroll = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
@@ -23,13 +24,14 @@ const SphereAnimation = () => {
         ticking = true;
       }
     };
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
     <div
-      className="relative w-[300px] h-[300px] md:w-[500px] md:h-[500px] transition-transform duration-75 ease-out will-change-transform"
+      className="relative w-[200px] sm:w-[300px] md:w-[500px] h-[200px] sm:h-[300px] md:h-[500px] transition-transform duration-75 ease-out will-change-transform"
       style={{ transform: `translateY(${scrollY * 0.2}px)` }} // Parallax Context
     >
       {/* Float Animation Context */}
@@ -91,16 +93,29 @@ const CountUp: React.FC<{ end: number; suffix?: string; duration?: number }> = (
 
   useEffect(() => {
     if (!isVisible) return;
+
+    let animationFrameId: number;
     let startTime: number | null = null;
+
     const animate = (timestamp: number) => {
       if (!startTime) startTime = timestamp;
       const progress = Math.min((timestamp - startTime) / duration, 1);
       setCount(Math.floor(progress * end));
 
-      if (progress < 1) requestAnimationFrame(animate);
-      else setCount(end);
+      if (progress < 1) {
+        animationFrameId = requestAnimationFrame(animate);
+      } else {
+        setCount(end);
+      }
     };
-    requestAnimationFrame(animate);
+
+    animationFrameId = requestAnimationFrame(animate);
+
+    return () => {
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
+    };
   }, [isVisible, end, duration]);
 
   return <span ref={nodeRef}>{count}{suffix}</span>;
@@ -150,12 +165,12 @@ const Home: React.FC = () => {
       />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden bg-white">
+      <section className="relative min-h-screen flex items-center pt-24 sm:pt-32 pb-16 md:pt-40 md:pb-32 overflow-hidden bg-white">
         {/* Animated Gradient Mesh Background */}
         <div className="absolute top-[-20%] right-[-10%] w-[70vw] h-[70vw] bg-gradient-to-br from-cream via-white to-electric/5 rounded-full blur-[100px] animate-pulse -z-10 mix-blend-multiply opacity-60 will-change-transform" />
         <div className="absolute bottom-[-20%] left-[-10%] w-[60vw] h-[60vw] bg-gradient-to-tr from-cream via-white to-sunset/5 rounded-full blur-[100px] animate-float -z-10 mix-blend-multiply opacity-60 will-change-transform" />
 
-        <div className="container mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center gap-16 md:gap-0">
+        <div className="container mx-auto px-4 sm:px-6 md:px-12 flex flex-col md:flex-row items-center gap-8 sm:gap-16 md:gap-0">
           <div className="md:w-3/5 space-y-10 z-10 opacity-0 animate-[scroll-reveal_0.8s_ease-out_forwards]">
             <h1 className="text-display-mobile md:text-display-desktop font-bold leading-[0.95] tracking-tight text-navy drop-shadow-sm">
               Empowering Businesses with <span className="text-primary relative inline-block">Secure</span> and <span className="text-sunset relative inline-block">Scalable</span> IT Services
@@ -190,23 +205,24 @@ const Home: React.FC = () => {
 
       {/* Services Grid */}
       <section className="py-40 bg-white" ref={el => sectionsRef.current[0] = el}>
-        <div className="container mx-auto px-6 md:px-12">
+        <div className="container mx-auto px-4 sm:px-6 md:px-12">
           <div className="mb-24 max-w-3xl">
             <h2 className="text-h2-mobile md:text-h2-desktop font-bold text-navy mb-8 tracking-tight leading-none">Our Services</h2>
             <p className="text-muted text-lg tracking-wide max-w-xl">Comprehensive digital solutions engineered for the modern enterprise.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 perspective-1000">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 perspective-1000" role="list">
             {services.map((service, idx) => (
               <div
                 key={idx}
                 className="group relative p-10 rounded-3xl border border-gray-200 bg-white transition-all duration-500 hover:shadow-[0_30px_60px_-15px_rgba(0,27,183,0.3)] hover:-translate-y-2 overflow-hidden preserve-3d hover:rotate-x-12 hover:bg-gradient-to-br hover:from-cream/30 hover:to-white will-change-transform"
                 style={{ animationDelay: `${idx * 50}ms` }}
+                role="listitem"
               >
                 {/* Top Border Accent */}
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-electric scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
 
                 <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-8 bg-gradient-to-br from-cream to-white group-hover:from-primary/10 group-hover:to-electric/10 transition-all duration-500 text-primary group-hover:text-electric group-hover:rotate-6 shadow-sm group-hover:shadow-md">
-                  <service.icon size={32} />
+                  <service.icon size={32} aria-hidden="true" />
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-navy group-hover:text-electric transition-colors tracking-tight backface-hidden">{service.title}</h3>
                 <p className="text-muted text-base leading-relaxed group-hover:text-navy/80 transition-colors backface-hidden">{service.desc}</p>
@@ -217,10 +233,10 @@ const Home: React.FC = () => {
       </section>
 
       {/* Trust Metrics */}
-      <section className="py-40 bg-cream relative overflow-hidden" ref={el => sectionsRef.current[1] = el}>
+      <section className="py-20 sm:py-40 bg-cream relative overflow-hidden" ref={el => sectionsRef.current[1] = el}>
         <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] mix-blend-multiply" />
-        <div className="container mx-auto px-6 md:px-12 relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-primary/10 gap-16 md:gap-0">
+        <div className="container mx-auto px-4 sm:px-6 md:px-12 relative z-10">
+          <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-primary/10 gap-8 sm:gap-0">
             {[
               { end: 99, label: 'Customer Retention', suffix: '%' },
               { end: 411, label: 'Service Requests' },
@@ -238,7 +254,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Partners Marquee */}
-      <section className="py-32 bg-white overflow-hidden" ref={el => sectionsRef.current[2] = el}>
+      <section className="py-16 sm:py-32 bg-white overflow-hidden" ref={el => sectionsRef.current[2] = el}>
         <div className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_200px,_black_calc(100%-200px),transparent_100%)]">
           <ul className="flex items-center justify-center md:justify-start [&_li]:mx-12 [&_img]:max-w-none animate-marquee hover:[animation-play-state:paused] group will-change-transform">
             {[...Array(2)].map((_, listIdx) => (
@@ -255,8 +271,8 @@ const Home: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-40 bg-gradient-to-tr from-primary via-electric to-electric text-center px-6 relative overflow-hidden" ref={el => sectionsRef.current[3] = el}>
-        <div className="relative z-10 max-w-5xl mx-auto space-y-12">
+      <section className="py-20 sm:py-40 bg-gradient-to-tr from-primary via-electric to-electric text-center px-6 relative overflow-hidden" ref={el => sectionsRef.current[3] = el}>
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 space-y-12">
           <h2 className="text-5xl md:text-7xl font-bold text-white leading-[0.95] tracking-tight drop-shadow-lg">
             Ready to Transform Your IT Infrastructure?
           </h2>

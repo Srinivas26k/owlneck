@@ -66,7 +66,7 @@ const Services: React.FC = () => {
             />
 
             {/* Hero */}
-            <section className="bg-cream/50 py-40 text-center relative overflow-hidden">
+            <section className="bg-cream/50 py-16 sm:py-40 text-center relative overflow-hidden">
                 <div className="absolute inset-0 opacity-30 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] mix-blend-multiply" aria-hidden="true" />
                 <div className="container mx-auto px-6 relative z-10">
                     <h1 className="text-display-mobile md:text-display-desktop font-bold text-navy mb-8 tracking-tight leading-[0.95]">Our Industries</h1>
@@ -77,7 +77,7 @@ const Services: React.FC = () => {
             </section>
 
             {/* Filters */}
-            <section className="bg-white pt-24 pb-12 sticky top-20 z-40 border-b border-gray-100 shadow-sm backdrop-blur-md bg-white/90">
+            <section className="bg-white pt-12 pb-8 sm:pt-24 sm:pb-12 sticky top-20 z-40 border-b border-gray-100 shadow-sm backdrop-blur-md bg-white/90">
                 <div className="container mx-auto px-6 md:px-12 flex items-center justify-center">
                     <div className="flex flex-wrap gap-4 justify-center" role="tablist" aria-label="Industry Filters">
                         {categories.map((cat) => (
@@ -99,9 +99,9 @@ const Services: React.FC = () => {
             </section>
 
             {/* Industries Grid */}
-            <section className="py-24 bg-white min-h-[600px]">
-                <div className="container mx-auto px-6 md:px-12">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 perspective-1000">
+            <section className="py-12 sm:py-24 bg-white min-h-[600px]">
+                <div className="container mx-auto px-4 sm:px-6 md:px-12">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 perspective-1000">
                         {filteredIndustries.map((item, idx) => (
                             <div
                                 key={item.name}
@@ -136,8 +136,8 @@ const Services: React.FC = () => {
             </section>
 
             {/* Service Deep Dive - Accordion */}
-            <section className="py-40 bg-white border-t border-gray-100">
-                <div className="container mx-auto px-6 md:px-12 max-w-5xl">
+            <section className="py-16 sm:py-40 bg-white border-t border-gray-100">
+                <div className="container mx-auto px-4 sm:px-6 md:px-12 max-w-5xl">
                     <h2 className="text-h2-mobile md:text-h2-desktop font-bold text-center mb-24 tracking-tight">Deep Dive</h2>
 
                     {/* Progress Bar (Conceptual - indicating active step) */}
@@ -160,6 +160,7 @@ const Services: React.FC = () => {
                                     }`}
                             >
                                 <button
+                                    id={`accordion-header-${item.id}`}
                                     onClick={() => setOpenAccordion(openAccordion === item.id ? null : item.id)}
                                     aria-expanded={openAccordion === item.id}
                                     aria-controls={`accordion-content-${item.id}`}
@@ -170,7 +171,7 @@ const Services: React.FC = () => {
                                             ? 'bg-electric text-white scale-110 shadow-lg shadow-electric/30'
                                             : 'bg-gray-100 text-gray-500'
                                             }`}>
-                                            <item.icon size={32} className={`transition-transform duration-500 ${openAccordion === item.id ? 'rotate-[360deg]' : ''}`} />
+                                            <item.icon size={32} className={`transition-transform duration-500 ${openAccordion === item.id ? 'rotate-[360deg]' : ''}`} aria-hidden="true" />
                                         </div>
                                         <span className={`text-2xl md:text-3xl font-bold tracking-tight transition-colors duration-300 ${openAccordion === item.id ? 'text-electric' : 'text-navy'
                                             }`}>
@@ -180,6 +181,7 @@ const Services: React.FC = () => {
                                     <ChevronDown
                                         className={`text-gray-400 transition-transform duration-500 transform scale-125 ${openAccordion === item.id ? 'rotate-180 text-electric' : ''
                                             }`}
+                                        aria-hidden="true"
                                     />
                                 </button>
 
@@ -188,6 +190,8 @@ const Services: React.FC = () => {
                                     className={`overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] ${openAccordion === item.id ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
                                         }`}
                                     style={{ willChange: openAccordion === item.id ? 'max-height, opacity' : 'auto' }}
+                                    role="region"
+                                    aria-labelledby={`accordion-header-${item.id}`}
                                 >
                                     <div className="p-8 md:p-12 pt-0 text-muted leading-loose text-xl pl-[8rem] pr-12">
                                         {item.content.split('. ').map((sentence, sIdx) => (
@@ -208,8 +212,8 @@ const Services: React.FC = () => {
             </section>
 
             {/* CTA Section - Added */}
-            <section className="py-40 bg-gradient-to-tr from-primary via-electric to-electric text-center px-6 relative overflow-hidden">
-                <div className="relative z-10 max-w-5xl mx-auto space-y-12">
+            <section className="py-20 sm:py-40 bg-gradient-to-tr from-primary via-electric to-electric text-center px-6 relative overflow-hidden">
+                <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 space-y-12">
                     <h2 className="text-5xl md:text-7xl font-bold text-white leading-[0.95] tracking-tight drop-shadow-lg">
                         Ready to Transform Your IT Infrastructure?
                     </h2>

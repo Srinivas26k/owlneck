@@ -93,8 +93,8 @@ const Contact: React.FC = () => {
             <SuccessModal isOpen={showSuccess} onClose={() => setShowSuccess(false)} />
 
             {/* Hero */}
-            <section className="bg-white py-32 md:py-40 text-center relative overflow-hidden">
-                <div className="container mx-auto px-6 relative z-10">
+            <section className="bg-white py-16 md:py-40 text-center relative overflow-hidden">
+                <div className="container mx-auto px-4 sm:px-6 relative z-10">
                     <h1 className="text-display-mobile md:text-display-desktop font-bold text-navy mb-8 tracking-tight leading-[0.95]">Get In Touch</h1>
                     <p className="text-2xl text-muted font-light tracking-wide mb-12">We'd love to hear from you.</p>
 
@@ -116,9 +116,9 @@ const Contact: React.FC = () => {
             </section>
 
             {/* Split Section */}
-            <section className="bg-white pb-40">
-                <div className="container mx-auto px-6 md:px-12">
-                    <div className="flex flex-col lg:flex-row gap-24">
+            <section className="bg-white pb-16 sm:pb-40">
+                <div className="container mx-auto px-4 sm:px-6 md:px-12">
+                    <div className="flex flex-col lg:flex-row gap-8 sm:gap-24">
 
                         {/* Contact Form */}
                         <div className="lg:w-1/2">
@@ -143,10 +143,10 @@ const Contact: React.FC = () => {
                                         className={`absolute duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 text-xl tracking-wide font-light ${errors.name ? 'text-red-400' : 'text-muted peer-focus:text-electric'
                                             }`}
                                     >
-                                        Name
+                                        Name *
                                     </label>
                                     <div className={`absolute right-0 top-4 transition-all duration-500 ${formData.name.length > 2 && !errors.name ? 'opacity-100 scale-100 text-green-500' : 'opacity-0 scale-50'}`}>
-                                        <CheckCircle2 size={24} />
+                                        <CheckCircle2 size={24} aria-hidden="true" />
                                     </div>
                                     {errors.name && <p id="name-error" className="text-red-500 text-sm mt-1">Name must be at least 3 characters.</p>}
                                 </div>
@@ -171,10 +171,10 @@ const Contact: React.FC = () => {
                                             className={`absolute duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 text-xl tracking-wide font-light ${errors.email ? 'text-red-400' : 'text-muted peer-focus:text-electric'
                                                 }`}
                                         >
-                                            Business Email
+                                            Business Email *
                                         </label>
                                         <div className={`absolute right-0 top-4 transition-all duration-500 ${formData.email && !errors.email ? 'opacity-100 scale-100 text-green-500' : 'opacity-0 scale-50'}`}>
-                                            <CheckCircle2 size={24} />
+                                            <CheckCircle2 size={24} aria-hidden="true" />
                                         </div>
                                         {errors.email && <p id="email-error" className="text-red-500 text-sm mt-1">Please enter a valid email address.</p>}
                                     </div>
@@ -242,7 +242,7 @@ const Contact: React.FC = () => {
                                         className={`absolute duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 text-xl tracking-wide font-light ${errors.message ? 'text-red-400' : 'text-muted peer-focus:text-electric'
                                             }`}
                                     >
-                                        Message
+                                        Message *
                                     </label>
                                     <div className="absolute bottom-4 right-0 text-sm text-gray-400">
                                         {formData.message.length}/500
@@ -338,7 +338,7 @@ const Contact: React.FC = () => {
             </section>
 
             {/* Map Embed - Enhanced */}
-            <section className="w-full h-[600px] border-t-8 border-transparent relative group border-image-source bg-gradient-to-r from-primary to-electric" style={{ borderImage: 'linear-gradient(to right, #001BB7, #0046FF) 1' }}>
+            <section className="w-full h-[400px] sm:h-[600px] border-t-8 border-transparent relative group border-image-source bg-gradient-to-r from-primary to-electric" style={{ borderImage: 'linear-gradient(to right, #001BB7, #0046FF) 1' }}>
                 {/* Overlay Tags */}
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none">
                     <div className="bg-white px-6 py-3 rounded-xl shadow-2xl shadow-black/30 animate-bounce flex items-center gap-3">

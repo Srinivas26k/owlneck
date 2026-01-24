@@ -41,6 +41,18 @@
   .will-change-transform {
     will-change: transform;
   }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
 }
 
 /* Custom Scrollbar for Chrome/Safari/Edge */
@@ -78,5 +90,18 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  .animate-float,
+  .animate-marquee,
+  .animate-ken-burns,
+  .animate-pulse {
+    animation: none !important;
+  }
+
+  .transition-transform,
+  .transition-all,
+  .transition-colors {
+    transition: none !important;
   }
 }

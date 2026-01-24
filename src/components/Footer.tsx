@@ -5,13 +5,13 @@ import logo from '../assets/logo.png';
 
 const Footer: React.FC = () => {
     return (
-        <footer className="bg-navy text-white pt-32 pb-12 relative overflow-hidden">
+        <footer className="bg-navy text-white pt-16 sm:pt-32 pb-8 sm:pb-12 relative overflow-hidden">
             {/* Pulse Background */}
             <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-electric/10 rounded-full blur-[100px] animate-pulse pointer-events-none" />
             <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-sunset/5 rounded-full blur-[80px] animate-pulse pointer-events-none" style={{ animationDelay: '2s' }} />
 
-            <div className="container mx-auto px-6 md:px-12 relative z-10">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
+            <div className="container mx-auto px-4 sm:px-6 md:px-12 relative z-10">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-16 mb-16 sm:mb-24">
 
                     {/* Brand */}
                     <div className="space-y-8">

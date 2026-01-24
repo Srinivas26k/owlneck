@@ -20,11 +20,11 @@ export default {
         display: ['Inter', 'sans-serif'],
       },
       fontSize: {
-        'display-desktop': ['clamp(3rem, 8vw, 5.5rem)', { lineHeight: '0.95', letterSpacing: '-0.02em' }],
-        'display-mobile': ['3rem', { lineHeight: '0.95', letterSpacing: '-0.02em' }],
-        'h2-desktop': ['56px', { lineHeight: '1.2', letterSpacing: '-0.02em' }],
-        'h2-mobile': ['36px', { lineHeight: '1.2', letterSpacing: '-0.02em' }],
-        'body': ['18px', { lineHeight: '1.75', letterSpacing: '0' }],
+        'display-desktop': ['clamp(2.5rem, 8vw, 5.5rem)', { lineHeight: '0.95', letterSpacing: '-0.02em' }],
+        'display-mobile': ['clamp(2rem, 8vw, 3rem)', { lineHeight: '0.95', letterSpacing: '-0.02em' }],
+        'h2-desktop': ['clamp(2.5rem, 4vw, 3.5rem)', { lineHeight: '1.2', letterSpacing: '-0.02em' }],
+        'h2-mobile': ['clamp(1.75rem, 4vw, 2.25rem)', { lineHeight: '1.2', letterSpacing: '-0.02em' }],
+        'body': ['clamp(16px, 2.5vw, 18px)', { lineHeight: '1.75', letterSpacing: '0' }],
       },
       scale: {
         '102': '1.02',

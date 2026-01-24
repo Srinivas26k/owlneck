@@ -9,7 +9,18 @@ const About: React.FC = () => {
     const [scrollY, setScrollY] = useState(0);
 
     useEffect(() => {
-        const handleScroll = () => requestAnimationFrame(() => setScrollY(window.scrollY));
+        let ticking = false;
+
+        const handleScroll = () => {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    setScrollY(window.scrollY);
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        };
+
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
@@ -49,7 +60,7 @@ const About: React.FC = () => {
             />
 
             {/* Hero with Ken Burns Effect */}
-            <section className="relative h-[85vh] min-h-[700px] flex items-center justify-center overflow-hidden">
+            <section className="relative h-[70vh] sm:h-[85vh] min-h-[500px] flex items-center justify-center overflow-hidden">
                 <div
                     className="absolute inset-0 bg-cover bg-center z-0 animate-ken-burns transform origin-center will-change-transform"
                     style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&q=80")' }}
@@ -73,11 +84,11 @@ const About: React.FC = () => {
             </section>
 
             {/* Mission Section */}
-            <section className="py-40 bg-white relative overflow-hidden" ref={el => sectionsRef.current[0] = el}>
+            <section className="py-16 sm:py-40 bg-white relative overflow-hidden" ref={el => sectionsRef.current[0] = el}>
                 {/* Pulse BG */}
                 <div className="absolute top-1/2 left-1/4 w-[600px] h-[600px] bg-electric/5 rounded-full blur-[100px] animate-pulse -z-0 transform -translate-y-1/2" />
 
-                <div className="container mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center gap-24 relative z-10">
+                <div className="container mx-auto px-4 sm:px-6 md:px-12 flex flex-col md:flex-row items-center gap-8 sm:gap-24 relative z-10">
                     <div className="md:w-3/5 space-y-12 opacity-0 slide-left-target" ref={el => sectionsRef.current[3] = el}>
                         <h2 className="text-h2-mobile md:text-h2-desktop font-bold text-navy tracking-tight leading-none">Our Mission</h2>
 
@@ -124,10 +135,10 @@ const About: React.FC = () => {
             </section>
 
             {/* What Sets Us Apart */}
-            <section className="py-40 bg-cream/30 relative" ref={el => sectionsRef.current[1] = el}>
-                <div className="container mx-auto px-6 md:px-12 space-y-40">
+            <section className="py-16 sm:py-40 bg-cream/30 relative" ref={el => sectionsRef.current[1] = el}>
+                <div className="container mx-auto px-4 sm:px-6 md:px-12 space-y-20 sm:space-y-40">
                     {/* Row 1 */}
-                    <div className="flex flex-col md:flex-row items-center gap-24 relative">
+                    <div className="flex flex-col md:flex-row items-center gap-8 sm:gap-24 relative">
                         <div className="absolute -top-32 -left-20 text-[20rem] font-bold text-white/80 select-none z-0 pointer-events-none drop-shadow-md" style={{ WebkitTextStroke: '2px #E5E7EB' }} aria-hidden="true">
                             01
                         </div>
@@ -158,7 +169,7 @@ const About: React.FC = () => {
                     </div>
 
                     {/* Row 2 */}
-                    <div className="flex flex-col md:flex-row-reverse items-center gap-24 relative">
+                    <div className="flex flex-col md:flex-row-reverse items-center gap-8 sm:gap-24 relative">
                         <div className="absolute -top-32 -right-20 text-[20rem] font-bold text-white/80 select-none z-0 pointer-events-none drop-shadow-md" style={{ WebkitTextStroke: '2px #E5E7EB' }} aria-hidden="true">
                             02
                         </div>
@@ -191,7 +202,7 @@ const About: React.FC = () => {
             </section>
 
             {/* Core Values */}
-            <section className="py-40 bg-navy relative overflow-hidden" ref={el => sectionsRef.current[2] = el}>
+            <section className="py-16 sm:py-40 bg-navy relative overflow-hidden" ref={el => sectionsRef.current[2] = el}>
                 {/* Geometric Background Pattern */}
                 <div className="absolute inset-0 opacity-5">
                     <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
@@ -207,13 +218,13 @@ const About: React.FC = () => {
                 {/* Connecting Lines (Conceptual - rendered as absolute SVGs behind) */}
                 <div className="absolute top-1/2 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-electric/30 to-transparent transform -translate-y-1/2 hidden lg:block" />
 
-                <div className="container mx-auto px-6 md:px-12 relative z-10">
+                <div className="container mx-auto px-4 sm:px-6 md:px-12 relative z-10">
                     <div className="text-center mb-32">
                         <h2 className="text-h2-mobile md:text-h2-desktop font-bold text-white mb-6 tracking-tight">Core Values</h2>
                         <div className="w-24 h-1.5 bg-electric mx-auto rounded-full" />
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-16">
                         {[
                             { icon: Lightbulb, title: 'Innovation', desc: 'Always dragging the future into the present.' },
                             { icon: Shield, title: 'Integrity', desc: 'Doing the right thing, even when no one is watching.' },
