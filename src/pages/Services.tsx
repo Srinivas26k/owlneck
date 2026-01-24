@@ -61,8 +61,8 @@ const Services: React.FC = () => {
         <div className="pt-20">
             <SEO
                 title="Services"
-                description="Explore OWLNECK's specialized IT services including Cybersecurity, Cloud Computing, and AI/ML integration across 15+ industries."
-                canonical="https://owlneck.com/services"
+                description="Explore CyberArcMSP's specialized IT services including Cybersecurity, Cloud Computing, and AI/ML integration across 15+ industries."
+                canonical="https://cyberarcmsp.com/services"
             />
 
             {/* Hero */}
@@ -214,7 +214,7 @@ const Services: React.FC = () => {
                         Ready to Transform Your IT Infrastructure?
                     </h2>
                     <p className="text-2xl text-white/90 max-w-3xl mx-auto font-light leading-relaxed">
-                        Join the industry leaders who trust OWLNECK for security, speed, and reliability.
+                        Join the industry leaders who trust CyberArcMSP for security, speed, and reliability.
                     </p>
                     <Link
                         to="/contact"

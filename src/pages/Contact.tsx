@@ -87,8 +87,8 @@ const Contact: React.FC = () => {
         <div className="pt-20">
             <SEO
                 title="Contact Us"
-                description="Get in touch with OWLNECK - 24/7 Support, Strategic IT Consulting, and Enterprise Solutions. We respond within 2 hours."
-                canonical="https://owlneck.com/contact"
+                description="Get in touch with CyberArcMSP - 24/7 Support, Strategic IT Consulting, and Enterprise Solutions. We respond within 2 hours."
+                canonical="https://cyberarcmsp.com/contact"
             />
             <SuccessModal isOpen={showSuccess} onClose={() => setShowSuccess(false)} />
 
@@ -297,7 +297,7 @@ const Contact: React.FC = () => {
 
                                     {/* Email */}
                                     <button
-                                        onClick={() => copyToClipboard('hello@owlneck.com', 'email')}
+                                        onClick={() => copyToClipboard('hello@cyberarcmsp.com', 'email')}
                                         className="flex items-start gap-8 group cursor-pointer p-6 rounded-2xl hover:bg-white/60 transition-all duration-300 hover:scale-102 hover:shadow-lg animate-slide-in-right w-full text-left focus:outline-none focus:ring-4 focus:ring-electric/50"
                                         style={{ animationDelay: '100ms' }}
                                         aria-label="Copy email address"
@@ -311,7 +311,7 @@ const Contact: React.FC = () => {
                                                 {copied === 'email' && <span className="text-sm text-green-500 font-bold bg-green-100 px-2 py-1 rounded">Copied!</span>}
                                                 <Copy size={16} className="opacity-0 group-hover:opacity-50 transition-opacity" />
                                             </div>
-                                            <p className="text-muted text-xl font-light leading-relaxed">hello@owlneck.com</p>
+                                            <p className="text-muted text-xl font-light leading-relaxed">hello@cyberarcmsp.com</p>
                                             <p className="text-muted text-sm mt-1">24/7 Support available</p>
                                         </div>
                                     </button>
@@ -343,7 +343,7 @@ const Contact: React.FC = () => {
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none">
                     <div className="bg-white px-6 py-3 rounded-xl shadow-2xl shadow-black/30 animate-bounce flex items-center gap-3">
                         <div className="w-3 h-3 bg-green-500 rounded-full animate-ping" />
-                        <span className="font-bold text-navy">OWLNECK HQ</span>
+                        <span className="font-bold text-navy">CyberArcMSP HQ</span>
                     </div>
                 </div>
 
@@ -356,7 +356,7 @@ const Contact: React.FC = () => {
                         allowFullScreen={true}
                         loading="lazy"
                         referrerPolicy="no-referrer-when-downgrade"
-                        title="OWLNECK Headquarters Location Map"
+                        title="CyberArcMSP Headquarters Location Map"
                         className="w-full h-full transform group-hover:scale-110 transition-transform duration-[2s]"
                     />
                 </div>

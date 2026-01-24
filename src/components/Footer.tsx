@@ -1,6 +1,7 @@
 import React from 'react';
 import { Twitter, Linkedin, Github, Facebook, Send } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import logo from '../assets/logo.png';
 
 const Footer: React.FC = () => {
     return (
@@ -14,8 +15,9 @@ const Footer: React.FC = () => {
 
                     {/* Brand */}
                     <div className="space-y-8">
-                        <Link to="/" className="text-3xl font-bold tracking-tight inline-block hover:scale-105 transition-transform">
-                            OWL<span className="text-electric">NECK</span>
+                        <Link to="/" className="text-3xl font-bold tracking-tight inline-block hover:scale-105 transition-transform flex items-center gap-3">
+                            <img src={logo} alt="CyberArcMSP" className="h-10 w-auto bg-white/10 rounded-lg p-1" />
+                            <span>CYBERARC<span className="text-electric">MSP</span></span>
                         </Link>
                         <p className="text-gray-400 leading-relaxed text-lg">
                             Building the future, one server at a time. Empowering enterprises with intelligent, secure, and scalable IT infrastructure.
@@ -76,7 +78,7 @@ const Footer: React.FC = () => {
                 </div>
 
                 <div className="border-t border-white/10 pt-12 flex flex-col md:flex-row justify-between items-center gap-6 text-gray-500 text-sm">
-                    <p>&copy; {new Date().getFullYear()} OWLNECK Technologies. All rights reserved.</p>
+                    <p>&copy; {new Date().getFullYear()} CyberArcMSP Technologies. All rights reserved.</p>
                     <div className="flex gap-8">
                         <Link to="#" className="hover:text-white transition-colors">Privacy Policy</Link>
                         <Link to="#" className="hover:text-white transition-colors">Terms of Service</Link>

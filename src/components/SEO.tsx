@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 
 interface SEOProps {
     title: string;
-    description: string;
+    description?: string;
     canonical?: string;
     type?: string;
     image?: string;
@@ -11,23 +11,23 @@ interface SEOProps {
 
 const SEO: React.FC<SEOProps> = ({
     title,
-    description,
+    description = "CyberArcMSP - Secure, Scalable IT Managed Services",
     canonical,
     type = 'website',
-    image = 'https://owlneck.com/og-image.jpg' // Placeholder default
+    image = 'https://cyberarcmsp.com/og-image.jpg'
 }) => {
-    const siteTitle = 'OWLNECK | Intelligent IT Managed Services';
+    const siteTitle = "CyberArcMSP";
 
     return (
         <Helmet>
-            <title>{title} | OWLNECK</title>
+            <title>{title} | {siteTitle}</title>
             <meta name="description" content={description} />
             <link rel="canonical" href={canonical || window.location.href} />
 
             {/* Open Graph */}
             <meta property="og:type" content={type} />
             <meta property="og:title" content={title} />
-            <meta propriedade="og:description" content={description} />
+            <meta property="og:description" content={description} />
             <meta property="og:image" content={image} />
             <meta property="og:url" content={window.location.href} />
 

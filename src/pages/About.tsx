@@ -44,8 +44,8 @@ const About: React.FC = () => {
         <div className="pt-20 overflow-hidden">
             <SEO
                 title="About Us"
-                description="Learn about OWLNECK's mission to democratize secure, scalable IT infrastructure. We combine AI-driven insights with a human-centric approach."
-                canonical="https://owlneck.com/about"
+                description="Learn about CyberArcMSP's mission to democratize secure, scalable IT infrastructure. We combine AI-driven insights with a human-centric approach."
+                canonical="https://cyberarcmsp.com/about"
             />
 
             {/* Hero with Ken Burns Effect */}
@@ -83,7 +83,7 @@ const About: React.FC = () => {
 
                         <div className="space-y-8 pl-8 border-l-4 border-electric">
                             <p className="text-xl md:text-2xl text-muted leading-relaxed font-light">
-                                At OWLNECK, we believe that technology should be an enabler, not a bottleneck. Our mission is to democratize prompt, secure, and scalable IT infrastructure for enterprises of all sizes.
+                                At CyberArcMSP, we believe that technology should be an enabler, not a bottleneck. Our mission is to democratize prompt, secure, and scalable IT infrastructure for enterprises of all sizes.
                             </p>
                             <div className={`overflow-hidden transition-all duration-500 ${isExpanded ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`} style={{ willChange: isExpanded ? 'max-height, opacity' : 'auto' }}>
                                 <p className="text-xl md:text-2xl text-muted leading-relaxed font-light pt-4">
@@ -167,7 +167,7 @@ const About: React.FC = () => {
                             <div className="overflow-hidden h-[600px]">
                                 <LazyImage
                                     src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&q=80"
-                                    alt="Owlneck Team collaborating in a modern office"
+                                    alt="CyberArcMSP Team collaborating in a modern office"
                                     className="w-full h-full object-cover scale-110 transition-transform duration-100 ease-out will-change-transform"
                                     style={{ transform: `translateY(${(scrollY - 2600) * 0.1}px) scale(1.1)` }}
                                 />

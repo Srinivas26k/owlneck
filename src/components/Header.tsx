@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import logo from '../assets/logo.png';
 
 const Header: React.FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,15 +26,17 @@ const Header: React.FC = () => {
     return (
         <header
             className={`fixed w-full z-50 transition-all duration-500 border-b ${scrolled
-                    ? 'bg-white/80 backdrop-blur-xl py-4 shadow-sm border-gray-100'
-                    : 'bg-transparent py-6 border-transparent'
+                ? 'bg-white/80 backdrop-blur-xl py-4 shadow-sm border-gray-100'
+                : 'bg-transparent py-6 border-transparent'
                 }`}
         >
             <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
 
                 {/* Logo */}
-                <Link to="/" className="text-2xl font-bold tracking-tight text-navy animate-slide-in-left group">
-                    OWL<span className="text-electric group-hover:text-sunset transition-colors duration-300">NECK</span>
+                {/* Logo */}
+                <Link to="/" className="text-2xl font-bold tracking-tight text-navy animate-slide-in-left group flex items-center gap-2">
+                    <img src={logo} alt="CyberArcMSP Logo" className="h-8 w-auto md:h-10 transition-transform duration-300 group-hover:scale-105" />
+                    <span>CYBERARC<span className="text-electric group-hover:text-sunset transition-colors duration-300">MSP</span></span>
                 </Link>
 
                 {/* Desktop Nav */}
