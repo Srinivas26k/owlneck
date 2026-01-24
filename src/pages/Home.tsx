@@ -186,10 +186,10 @@ const Home: React.FC = () => {
             <SphereAnimation />
           </div>
         </div>
-      </section >
+      </section>
 
       {/* Services Grid */}
-      < section className="py-40 bg-white" ref={el => sectionsRef.current[0] = el} >
+      <section className="py-40 bg-white" ref={el => sectionsRef.current[0] = el}>
         <div className="container mx-auto px-6 md:px-12">
           <div className="mb-24 max-w-3xl">
             <h2 className="text-h2-mobile md:text-h2-desktop font-bold text-navy mb-8 tracking-tight leading-none">Our Services</h2>
@@ -214,10 +214,10 @@ const Home: React.FC = () => {
             ))}
           </div>
         </div>
-      </section >
+      </section>
 
       {/* Trust Metrics */}
-      < section className="py-40 bg-cream relative overflow-hidden" ref={el => sectionsRef.current[1] = el} >
+      <section className="py-40 bg-cream relative overflow-hidden" ref={el => sectionsRef.current[1] = el}>
         <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] mix-blend-multiply" />
         <div className="container mx-auto px-6 md:px-12 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-primary/10 gap-16 md:gap-0">
@@ -235,10 +235,10 @@ const Home: React.FC = () => {
             ))}
           </div>
         </div>
-      </section >
+      </section>
 
       {/* Partners Marquee */}
-      < section className="py-32 bg-white overflow-hidden" ref={el => sectionsRef.current[2] = el} >
+      <section className="py-32 bg-white overflow-hidden" ref={el => sectionsRef.current[2] = el}>
         <div className="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_200px,_black_calc(100%-200px),transparent_100%)]">
           <ul className="flex items-center justify-center md:justify-start [&_li]:mx-12 [&_img]:max-w-none animate-marquee hover:[animation-play-state:paused] group will-change-transform">
             {[...Array(2)].map((_, listIdx) => (
@@ -252,10 +252,10 @@ const Home: React.FC = () => {
             ))}
           </ul>
         </div>
-      </section >
+      </section>
 
       {/* CTA Section */}
-      < section className="py-40 bg-gradient-to-tr from-primary via-electric to-electric text-center px-6 relative overflow-hidden" ref={el => sectionsRef.current[3] = el} >
+      <section className="py-40 bg-gradient-to-tr from-primary via-electric to-electric text-center px-6 relative overflow-hidden" ref={el => sectionsRef.current[3] = el}>
         <div className="relative z-10 max-w-5xl mx-auto space-y-12">
           <h2 className="text-5xl md:text-7xl font-bold text-white leading-[0.95] tracking-tight drop-shadow-lg">
             Ready to Transform Your IT Infrastructure?
@@ -274,9 +274,9 @@ const Home: React.FC = () => {
 
         {/* Abstract background shapes - Enhanced */}
         <div className="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-[100px] transform -translate-y-1/2 -translate-x-1/2 animate-pulse" />
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-sunset/30 rounded-full blur-[120px] transform translate-y-1/2 translate-x-1/2" />
+        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-sunset/30 rounded-full blur-[120px] transform translate-y-1/2 -translate-x-1/2" />
         <div className="absolute top-1/2 left-1/2 w-[800px] h-[800px] bg-electric/20 rounded-full blur-[150px] transform -translate-x-1/2 -translate-y-1/2 mix-blend-overlay" />
-      </section >
+      </section>
     </div >
   );
 };
