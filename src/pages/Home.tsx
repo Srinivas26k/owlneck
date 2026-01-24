@@ -13,8 +13,15 @@ const SphereAnimation = () => {
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      requestAnimationFrame(() => setScrollY(window.scrollY));
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setScrollY(window.scrollY);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -22,29 +29,43 @@ const SphereAnimation = () => {
 
   return (
     <div
-      className="relative w-[300px] h-[300px] md:w-[500px] md:h-[500px] animate-float transition-transform duration-100 ease-out will-change-transform"
-      style={{ transform: `translateY(${scrollY * 0.2}px)` }} // Parallax Effect
+      className="relative w-[300px] h-[300px] md:w-[500px] md:h-[500px] transition-transform duration-75 ease-out will-change-transform"
+      style={{ transform: `translateY(${scrollY * 0.2}px)` }} // Parallax Context
     >
-      {/* Core Gradient Sphere */}
-      <div className="absolute inset-0 rounded-full bg-gradient-to-br from-electric via-primary to-sunset opacity-80 blur-3xl animate-pulse" />
+      {/* Float Animation Context */}
+      <div className="w-full h-full animate-float">
 
-      {/* Rotating Rings */}
-      <div className="absolute inset-0 border-2 border-electric/40 rounded-full animate-[spin_10s_linear_infinite] will-change-transform" style={{ transform: 'rotateX(70deg)' }} />
-      <div className="absolute inset-0 border-2 border-sunset/40 rounded-full animate-[spin_15s_linear_infinite_reverse] will-change-transform" style={{ transform: 'rotateY(70deg)' }} />
-      <div className="absolute inset-8 border border-white/30 rounded-full animate-[spin_20s_linear_infinite] will-change-transform" />
+        {/* Core Gradient Sphere */}
+        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-electric via-primary to-sunset opacity-80 blur-3xl animate-pulse" />
 
-      {/* Floating Particles - Increased Count */}
-      {[...Array(12)].map((_, i) => (
-        <div
-          key={i}
-          className="absolute w-3 h-3 bg-sunset rounded-full shadow-[0_0_15px_#FF8040] opacity-80 will-change-transform"
-          style={{
-            top: `${Math.random() * 80 + 10}%`,
-            left: `${Math.random() * 80 + 10}%`,
-            animation: `float ${2 + i * 0.5}s ease-in-out infinite alternate ${i * 0.2}s`
-          }}
-        />
-      ))}
+        {/* Rotating Rings (Nested to separate Tilt vs Spin) */}
+
+        {/* Ring 1 - X Axis Tilt */}
+        <div className="absolute inset-0" style={{ transform: 'rotateX(70deg)' }}>
+          <div className="w-full h-full border-2 border-electric/40 rounded-full animate-[spin_10s_linear_infinite]" />
+        </div>
+
+        {/* Ring 2 - Y Axis Tilt */}
+        <div className="absolute inset-0" style={{ transform: 'rotateY(70deg)' }}>
+          <div className="w-full h-full border-2 border-sunset/40 rounded-full animate-[spin_15s_linear_infinite_reverse]" />
+        </div>
+
+        {/* Ring 3 - No Tilt */}
+        <div className="absolute inset-8 border border-white/30 rounded-full animate-[spin_20s_linear_infinite]" />
+
+        {/* Floating Particles */}
+        {[...Array(12)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-3 h-3 bg-sunset rounded-full shadow-[0_0_15px_#FF8040] opacity-80"
+            style={{
+              top: `${Math.random() * 80 + 10}%`,
+              left: `${Math.random() * 80 + 10}%`,
+              animation: `float ${2 + i * 0.5}s ease-in-out infinite alternate ${i * 0.2}s`
+            }}
+          />
+        ))}
+      </div>
     </div>
   );
 };
