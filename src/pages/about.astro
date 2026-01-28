@@ -1,92 +1,143 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Navigation from '../components/Navigation';
-import Hero from '../components/Hero';
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation";
+import Hero from "../components/Hero";
+import InteractiveServices from "../components/InteractiveServices";
 ---
 
 <Layout title="About Us" description="Learn about CyberArcMSP and our mission">
   <Navigation client:load currentPage="about" />
-  
-  <Hero 
-    client:load
-    variant="about"
-  />
+
+  <Hero client:load variant="about" />
 
   <main class="relative bg-vapor-white z-20">
     <!-- What Sets Us Apart -->
-    <section class="py-24 px-6 md:px-12 lg:px-20 max-w-[1600px] mx-auto relative">
-      <div class="flex flex-col md:flex-row justify-between items-end mb-16 border-b border-silver-divider pb-8">
+    <section
+      class="py-24 px-6 md:px-12 lg:px-20 max-w-[1600px] mx-auto relative"
+    >
+      <div
+        class="flex flex-col md:flex-row justify-between items-end mb-16 border-b border-silver-divider pb-8"
+      >
         <div class="max-w-2xl">
-          <span class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4 block">Excellence by Design</span>
-          <h2 class="font-display text-4xl md:text-5xl uppercase tracking-tight text-navy-premium">
+          <span
+            class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4 block"
+            >Excellence by Design</span
+          >
+          <h2
+            class="font-display text-4xl md:text-5xl uppercase tracking-tight text-navy-premium"
+          >
             What Sets <span class="text-primary">Us Apart</span>
           </h2>
         </div>
         <div class="text-right mt-8 md:mt-0 hidden md:block">
           <p class="text-sm text-text-muted max-w-xs leading-relaxed">
-            We don't just manage IT; we engineer institutional-grade resilience for the modern enterprise.
+            We don't just manage IT; we engineer institutional-grade resilience
+            for the modern enterprise.
           </p>
         </div>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-white p-10 rounded-xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] border border-white hover:border-primary/20 transition-all duration-500 hover:-translate-y-2 group scroll-reveal">
-          <div class="w-12 h-12 rounded-full bg-soft-azure flex items-center justify-center mb-8 group-hover:bg-primary transition-colors duration-300">
-            <span class="material-symbols-outlined text-primary group-hover:text-white transition-colors">psychology</span>
+        <div
+          class="bg-white p-10 rounded-xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] border border-white hover:border-primary/20 transition-all duration-500 hover:-translate-y-2 group scroll-reveal"
+        >
+          <div
+            class="w-12 h-12 rounded-full bg-soft-azure flex items-center justify-center mb-8 group-hover:bg-primary transition-colors duration-300"
+          >
+            <span
+              class="material-symbols-outlined text-primary group-hover:text-white transition-colors"
+              >psychology</span
+            >
           </div>
-          <h3 class="font-serif text-2xl text-navy-premium mb-4 group-hover:text-primary transition-colors">
+          <h3
+            class="font-serif text-2xl text-navy-premium mb-4 group-hover:text-primary transition-colors"
+          >
             AI-Driven Proactive Support
           </h3>
           <p class="text-text-muted text-sm leading-relaxed">
-            Predictive analytics that identify and neutralize potential bottlenecks before they impact your operational velocity.
+            Predictive analytics that identify and neutralize potential
+            bottlenecks before they impact your operational velocity.
           </p>
         </div>
 
-        <div class="bg-white p-10 rounded-xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] border border-white hover:border-primary/20 transition-all duration-500 hover:-translate-y-2 group lg:mt-12 scroll-reveal">
-          <div class="w-12 h-12 rounded-full bg-soft-azure flex items-center justify-center mb-8 group-hover:bg-primary transition-colors duration-300">
-            <span class="material-symbols-outlined text-primary group-hover:text-white transition-colors">security</span>
+        <div
+          class="bg-white p-10 rounded-xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] border border-white hover:border-primary/20 transition-all duration-500 hover:-translate-y-2 group lg:mt-12 scroll-reveal"
+        >
+          <div
+            class="w-12 h-12 rounded-full bg-soft-azure flex items-center justify-center mb-8 group-hover:bg-primary transition-colors duration-300"
+          >
+            <span
+              class="material-symbols-outlined text-primary group-hover:text-white transition-colors"
+              >security</span
+            >
           </div>
-          <h3 class="font-serif text-2xl text-navy-premium mb-4 group-hover:text-primary transition-colors">
+          <h3
+            class="font-serif text-2xl text-navy-premium mb-4 group-hover:text-primary transition-colors"
+          >
             Intelligent Solutions
           </h3>
           <p class="text-text-muted text-sm leading-relaxed">
-            Architecture that learns from your workflow, optimizing resources dynamically to match your growth cadence.
+            Architecture that learns from your workflow, optimizing resources
+            dynamically to match your growth cadence.
           </p>
         </div>
 
-        <div class="bg-white p-10 rounded-xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] border border-white hover:border-primary/20 transition-all duration-500 hover:-translate-y-2 group scroll-reveal">
-          <div class="w-12 h-12 rounded-full bg-soft-azure flex items-center justify-center mb-8 group-hover:bg-primary transition-colors duration-300">
-            <span class="material-symbols-outlined text-primary group-hover:text-white transition-colors">verified_user</span>
+        <div
+          class="bg-white p-10 rounded-xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] border border-white hover:border-primary/20 transition-all duration-500 hover:-translate-y-2 group scroll-reveal"
+        >
+          <div
+            class="w-12 h-12 rounded-full bg-soft-azure flex items-center justify-center mb-8 group-hover:bg-primary transition-colors duration-300"
+          >
+            <span
+              class="material-symbols-outlined text-primary group-hover:text-white transition-colors"
+              >verified_user</span
+            >
           </div>
-          <h3 class="font-serif text-2xl text-navy-premium mb-4 group-hover:text-primary transition-colors">
+          <h3
+            class="font-serif text-2xl text-navy-premium mb-4 group-hover:text-primary transition-colors"
+          >
             Advanced Security
           </h3>
           <p class="text-text-muted text-sm leading-relaxed">
-            Military-grade encryption and zero-trust protocols woven seamlessly into the fabric of your daily operations.
+            Military-grade encryption and zero-trust protocols woven seamlessly
+            into the fabric of your daily operations.
           </p>
         </div>
       </div>
     </section>
 
     <!-- The Difference -->
-    <section class="py-32 px-6 md:px-12 lg:px-20 max-w-[1800px] mx-auto mesh-gradient border-t border-silver-divider">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start">
+    <section
+      class="py-32 px-6 md:px-12 lg:px-20 max-w-[1800px] mx-auto mesh-gradient border-t border-silver-divider"
+    >
+      <div
+        class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start"
+      >
         <div class="lg:col-span-4 sticky top-32">
           <div class="space-y-8 scroll-reveal">
             <div>
-              <span class="block text-[11px] font-bold uppercase tracking-widest mb-4 border-l-2 border-primary pl-4 text-navy-premium">
+              <span
+                class="block text-[11px] font-bold uppercase tracking-widest mb-4 border-l-2 border-primary pl-4 text-navy-premium"
+              >
                 The CyberArcMSP Difference
               </span>
             </div>
-            <div class="w-full aspect-[4/5] bg-soft-azure rounded-sm overflow-hidden shadow-lg border border-white/50 relative group">
-              <div class="absolute inset-0 bg-navy-premium/10 z-10 group-hover:bg-transparent transition-all duration-700"></div>
+            <div
+              class="w-full aspect-[4/5] bg-soft-azure rounded-sm overflow-hidden shadow-lg border border-white/50 relative group"
+            >
+              <div
+                class="absolute inset-0 bg-navy-premium/10 z-10 group-hover:bg-transparent transition-all duration-700"
+              >
+              </div>
               <img
                 alt="Professional Team"
                 class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105"
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXs4p1r5Nilf7MVBfKwRS6IcdWbcNP5KPX2MOCdxhAPjZ7hG8RnFq1cK1hj150WmL_1t1AK3tvMmMO96VcD1xpw6KWVbsM-NS12lKbJszjNUp4pL1MiT1uuJ1VLS48sAqHFATbTQLumWYnqe6b4f0AXD1zWm9J87HPT2AYUIwPB4jubUUHlTS7sHtPlaaOB-tEQjC0PKvcBvB-Q7dL1QW1_JrR4QaQ-wXGAVI29_TVJPYQ4s-eNTxc6wnVQMh8MUQssJ-u-LHAc3BX"
               />
               <div class="absolute bottom-6 left-6 z-20">
-                <span class="text-white text-[10px] uppercase tracking-widest font-bold bg-navy-premium/80 px-3 py-1 backdrop-blur-sm">
+                <span
+                  class="text-white text-[10px] uppercase tracking-widest font-bold bg-navy-premium/80 px-3 py-1 backdrop-blur-sm"
+                >
                   Executive Team
                 </span>
               </div>
@@ -95,38 +146,82 @@ import Hero from '../components/Hero';
         </div>
 
         <div class="lg:col-span-8 lg:pl-12">
-          <h2 class="font-display text-5xl md:text-7xl uppercase leading-[0.9] text-navy-premium mb-12 scroll-reveal">
-            Defining the standard for <br /><span class="text-primary">Elite Cyber Resilience.</span>
+          <h2
+            class="font-display text-5xl md:text-7xl uppercase leading-[0.9] text-navy-premium mb-12 scroll-reveal"
+          >
+            Defining the standard for <br /><span class="text-primary"
+              >Elite Cyber Resilience.</span
+            >
           </h2>
-          <p class="font-serif text-xl md:text-2xl leading-relaxed text-text-muted font-light mb-16 max-w-3xl scroll-reveal">
-            CyberArcMSP isn't just a service provider; we are the architects of your digital safety. In an era where data is the new currency, we build the vaults.
+          <p
+            class="font-serif text-xl md:text-2xl leading-relaxed text-text-muted font-light mb-16 max-w-3xl scroll-reveal"
+          >
+            CyberArcMSP isn't just a service provider; we are the architects of
+            your digital safety. In an era where data is the new currency, we
+            build the vaults.
           </p>
 
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-12 pt-12 border-t border-silver-divider scroll-reveal">
+          <div
+            class="grid grid-cols-1 md:grid-cols-3 gap-12 pt-12 border-t border-silver-divider scroll-reveal"
+          >
             <div>
-              <span class="block font-display text-6xl font-bold text-navy-premium mb-2">99%</span>
-              <span class="text-[11px] uppercase tracking-widest text-primary font-bold">Client Retention</span>
-              <p class="text-xs text-text-muted mt-2 leading-relaxed">Our partners stay because we deliver peace of mind, consistently.</p>
+              <span
+                class="block font-display text-6xl font-bold text-navy-premium mb-2"
+                >99%</span
+              >
+              <span
+                class="text-[11px] uppercase tracking-widest text-primary font-bold"
+                >Client Retention</span
+              >
+              <p class="text-xs text-text-muted mt-2 leading-relaxed">
+                Our partners stay because we deliver peace of mind,
+                consistently.
+              </p>
             </div>
             <div>
-              <span class="block font-display text-6xl font-bold text-navy-premium mb-2">24/7</span>
-              <span class="text-[11px] uppercase tracking-widest text-primary font-bold">Active Monitoring</span>
-              <p class="text-xs text-text-muted mt-2 leading-relaxed">Eyes on glass around the clock, ensuring zero downtime.</p>
+              <span
+                class="block font-display text-6xl font-bold text-navy-premium mb-2"
+                >24/7</span
+              >
+              <span
+                class="text-[11px] uppercase tracking-widest text-primary font-bold"
+                >Active Monitoring</span
+              >
+              <p class="text-xs text-text-muted mt-2 leading-relaxed">
+                Eyes on glass around the clock, ensuring zero downtime.
+              </p>
             </div>
             <div>
-              <span class="block font-display text-6xl font-bold text-navy-premium mb-2">Global</span>
-              <span class="text-[11px] uppercase tracking-widest text-primary font-bold">Compliance Ready</span>
-              <p class="text-xs text-text-muted mt-2 leading-relaxed">Meeting international standards including GDPR, HIPAA, and SOC2.</p>
+              <span
+                class="block font-display text-6xl font-bold text-navy-premium mb-2"
+                >Global</span
+              >
+              <span
+                class="text-[11px] uppercase tracking-widest text-primary font-bold"
+                >Compliance Ready</span
+              >
+              <p class="text-xs text-text-muted mt-2 leading-relaxed">
+                Meeting international standards including GDPR, HIPAA, and SOC2.
+              </p>
             </div>
           </div>
 
-          <div class="mt-20 bg-white p-8 md:p-12 border-l-4 border-primary shadow-sm scroll-reveal">
-            <blockquote class="font-serif text-2xl text-navy-premium italic leading-relaxed">
-              "We believe that true security is invisible. It supports your business without interrupting it, empowering your team to work without boundaries."
+          <div
+            class="mt-20 bg-white p-8 md:p-12 border-l-4 border-primary shadow-sm scroll-reveal"
+          >
+            <blockquote
+              class="font-serif text-2xl text-navy-premium italic leading-relaxed"
+            >
+              "We believe that true security is invisible. It supports your
+              business without interrupting it, empowering your team to work
+              without boundaries."
             </blockquote>
             <div class="mt-6 flex items-center gap-4">
               <div class="w-10 h-[1px] bg-text-muted"></div>
-              <span class="text-[11px] uppercase tracking-widest text-navy-premium font-bold">The Board of Directors</span>
+              <span
+                class="text-[11px] uppercase tracking-widest text-navy-premium font-bold"
+                >The Board of Directors</span
+              >
             </div>
           </div>
         </div>
@@ -134,80 +229,58 @@ import Hero from '../components/Hero';
     </section>
 
     <!-- Core Capabilities -->
-    <section class="bg-soft-azure py-32 px-6 md:px-12 lg:px-20 border-t border-white shadow-inner relative overflow-hidden">
-      <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-b from-white to-transparent rounded-full blur-3xl opacity-60 -z-10"></div>
-      
+    <section
+      class="bg-soft-azure py-32 px-6 md:px-12 lg:px-20 border-t border-white shadow-inner relative overflow-hidden"
+    >
+      <div
+        class="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-b from-white to-transparent rounded-full blur-3xl opacity-60 -z-10"
+      >
+      </div>
+
       <div class="max-w-[1800px] mx-auto">
-        <div class="flex items-end justify-between mb-20 border-b border-gray-200 pb-6">
-          <h3 class="font-display text-5xl md:text-6xl uppercase tracking-tight text-navy-premium scroll-reveal">
+        <div
+          class="flex items-end justify-between mb-20 border-b border-gray-200 pb-6"
+        >
+          <h3
+            class="font-display text-5xl md:text-6xl uppercase tracking-tight text-navy-premium scroll-reveal"
+          >
             Core Capabilities
           </h3>
-          <span class="hidden md:block text-[11px] uppercase tracking-widest text-primary font-bold mb-2 bg-white px-3 py-1 rounded-full shadow-sm">
+          <span
+            class="hidden md:block text-[11px] uppercase tracking-widest text-primary font-bold mb-2 bg-white px-3 py-1 rounded-full shadow-sm"
+          >
             ( Services 2024 )
           </span>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-16">
-          <div class="md:col-span-5 flex flex-col justify-center space-y-12">
-            <div class="group cursor-pointer scroll-reveal">
-              <span class="text-[10px] uppercase tracking-widest text-text-muted mb-2 block">01. Strategy</span>
-              <h4 class="font-serif text-3xl md:text-4xl text-navy-premium group-hover:text-primary transition-colors mb-4">
-                Strategic Consulting
-              </h4>
-              <p class="text-sm text-text-muted leading-relaxed max-w-md border-l border-silver-divider pl-4">
-                Aligning your technology roadmap with business objectives to drive efficiency and innovation.
-              </p>
-            </div>
-
-            <div class="group cursor-pointer scroll-reveal">
-              <span class="text-[10px] uppercase tracking-widest text-text-muted mb-2 block">02. Infrastructure</span>
-              <h4 class="font-serif text-3xl md:text-4xl text-navy-premium group-hover:text-primary transition-colors mb-4">
-                Cloud & Hybrid Systems
-              </h4>
-              <p class="text-sm text-text-muted leading-relaxed max-w-md border-l border-silver-divider pl-4">
-                Designing robust, scalable environments that adapt to the fluctuating demands of the market.
-              </p>
-            </div>
-
-            <div class="group cursor-pointer scroll-reveal">
-              <span class="text-[10px] uppercase tracking-widest text-text-muted mb-2 block">03. Protection</span>
-              <h4 class="font-serif text-3xl md:text-4xl text-navy-premium group-hover:text-primary transition-colors mb-4">
-                Cyber Defense
-              </h4>
-              <p class="text-sm text-text-muted leading-relaxed max-w-md border-l border-silver-divider pl-4">
-                Advanced threat detection and response systems that neutralize risks 24/7.
-              </p>
-            </div>
-          </div>
-
-          <div class="md:col-span-7 flex justify-center items-center relative h-[500px] md:h-auto scroll-reveal">
-            <div class="relative w-full h-full flex items-center justify-center">
-              <div class="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent rounded-lg"></div>
-              <div class="relative z-10 text-center">
-                <div class="text-[120px] leading-none font-display font-bold text-white/20 select-none">03.</div>
-                <p class="text-text-muted max-w-xl mx-auto mt-8">We integrate strategy, infrastructure, and protection into a cohesive, resilient security posture tailored to your unique business needs.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <InteractiveServices client:load />
       </div>
     </section>
   </main>
 
   <!-- CTA -->
-  <section class="bg-vapor-white py-32 px-6 border-t border-gray-100 relative overflow-hidden">
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-gradient-to-b from-soft-azure to-transparent rounded-full blur-3xl -z-10 opacity-60"></div>
-    
+  <section
+    class="bg-vapor-white py-32 px-6 border-t border-gray-100 relative overflow-hidden"
+  >
+    <div
+      class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-gradient-to-b from-soft-azure to-transparent rounded-full blur-3xl -z-10 opacity-60"
+    >
+    </div>
+
     <div class="max-w-5xl mx-auto text-center relative z-10 scroll-reveal">
-      <span class="text-[11px] uppercase tracking-widest text-primary mb-6 block font-bold bg-white inline-block px-4 py-2 rounded-full shadow-sm border border-gray-100">
+      <span
+        class="text-[11px] uppercase tracking-widest text-primary mb-6 block font-bold bg-white inline-block px-4 py-2 rounded-full shadow-sm border border-gray-100"
+      >
         Let's Connect
       </span>
-      <h2 class="font-display text-5xl md:text-7xl uppercase text-navy-premium mb-12 leading-[0.9]">
-        Join the Elite <span class="italic font-serif text-primary lowercase">Circle</span>
+      <h2
+        class="font-display text-5xl md:text-7xl uppercase text-navy-premium mb-12 leading-[0.9]"
+      >
+        Join the Elite <span class="italic font-serif text-primary lowercase"
+          >Circle</span
+        >
       </h2>
-      <button class="btn-primary mx-auto">
-        Request a Meeting
-      </button>
+      <button class="btn-primary mx-auto"> Request a Meeting </button>
     </div>
   </section>
 </Layout>
