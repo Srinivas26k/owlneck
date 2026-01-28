@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>CyberArcMSP | Luminous Elite Home</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,900;1,400&amp;family=Oswald:wght@500;700&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2563EB", // Electric Blue
+                        "primary-dark": "#0A2558",
+                        "navy-premium": "#0A1628", // Deep Navy for Typography
+                        "vapor-white": "#F8FAFC", // Clean Background
+                        "soft-azure": "#F0F9FF", // Tinted Background
+                        "glass-border": "rgba(255, 255, 255, 0.6)",
+                        "silver-divider": "#E2E8F0",
+                        "text-main": "#0F172A",
+                        "text-muted": "#64748B",
+                    },
+                    fontFamily: {
+                        "sans": ["Inter", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"],
+                        "display": ["Oswald", "sans-serif"],
+                    },
+                    spacing: {
+                        "128": "32rem",
+                    },
+                    letterSpacing: {
+                        "tightest": "-0.05em",
+                        "widest-plus": "0.2em",
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+        }
+
+        .text-glossy {
+            background: linear-gradient(135deg, #0A1628 0%, #1E3A8A 50%, #0A1628 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .mesh-gradient {
+            background: radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.08) 0%, rgba(248, 250, 252, 0) 70%);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-vapor-white text-text-main font-sans antialiased overflow-x-hidden selection:bg-primary selection:text-white">
+    <nav
+        class="fixed top-0 left-0 right-0 z-50 flex justify-between items-start p-6 md:p-10 transition-all duration-300">
+        <div class="glass-effect absolute inset-x-4 top-4 bottom-0 rounded-2xl -z-10 shadow-sm opacity-90 h-20 md:h-24">
+        </div>
+        <div class="flex flex-col gap-1 relative z-20">
+            <span class="text-[10px] uppercase tracking-widest font-semibold text-navy-premium">New York, USA</span>
+            <span class="text-[10px] uppercase tracking-widest text-text-muted">EST 09:21 AM</span>
+        </div>
+        <div class="hidden md:flex gap-12 absolute left-1/2 -translate-x-1/2 top-10 relative z-20">
+            <a class="text-[11px] uppercase tracking-widest font-semibold text-navy-premium hover:text-primary transition-colors"
+                href="#">Home</a>
+            <a class="text-[11px] uppercase tracking-widest font-semibold text-navy-premium hover:text-primary transition-colors"
+                href="#">Services</a>
+            <a class="text-[11px] uppercase tracking-widest font-semibold text-navy-premium hover:text-primary transition-colors"
+                href="#">Projects</a>
+            <a class="text-[11px] uppercase tracking-widest font-semibold text-navy-premium hover:text-primary transition-colors"
+                href="#">Contact</a>
+        </div>
+        <div class="flex flex-col items-end gap-1 relative z-20">
+            <button class="group flex items-center gap-2">
+                <span
+                    class="text-[10px] uppercase tracking-widest font-bold hidden sm:block text-navy-premium group-hover:text-primary transition-colors">Menu</span>
+                <span
+                    class="material-symbols-outlined text-2xl cursor-pointer text-navy-premium group-hover:text-primary transition-colors">menu</span>
+            </button>
+        </div>
+    </nav>
+    <header
+        class="relative w-full h-[100vh] min-h-[700px] flex items-center justify-center overflow-hidden bg-vapor-white pt-20">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-vapor-white z-10"></div>
+            <div class="absolute inset-0 bg-teal-500/5 mix-blend-overlay z-10"></div>
+            <img alt="Bright Modern Corporate Environment" class="w-full h-full object-cover opacity-90"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4sKU69pZlCtSIna7rQDpJWBdZf_oWbHrS8NVwcxV8LYBYiFVb-qNW-ycwJCo25mEaQYZ8T1HXE4MRPkvBaqTRd0Wpz6_NQ82Xfl0tlLOj3JYYSRu33WarSwvNMEIh93h02iPklnXTKqB7PW6G3AxamugAYj8tAa2YUedjCFpnio0hSdZqODdubXnEI0qA4fi4mDmuNdusSr48OSZpA0aaVkxnjrdRuu3kKZsTNf3RVUFmjl-n2hP70QqGxrxVK8GLkagS7KRmuy_x" />
+        </div>
+        <div class="absolute top-1/4 left-10 w-64 h-64 bg-white/20 rounded-full blur-3xl z-0 animate-pulse"></div>
+        <div class="absolute bottom-1/4 right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl z-0"></div>
+        <div class="relative z-10 w-full px-6 md:px-12 flex flex-col items-center justify-center h-full">
+            <div class="text-center w-full max-w-[1400px] relative">
+                <h1
+                    class="font-display font-bold text-[16vw] leading-[0.8] tracking-tighter text-glossy uppercase select-none opacity-90 drop-shadow-sm">
+                    CYBER
+                </h1>
+                <div class="relative inline-block w-full">
+                    <h1
+                        class="font-display font-bold text-[16vw] leading-[0.8] tracking-tighter text-glossy uppercase select-none relative z-10">
+                        ARC<span class="text-primary text-[16vw] leading-[0.8] animate-pulse">.</span>MSP
+                    </h1>
+                    <div
+                        class="absolute -top-[1vw] right-[8vw] size-[5vw] min-w-[50px] min-h-[50px] bg-white/60 backdrop-blur-md border border-white/50 shadow-lg rounded-full flex items-center justify-center transform rotate-12 hover:rotate-0 transition-transform duration-500">
+                        <span class="text-primary font-bold text-[2vw]">R</span>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="absolute bottom-12 left-0 right-0 px-6 md:px-12 flex justify-between items-end text-navy-premium">
+                <div class="hidden md:flex gap-8 text-[11px] uppercase tracking-widest font-medium">
+                    <span class="flex items-center gap-2"><span class="w-2 h-2 bg-primary rounded-full"></span>
+                        Security</span>
+                    <span class="flex items-center gap-2"><span
+                            class="w-2 h-2 bg-primary rounded-full opacity-50"></span> Infrastructure</span>
+                    <span class="flex items-center gap-2"><span
+                            class="w-2 h-2 bg-primary rounded-full opacity-25"></span> Compliance</span>
+                </div>
+                <div class="text-[11px] uppercase tracking-widest text-right font-medium leading-relaxed">
+                    <span class="opacity-60">Elite Standards</span><br />
+                    Institutional Grade Architecture
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="relative bg-vapor-white z-20">
+        <section class="py-32 px-6 md:px-12 lg:px-20 max-w-[1800px] mx-auto mesh-gradient">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-32 items-start">
+                <div class="lg:col-span-3 hidden lg:block sticky top-32">
+                    <div class="space-y-12">
+                        <div>
+                            <span
+                                class="block text-[11px] font-bold uppercase tracking-widest mb-4 border-l-2 border-primary pl-4 text-navy-premium">About
+                                Us</span>
+                        </div>
+                        <div
+                            class="w-full aspect-[3/4] bg-soft-azure rounded-sm overflow-hidden shadow-lg border border-white/50">
+                            <img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXs4p1r5Nilf7MVBfKwRS6IcdWbcNP5KPX2MOCdxhAPjZ7hG8RnFq1cK1hj150WmL_1t1AK3tvMmMO96VcD1xpw6KWVbsM-NS12lKbJszjNUp4pL1MiT1uuJ1VLS48sAqHFATbTQLumWYnqe6b4f0AXD1zWm9J87HPT2AYUIwPB4jubUUHlTS7sHtPlaaOB-tEQjC0PKvcBvB-Q7dL1QW1_JrR4QaQ-wXGAVI29_TVJPYQ4s-eNTxc6wnVQMh8MUQssJ-u-LHAc3BX" />
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-9">
+                    <h2
+                        class="font-serif text-4xl md:text-6xl lg:text-7xl leading-[1.05] text-navy-premium font-medium mb-16">
+                        It’s a time where <span class="italic text-primary/80 font-serif">digital resilience</span>
+                        reigns, allowing enterprises to surrender to growth.
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 pt-12 border-t border-silver-divider">
+                        <div>
+                            <button
+                                class="bg-primary text-white text-[11px] font-bold uppercase tracking-widest px-8 py-5 rounded-full hover:bg-navy-premium shadow-lg shadow-primary/20 hover:shadow-xl transition-all mb-10 transform hover:-translate-y-1">
+                                Learn More About Us
+                            </button>
+                            <h3 class="text-[11px] font-bold uppercase tracking-widest mb-4 text-primary">Our Vision
+                            </h3>
+                            <p class="text-base leading-relaxed text-text-muted font-light max-w-sm">
+                                Whether you're looking for professional infrastructure management, lifestyle IT support,
+                                or creative security architecture designed for the modern age.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 class="text-[11px] font-bold uppercase tracking-widest mb-4 text-primary">Our Mission
+                            </h3>
+                            <p class="text-base leading-relaxed text-text-muted font-light max-w-sm">
+                                Your data story to be told beautifully. We create warm, candid, and heartfelt protocols
+                                that reflect the connection between you and your clients.
+                            </p>
+                            <div class="mt-16 grid grid-cols-3 gap-8">
+                                <div class="border-l border-silver-divider pl-6">
+                                    <span class="block font-display text-4xl font-bold text-navy-premium">99%</span>
+                                    <span
+                                        class="text-[10px] uppercase tracking-widest text-text-muted mt-1 block">Retention</span>
+                                </div>
+                                <div class="border-l border-silver-divider pl-6">
+                                    <span class="block font-display text-4xl font-bold text-navy-premium">411</span>
+                                    <span
+                                        class="text-[10px] uppercase tracking-widest text-text-muted mt-1 block">Footprint</span>
+                                </div>
+                                <div class="border-l border-silver-divider pl-6">
+                                    <span class="block font-display text-4xl font-bold text-navy-premium">90+</span>
+                                    <span
+                                        class="text-[10px] uppercase tracking-widest text-text-muted mt-1 block">Clients</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="mt-32 pt-16 border-t border-silver-divider flex flex-wrap justify-between items-center gap-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                <span class="font-display font-bold text-2xl tracking-tighter text-navy-premium">TECHCORP</span>
+                <span class="font-display font-bold text-2xl tracking-tighter text-navy-premium">DATAVANT</span>
+                <span class="font-display font-bold text-2xl tracking-tighter text-navy-premium">SECURE.IO</span>
+                <span class="font-display font-bold text-2xl tracking-tighter text-navy-premium">CLOUDBASE</span>
+                <span class="font-display font-bold text-2xl tracking-tighter text-navy-premium">FORTRESS</span>
+            </div>
+        </section>
+        <section class="bg-soft-azure py-32 px-6 md:px-12 lg:px-20 border-t border-white shadow-inner">
+            <div class="max-w-[1800px] mx-auto">
+                <div class="flex items-end justify-between mb-20 border-b border-gray-200 pb-6">
+                    <h3 class="font-display text-5xl md:text-6xl uppercase tracking-tight text-navy-premium">
+                        Core Architecture
+                    </h3>
+                    <span
+                        class="hidden md:block text-[11px] uppercase tracking-widest text-primary font-bold mb-2 bg-white px-3 py-1 rounded-full shadow-sm">
+                        ( Services 2024 )
+                    </span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12">
+                    <div
+                        class="md:col-span-7 relative group cursor-pointer overflow-hidden bg-white rounded-lg shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] h-[600px] border border-white">
+                        <img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzZEbjbdS2-q6OAKMD518rB_ORsZasqh4vDqzFPmcQ3g5_mGv4C7U1WQ2izf6M2HP0hsVUdOD_F1Kz-01Mt_yv1JOFpPs3rcxdnKR84kEDGDzcceWXSYCEprfmpfaeLd2LnX9-WXJFNMxYQYG2zL9od0PLH-bg-wusXDbdKPSeAm0h_k8MryK7zo22C450Rwp-2f730CU1EgC9AUwkPfHSrjM0stOYAhb3WsoXGS3xEuWZfmwV4i17ct9ah1U3pc4r-XnKWJyeM6-u" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-white/90 via-white/20 to-transparent opacity-90 transition-opacity">
+                        </div>
+                        <div class="absolute bottom-10 left-10 text-navy-premium">
+                            <span
+                                class="block text-primary font-bold text-4xl md:text-6xl font-display mb-3 drop-shadow-sm">Managed
+                                IT</span>
+                            <span
+                                class="text-xs font-bold uppercase tracking-widest bg-white/80 backdrop-blur px-4 py-2 rounded-full inline-block">Full
+                                Infrastructure Control</span>
+                        </div>
+                    </div>
+                    <div class="md:col-span-5 flex flex-col justify-between pl-0 md:pl-10 py-6">
+                        <div class="space-y-16">
+                            <div class="group cursor-pointer">
+                                <div class="flex justify-between items-center border-b border-gray-300 pb-4 mb-4">
+                                    <h4
+                                        class="font-serif text-3xl text-navy-premium group-hover:text-primary transition-colors">
+                                        Cyber Defense</h4>
+                                    <span
+                                        class="material-symbols-outlined text-xl text-primary opacity-0 group-hover:opacity-100 transition-all -translate-x-4 group-hover:translate-x-0">arrow_outward</span>
+                                </div>
+                                <p class="text-sm text-text-muted leading-relaxed max-w-md">
+                                    Advanced threat protection utilizing AI-driven heuristics to preemptively neutralize
+                                    risks before they manifest.
+                                </p>
+                            </div>
+                            <div class="group cursor-pointer">
+                                <div class="flex justify-between items-center border-b border-gray-300 pb-4 mb-4">
+                                    <h4
+                                        class="font-serif text-3xl text-navy-premium group-hover:text-primary transition-colors">
+                                        Cloud Systems</h4>
+                                    <span
+                                        class="material-symbols-outlined text-xl text-primary opacity-0 group-hover:opacity-100 transition-all -translate-x-4 group-hover:translate-x-0">arrow_outward</span>
+                                </div>
+                                <p class="text-sm text-text-muted leading-relaxed max-w-md">
+                                    Scalable cloud infrastructure design that grows organically with your enterprise
+                                    needs and demands.
+                                </p>
+                            </div>
+                            <div class="group cursor-pointer">
+                                <div class="flex justify-between items-center border-b border-gray-300 pb-4 mb-4">
+                                    <h4
+                                        class="font-serif text-3xl text-navy-premium group-hover:text-primary transition-colors">
+                                        Compliance</h4>
+                                    <span
+                                        class="material-symbols-outlined text-xl text-primary opacity-0 group-hover:opacity-100 transition-all -translate-x-4 group-hover:translate-x-0">arrow_outward</span>
+                                </div>
+                                <p class="text-sm text-text-muted leading-relaxed max-w-md">
+                                    Regulatory adherence support for SOC2, HIPAA, and ISO standards with precision
+                                    reporting.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="mt-12 md:mt-0 flex justify-end">
+                            <span
+                                class="text-[120px] leading-none font-display font-bold text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.05)] select-none">01.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                    <div
+                        class="bg-white p-10 rounded-lg shadow-sm border border-gray-100 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 group">
+                        <span
+                            class="text-[10px] uppercase tracking-widest text-primary font-bold mb-6 block bg-soft-azure w-fit px-2 py-1 rounded">Included</span>
+                        <h4 class="font-display text-2xl mb-6 text-navy-premium">24/7 Monitoring</h4>
+                        <div class="w-8 h-[2px] bg-primary group-hover:w-full transition-all duration-500 ease-out">
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white p-10 rounded-lg shadow-sm border border-gray-100 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 group">
+                        <span
+                            class="text-[10px] uppercase tracking-widest text-primary font-bold mb-6 block bg-soft-azure w-fit px-2 py-1 rounded">Included</span>
+                        <h4 class="font-display text-2xl mb-6 text-navy-premium">Disaster Recovery</h4>
+                        <div class="w-8 h-[2px] bg-primary group-hover:w-full transition-all duration-500 ease-out">
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white p-10 rounded-lg shadow-sm border border-primary/20 flex flex-col justify-center items-center text-center group cursor-pointer hover:bg-primary transition-all duration-300">
+                        <span
+                            class="material-symbols-outlined text-4xl mb-4 text-primary group-hover:text-white transition-colors">add</span>
+                        <span
+                            class="text-[11px] uppercase tracking-widest font-bold text-navy-premium group-hover:text-white transition-colors">View
+                            All Services</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="bg-vapor-white py-32 px-6 border-t border-gray-100 relative overflow-hidden">
+            <div
+                class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-gradient-to-b from-soft-azure to-transparent rounded-full blur-3xl -z-10 opacity-60">
+            </div>
+            <div class="max-w-5xl mx-auto text-center relative z-10">
+                <span
+                    class="text-[11px] uppercase tracking-widest text-primary mb-6 block font-bold bg-white inline-block px-4 py-2 rounded-full shadow-sm border border-gray-100">Start
+                    From Here</span>
+                <h2 class="font-display text-6xl md:text-8xl uppercase text-navy-premium mb-12 leading-[0.9]">
+                    Secure Your<br /><span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400">Future
+                        Today</span>
+                </h2>
+                <div
+                    class="flex flex-col md:flex-row justify-between items-end border-t border-silver-divider pt-8 mt-16 max-w-4xl mx-auto">
+                    <div class="text-left mb-8 md:mb-0">
+                        <p class="text-[11px] uppercase tracking-widest text-text-muted mb-2 font-semibold">Direct
+                            Contact</p>
+                        <p
+                            class="font-serif text-2xl text-navy-premium hover:text-primary transition-colors cursor-pointer">
+                            hello@cyberarcmsp.com</p>
+                    </div>
+                    <button
+                        class="bg-primary hover:bg-navy-premium text-white text-[11px] font-bold uppercase tracking-widest px-12 py-5 rounded-full transition-all w-full md:w-auto shadow-lg shadow-primary/30 hover:shadow-xl hover:-translate-y-1">
+                        Schedule Consultation
+                    </button>
+                </div>
+                <p class="text-center text-[10px] uppercase tracking-widest text-text-muted mt-32 opacity-50">
+                    - World for a few hours -
+                </p>
+            </div>
+        </section>
+    </main>
+
+</body>
+
+</html>

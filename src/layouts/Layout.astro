@@ -1,5 +1,6 @@
 ---
 import "../styles/globals.css";
+import Footer from "../components/Footer";
 
 const { title, description = "CyberArcMSP - Elite Cybersecurity Solutions" } =
   Astro.props;
@@ -22,6 +23,7 @@ const { title, description = "CyberArcMSP - Elite Cybersecurity Solutions" } =
   </head>
   <body>
     <slot />
+    <Footer client:load />
     <script>
       // Smooth scroll reveal animations
       const observerOptions = {
