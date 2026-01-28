@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Navigation from "../components/Navigation";
-import InteractiveServices from "../components/InteractiveServices";
+import ColorChangeCards from "../components/ui/ColorChangeCards";
 import Hero from "../components/Hero";
 ---
 
@@ -113,7 +113,7 @@ import Hero from "../components/Hero";
             </div>
         </div>
         <!-- Dynamic Service Grid -->
-        <InteractiveServices client:load />
+        <ColorChangeCards client:load />
     </main>
     <!-- CTA -->
     <section

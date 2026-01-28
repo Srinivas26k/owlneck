@@ -16,6 +16,7 @@ import {
 const SERVICES = [
     {
         id: 'aiml',
+        slug: 'aiml-services',
         title: 'AIML Services',
         description: 'Deploying bespoke machine learning models that analyze operational data to predict market shifts.',
         icon: Bot,
@@ -24,6 +25,7 @@ const SERVICES = [
     },
     {
         id: 'cloud',
+        slug: 'cloud-computing',
         title: 'Cloud Computing',
         description: 'Elastic, scalable serverless architectures designed for high-availability and global reach.',
         icon: Cloud,
@@ -32,6 +34,7 @@ const SERVICES = [
     },
     {
         id: 'audit',
+        slug: 'audit-compliance',
         title: 'Audit & Compliance',
         description: 'Precision regulatory frameworks covering HIPAA, GDPR, and ISO standards.',
         icon: FileCheck,
@@ -40,6 +43,7 @@ const SERVICES = [
     },
     {
         id: 'finance',
+        slug: 'financial-reports',
         title: 'Financial Reports',
         description: 'Real-time data visualization of IT spend versus ROI for transparent fiscal governance.',
         icon: BarChart3,
@@ -48,6 +52,7 @@ const SERVICES = [
     },
     {
         id: 'training',
+        slug: 'corporate-training',
         title: 'Corporate Training',
         description: 'Upskilling workforces with cybersecurity awareness and modern toolset proficiency.',
         icon: GraduationCap,
@@ -56,6 +61,7 @@ const SERVICES = [
     },
     {
         id: 'toolkit',
+        slug: 'ai-powered-toolkit',
         title: 'AI Powered Toolkit',
         description: 'Proprietary automation scripts that reduce manual overhead by up to 40%.',
         icon: Shield,
@@ -64,6 +70,7 @@ const SERVICES = [
     },
     {
         id: 'staffing',
+        slug: 'strategic-staffing',
         title: 'Strategic Staffing',
         description: 'We don\'t just find employees; we headhunt the top 1% of technical talent.',
         icon: Users,
@@ -92,9 +99,8 @@ export default function InteractiveServices() {
                     return (
                         <div
                             key={service.id}
-                            onClick={() => toggleService(service.id)}
                             className={`
-                relative rounded-2xl p-8 transition-all duration-300 cursor-pointer group border
+                relative rounded-2xl p-8 transition-all duration-300 group border
                 ${service.colSpan === 2 ? 'lg:col-span-2' : ''}
                 ${isSelected
                                     ? 'ring-2 ring-primary border-primary transform scale-[1.02] shadow-xl'
@@ -106,8 +112,14 @@ export default function InteractiveServices() {
                                 }
               `}
                         >
+                            {/* Click handler for selection on the card background */}
+                            <div
+                                className="absolute inset-0 z-0"
+                                onClick={() => toggleService(service.id)}
+                            />
+
                             {/* Selection Indicator */}
-                            <div className={`absolute top-6 right-6 transition-all duration-300 ${isSelected ? 'scale-100 opacity-100' : 'scale-75 opacity-0 group-hover:opacity-50'}`}>
+                            <div className={`absolute top-6 right-6 transition-all duration-300 pointer-events-none z-10 ${isSelected ? 'scale-100 opacity-100' : 'scale-75 opacity-0 group-hover:opacity-50'}`}>
                                 {isSelected ? (
                                     <div className="bg-primary text-white rounded-full p-1">
                                         <CheckCircle2 className="w-5 h-5" />
@@ -119,7 +131,7 @@ export default function InteractiveServices() {
                                 )}
                             </div>
 
-                            <div className={`flex flex-col ${service.colSpan === 2 ? 'md:flex-row md:items-center' : ''} gap-6`}>
+                            <div className={`flex flex-col ${service.colSpan === 2 && 'md:flex-row md:items-center'} gap-6 relative z-10 pointer-events-none`}>
                                 <div className={`
                   w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 transition-transform duration-500 group-hover:scale-110
                   ${isDark ? 'bg-white/10 text-white' : 'bg-soft-azure text-primary'}
@@ -127,13 +139,27 @@ export default function InteractiveServices() {
                                     <service.icon className="w-7 h-7" strokeWidth={1.5} />
                                 </div>
 
-                                <div>
+                                <div className="flex-1">
                                     <h3 className={`text-xl font-display uppercase tracking-tight mb-2 ${isDark ? 'text-white' : 'text-navy-premium'}`}>
                                         {service.title}
                                     </h3>
                                     <p className={`text-sm leading-relaxed font-light ${isDark ? 'text-slate-300' : 'text-text-muted'}`}>
                                         {service.description}
                                     </p>
+                                </div>
+
+                                {/* Learn More Link - Proper clickable element */}
+                                <div className={`mt-4 md:mt-0 pointer-events-auto`}>
+                                    <a href={`/services/${service.slug}`} className={`
+                        inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest px-4 py-2 rounded-full border transition-all hover:scale-105
+                        ${isDark
+                                            ? 'border-white/20 text-white hover:bg-white hover:text-navy-premium'
+                                            : 'border-slate-200 text-navy-premium hover:border-primary hover:text-primary'
+                                        }
+                    `}>
+                                        Details
+                                        <ArrowRight className="w-3 h-3" />
+                                    </a>
                                 </div>
                             </div>
                         </div>

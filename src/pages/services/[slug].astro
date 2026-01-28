@@ -1,0 +1,124 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import Navigation from "../../components/Navigation";
+
+export async function getStaticPaths() {
+    const serviceEntries = await getCollection("services");
+    return serviceEntries.map((entry) => ({
+        params: { slug: entry.slug },
+        props: { entry },
+    }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+// Image
+const serviceImages: Record<string, string> = {
+    "cybersecurity-services":
+        "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2070", // Cyber lock
+    "aiml-services":
+        "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=2070", // AI Brain
+    "cloud-computing":
+        "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2072", // Cloud Network
+    "audit-compliance":
+        "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=2070", // Documents/Signing
+    "financial-reports":
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2070", // Graphs
+    "corporate-training":
+        "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=2070", // Classroom/Learning
+    "ai-powered-toolkit":
+        "https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?auto=format&fit=crop&q=80&w=2070", // Robot arm/Automation
+    "strategic-staffing":
+        "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=2084", // People/Meeting
+};
+
+const bgImage =
+    serviceImages[entry.slug] ||
+    "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2070";
+---
+
+<Layout title={entry.data.title} description={entry.data.description}>
+    <Navigation client:load currentPage="services" />
+
+    {/* Hero Section */}
+    <section
+        class="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden"
+    >
+        <div class="absolute inset-0 z-0">
+            <img
+                src={bgImage}
+                alt={entry.data.title}
+                class="w-full h-full object-cover"
+            />
+            <div class="absolute inset-0 bg-navy-premium/80 mix-blend-multiply">
+            </div>
+            <div
+                class="absolute inset-0 bg-gradient-to-t from-vapor-white via-transparent to-transparent"
+            >
+            </div>
+        </div>
+
+        <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
+            <div
+                class="flex items-center justify-center gap-3 mb-6 animate-fade-in-up"
+            >
+                <span class="w-8 h-[1px] bg-primary"></span>
+                <span
+                    class="text-xs uppercase tracking-[0.2em] font-bold text-primary"
+                    >Service Offering</span
+                >
+                <span class="w-8 h-[1px] bg-primary"></span>
+            </div>
+            <h1
+                class="font-display text-5xl md:text-7xl text-white mb-6 leading-tight animate-fade-in-up delay-100"
+            >
+                {entry.data.title}
+            </h1>
+            <p
+                class="text-xl text-slate-200 font-light max-w-2xl mx-auto animate-fade-in-up delay-200"
+            >
+                {entry.data.description}
+            </p>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <main
+        class="relative z-20 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto pb-32 -mt-20"
+    >
+        <div
+            class="bg-white rounded-[2rem] p-8 md:p-16 shadow-soft-xl border border-white/50 backdrop-blur-sm relative overflow-hidden"
+        >
+            <div
+                class="prose prose-lg prose-slate max-w-none prose-headings:font-display prose-headings:text-navy-premium prose-p:font-light prose-p:text-text-muted prose-li:text-text-muted prose-strong:text-navy-premium prose-strong:font-semibold"
+            >
+                <Content />
+            </div>
+
+            <!-- CTA Box -->
+            <div
+                class="mt-16 bg-soft-azure/30 rounded-2xl p-8 md:p-12 border border-primary/10 flex flex-col md:flex-row items-center justify-between gap-8"
+            >
+                <div>
+                    <h3 class="font-display text-2xl text-navy-premium mb-2">
+                        Ready to implement this solution?
+                    </h3>
+                    <p class="text-text-muted font-light">
+                        Schedule a consultation with our experts today.
+                    </p>
+                </div>
+                <a
+                    href="/contact"
+                    class="flex items-center gap-3 bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full text-xs font-bold uppercase tracking-widest transition-all hover:-translate-y-1 shadow-lg shadow-primary/20"
+                >
+                    Get Started
+                    <span class="material-symbols-outlined text-lg"
+                        >arrow_forward</span
+                    >
+                </a>
+            </div>
+        </div>
+    </main>
+</Layout>
