@@ -38,6 +38,7 @@ export default function InteractiveServices() {
                         key={service.id}
                         className={`group cursor-pointer transition-all duration-300 p-6 rounded-xl border ${activeId === service.id ? 'bg-white border-primary/20 shadow-lg' : 'bg-transparent border-transparent hover:bg-white/50'}`}
                         onMouseEnter={() => setActiveId(service.id)}
+                        onClick={() => setActiveId(service.id)}
                     >
                         <span className={`text-[10px] uppercase tracking-widest mb-2 block transition-colors ${activeId === service.id ? 'text-primary' : 'text-text-muted'}`}>
                             0{service.id}. Strategy
