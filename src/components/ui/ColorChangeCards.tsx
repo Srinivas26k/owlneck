@@ -114,8 +114,7 @@ const Card = ({ id, slug, heading, description, imgSrc, isSelected, onToggle }: 
         <motion.div
             transition={{ staggerChildren: 0.035 }}
             whileHover="hover"
-            onClick={onToggle}
-            className={`group relative h-96 w-full cursor-pointer overflow-hidden bg-slate-100 rounded-2xl transition-all duration-300 ${isSelected ? 'ring-4 ring-primary ring-offset-2' : ''}`}
+            className={`group relative h-96 w-full overflow-hidden bg-slate-100 rounded-2xl transition-all duration-300 ${isSelected ? 'ring-4 ring-primary ring-offset-2' : ''}`}
         >
             <div
                 className="absolute inset-0 saturate-0 transition-all duration-500 group-hover:scale-110 group-hover:saturate-100"
@@ -128,34 +127,54 @@ const Card = ({ id, slug, heading, description, imgSrc, isSelected, onToggle }: 
             {/* Overlay for text readability */}
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black/90 opacity-60 transition-opacity duration-500 group-hover:opacity-80"></div>
 
-            {/* Selection Checkmark */}
-            <div className={`absolute top-4 right-4 z-30 transition-all duration-300 ${isSelected ? 'opacity-100 scale-100' : 'opacity-0 scale-75'}`}>
-                <div className="bg-primary text-white rounded-full p-2 shadow-lg">
-                    <FiCheck className="text-xl" />
-                </div>
-            </div>
-
             <div className="relative z-20 flex h-full flex-col justify-between p-6 text-slate-300 transition-colors duration-500 group-hover:text-white">
 
-                <div className="flex justify-between items-start">
-                    {/* Learn More Link (stops propagation to avoid toggling selection) */}
-                    <a
-                        href={`/services/${slug}`}
-                        onClick={(e) => e.stopPropagation()}
-                        className="ml-auto bg-white/10 hover:bg-primary hover:text-white backdrop-blur-md p-2 rounded-full transition-all duration-300 transform group-hover:-rotate-45"
-                        title="View Details"
-                    >
-                        <FiArrowRight className="text-xl" />
-                    </a>
-                </div>
-
+                {/* Top Content: Heading & Description */}
                 <div>
-                    <h4 className="mb-2 font-display text-2xl font-bold uppercase tracking-tight text-white">
+                    <h4 className="mb-4 font-display text-2xl font-bold uppercase tracking-tight text-white">
                         {heading.split("").map((letter, index) => (
                             <AnimatedLetter letter={letter} key={index} />
                         ))}
                     </h4>
-                    <p className="text-sm font-light leading-relaxed text-slate-200 line-clamp-3">{description}</p>
+                    <p className="text-sm font-light leading-relaxed text-slate-200 line-clamp-3 mb-6">{description}</p>
+                </div>
+
+                {/* Bottom Actions: Two Explicit Buttons */}
+                <div className="flex gap-3 mt-auto">
+                    {/* Button 1: Get Quote (Toggle Selection) */}
+                    <button
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            onToggle?.();
+                        }}
+                        className={`
+                            flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-lg text-xs font-bold uppercase tracking-wider transition-all duration-300 border
+                            ${isSelected
+                                ? 'bg-primary border-primary text-white shadow-lg shadow-primary/30'
+                                : 'bg-white/10 border-white/20 text-white hover:bg-white hover:text-navy-premium'
+                            }
+                        `}
+                    >
+                        {isSelected ? (
+                            <>
+                                <FiCheck className="text-lg" />
+                                Selected
+                            </>
+                        ) : (
+                            <>
+                                Get Quote
+                            </>
+                        )}
+                    </button>
+
+                    {/* Button 2: View Details (Navigation) */}
+                    <a
+                        href={`/services/${slug}`}
+                        className="flex-1 flex items-center justify-center gap-2 bg-white/10 hover:bg-primary hover:border-primary hover:text-white border border-white/20 backdrop-blur-md py-3 px-4 rounded-lg text-xs font-bold uppercase tracking-wider text-white transition-all duration-300"
+                    >
+                        Details
+                        <FiArrowRight className="text-lg" />
+                    </a>
                 </div>
             </div>
         </motion.div>
