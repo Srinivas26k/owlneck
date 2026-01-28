@@ -128,29 +128,64 @@ import Hero from "../components/Hero";
           </div>
 
           {/* Clients */}
+          {/* Clients Marquee - Infinite Scroll */}
           <div
-            class="mt-32 pt-16 border-t border-silver-divider flex flex-wrap justify-between items-center gap-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-500 scroll-reveal"
+            class="mt-32 pt-16 border-t border-silver-divider overflow-hidden relative w-full group"
           >
-            <span
-              class="font-display font-bold text-2xl tracking-tighter text-navy-premium"
-              >TECHCORP</span
+            <div
+              class="flex whitespace-nowrap animate-marquee items-center gap-16 md:gap-32 w-max hover:[animation-play-state:paused] opacity-60 grayscale hover:grayscale-0 transition-all duration-500"
             >
-            <span
-              class="font-display font-bold text-2xl tracking-tighter text-navy-premium"
-              >DATAVANT</span
-            >
-            <span
-              class="font-display font-bold text-2xl tracking-tighter text-navy-premium"
-              >SECURE.IO</span
-            >
-            <span
-              class="font-display font-bold text-2xl tracking-tighter text-navy-premium"
-              >CLOUDBASE</span
-            >
-            <span
-              class="font-display font-bold text-2xl tracking-tighter text-navy-premium"
-              >FORTRESS</span
-            >
+              {/* Set 1 */}
+              <span
+                class="font-display font-bold text-3xl md:text-4xl tracking-tighter text-navy-premium"
+                >TECHCORP</span
+              >
+              <span
+                class="font-display font-bold text-3xl md:text-4xl tracking-tighter text-navy-premium"
+                >DATAVANT</span
+              >
+              <span
+                class="font-display font-bold text-3xl md:text-4xl tracking-tighter text-navy-premium"
+                >SECURE.IO</span
+              >
+              <span
+                class="font-display font-bold text-3xl md:text-4xl tracking-tighter text-navy-premium"
+                >CLOUDBASE</span
+              >
+              <span
+                class="font-display font-bold text-3xl md:text-4xl tracking-tighter text-navy-premium"
+                >FORTRESS</span
+              >
+              <span
+                class="font-display font-bold text-3xl md:text-4xl tracking-tighter text-navy-premium"
+                >CYBERNOD</span
+              >
+              {/* Set 2 (Duplicate for seamless loop) */}
+              <span
+                class="font-display font-bold text-3xl md:text-4xl tracking-tighter text-navy-premium"
+                >TECHCORP</span
+              >
+              <span
+                class="font-display font-bold text-3xl md:text-4xl tracking-tighter text-navy-premium"
+                >DATAVANT</span
+              >
+              <span
+                class="font-display font-bold text-3xl md:text-4xl tracking-tighter text-navy-premium"
+                >SECURE.IO</span
+              >
+              <span
+                class="font-display font-bold text-3xl md:text-4xl tracking-tighter text-navy-premium"
+                >CLOUDBASE</span
+              >
+              <span
+                class="font-display font-bold text-3xl md:text-4xl tracking-tighter text-navy-premium"
+                >FORTRESS</span
+              >
+              <span
+                class="font-display font-bold text-3xl md:text-4xl tracking-tighter text-navy-premium"
+                >CYBERNOD</span
+              >
+            </div>
           </div>
         </div>
       </div>
@@ -259,7 +294,7 @@ import Hero from "../components/Hero";
           Ready to Upgrade
         </span>
         <h2
-          class="font-display text-5xl md:text-7xl uppercase text-navy-premium mb-12 leading-[0.9]"
+          class="font-display text-3xl sm:text-4xl md:text-6xl lg:text-7xl uppercase text-navy-premium mb-12 leading-[0.9]"
         >
           Initiate <span class="italic font-serif text-primary lowercase"
             >the</span
@@ -345,5 +380,18 @@ import Hero from "../components/Hero";
     );
     background-size: 200% 200%;
     animation: gradient-shift-3 18s ease infinite;
+  }
+
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
   }
 </style>
