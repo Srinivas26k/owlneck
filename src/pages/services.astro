@@ -1,0 +1,192 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation';
+import Hero from '../components/Hero';
+---
+
+<Layout title="Services" description="Our Cybersecurity Services and Capabilities">
+  <Navigation client:load currentPage="services" />
+  
+  <Hero 
+    client:load
+    variant="services"
+  />
+
+  <main class="relative z-20 px-6 md:px-12 lg:px-20 max-w-[1600px] mx-auto pb-32">
+    <!-- Main Feature -->
+    <div class="bg-white rounded-[2rem] p-8 md:p-16 shadow-soft-xl border border-white relative overflow-hidden mb-16 group isolate scroll-reveal">
+      <div class="absolute inset-0 bg-gradient-to-br from-white via-soft-azure/30 to-white -z-10"></div>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="order-2 lg:order-1 relative z-10">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="w-8 h-[1px] bg-primary"></span>
+            <span class="text-[11px] uppercase tracking-widest font-bold text-primary">Core Competency</span>
+          </div>
+          <h2 class="font-display text-4xl md:text-5xl text-navy-premium mb-6 uppercase tracking-tight">
+            Cybersecurity <br /><span class="text-primary font-serif normal-case italic">Services</span>
+          </h2>
+          <p class="text-text-muted text-lg leading-relaxed mb-10 font-light max-w-lg">
+            Our flagship defensive matrix employs active heuristic analysis and zero-trust architecture to inoculate your enterprise against next-generation threats. We don't just patch vulnerabilities; we design impervious digital ecosystems.
+          </p>
+          <div class="flex flex-wrap gap-4 mb-10">
+            <span class="px-4 py-2 bg-vapor-white border border-silver-divider rounded-full text-xs font-semibold text-navy-premium uppercase tracking-wide">SOC 2 Type II</span>
+            <span class="px-4 py-2 bg-vapor-white border border-silver-divider rounded-full text-xs font-semibold text-navy-premium uppercase tracking-wide">Zero Trust</span>
+            <span class="px-4 py-2 bg-vapor-white border border-silver-divider rounded-full text-xs font-semibold text-navy-premium uppercase tracking-wide">24/7 Threat Hunting</span>
+          </div>
+          <button class="flex items-center gap-3 text-[11px] font-bold uppercase tracking-widest text-navy-premium hover:text-primary transition-colors group/btn">
+            Explore Security Architecture
+            <span class="material-symbols-outlined text-lg transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+          </button>
+        </div>
+
+        <div class="order-1 lg:order-2 flex justify-center items-center relative h-[400px] scroll-reveal">
+          <div class="relative w-[240px] h-[300px]">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-primary/20 blur-[60px] rounded-full"></div>
+            <div class="absolute inset-0 bg-gradient-to-br from-white/80 to-white/10 backdrop-blur-xl border border-white/50 shadow-2xl z-20 flex items-center justify-center transform transition-transform duration-700 group-hover:scale-105 group-hover:-translate-y-2 rounded-3xl">
+              <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/40 to-transparent opacity-50"></div>
+              <span class="material-symbols-outlined text-[80px] text-primary drop-shadow-lg relative z-30">shield_lock</span>
+            </div>
+            <div class="absolute top-10 -right-10 w-16 h-16 bg-white/40 backdrop-blur-md rounded-full border border-white/60 shadow-lg animate-bounce z-30 flex items-center justify-center">
+              <span class="material-symbols-outlined text-primary text-xl">verified_user</span>
+            </div>
+            <div class="absolute bottom-20 -left-12 w-12 h-12 bg-white/60 backdrop-blur-md rounded-full border border-white/60 shadow-lg animate-bounce z-30 flex items-center justify-center">
+              <span class="material-symbols-outlined text-navy-premium text-lg">lock</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Service Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+      <!-- AIML Services -->
+      <div class="lg:col-span-2 bg-white rounded-xl p-8 md:p-10 shadow-sm hover:shadow-soft-xl border border-slate-100 transition-all duration-500 group flex flex-col md:flex-row gap-8 items-start md:items-center scroll-reveal">
+        <div class="w-16 h-16 rounded-full bg-soft-azure flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-500">
+          <span class="material-symbols-outlined text-3xl text-primary font-light">psychology</span>
+        </div>
+        <div>
+          <h3 class="text-xl md:text-2xl font-display uppercase tracking-tight text-navy-premium mb-3 group-hover:text-primary transition-colors">
+            AIML Services
+          </h3>
+          <p class="text-sm text-text-muted leading-relaxed max-w-lg font-light">
+            Deploying bespoke machine learning models that analyze operational data to predict market shifts. Our AI integration transforms raw data into strategic foresight.
+          </p>
+        </div>
+        <div class="ml-auto opacity-0 group-hover:opacity-100 transition-opacity transform translate-x-4 group-hover:translate-x-0 hidden md:block">
+          <span class="material-symbols-outlined text-primary">arrow_outward</span>
+        </div>
+      </div>
+
+      <!-- Cloud Computing -->
+      <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-soft-xl border border-slate-100 transition-all duration-500 group scroll-reveal">
+        <div class="flex justify-between items-start mb-8">
+          <span class="material-symbols-outlined text-3xl text-primary font-light">cloud_upload</span>
+          <span class="material-symbols-outlined text-slate-300 group-hover:text-primary transition-colors">arrow_outward</span>
+        </div>
+        <h3 class="text-lg font-display uppercase tracking-tight text-navy-premium mb-3 group-hover:text-primary transition-colors">
+          Cloud Computing
+        </h3>
+        <p class="text-sm text-text-muted leading-relaxed font-light">
+          Elastic, scalable serverless architectures designed for high-availability and global reach.
+        </p>
+      </div>
+
+      <!-- Audit & Compliance -->
+      <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-soft-xl border border-slate-100 transition-all duration-500 group scroll-reveal">
+        <div class="flex justify-between items-start mb-8">
+          <span class="material-symbols-outlined text-3xl text-primary font-light">gavel</span>
+          <span class="material-symbols-outlined text-slate-300 group-hover:text-primary transition-colors">arrow_outward</span>
+        </div>
+        <h3 class="text-lg font-display uppercase tracking-tight text-navy-premium mb-3 group-hover:text-primary transition-colors">
+          Audit & Compliance
+        </h3>
+        <p class="text-sm text-text-muted leading-relaxed font-light">
+          Precision regulatory frameworks covering HIPAA, GDPR, and ISO standards.
+        </p>
+      </div>
+
+      <!-- Financial Reports -->
+      <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-soft-xl border border-slate-100 transition-all duration-500 group scroll-reveal">
+        <div class="flex justify-between items-start mb-8">
+          <span class="material-symbols-outlined text-3xl text-primary font-light">monitoring</span>
+          <span class="material-symbols-outlined text-slate-300 group-hover:text-primary transition-colors">arrow_outward</span>
+        </div>
+        <h3 class="text-lg font-display uppercase tracking-tight text-navy-premium mb-3 group-hover:text-primary transition-colors">
+          Financial Reports
+        </h3>
+        <p class="text-sm text-text-muted leading-relaxed font-light">
+          Real-time data visualization of IT spend versus ROI for transparent fiscal governance.
+        </p>
+      </div>
+
+      <!-- Corporate Training -->
+      <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-soft-xl border border-slate-100 transition-all duration-500 group scroll-reveal">
+        <div class="flex justify-between items-start mb-8">
+          <span class="material-symbols-outlined text-3xl text-primary font-light">school</span>
+          <span class="material-symbols-outlined text-slate-300 group-hover:text-primary transition-colors">arrow_outward</span>
+        </div>
+        <h3 class="text-lg font-display uppercase tracking-tight text-navy-premium mb-3 group-hover:text-primary transition-colors">
+          Corporate Training
+        </h3>
+        <p class="text-sm text-text-muted leading-relaxed font-light">
+          Upskilling workforces with cybersecurity awareness and modern toolset proficiency.
+        </p>
+      </div>
+
+      <!-- AI Powered Toolkit -->
+      <div class="bg-white rounded-xl p-8 shadow-sm hover:shadow-soft-xl border border-slate-100 transition-all duration-500 group scroll-reveal">
+        <div class="flex justify-between items-start mb-8">
+          <span class="material-symbols-outlined text-3xl text-primary font-light">extension</span>
+          <span class="material-symbols-outlined text-slate-300 group-hover:text-primary transition-colors">arrow_outward</span>
+        </div>
+        <h3 class="text-lg font-display uppercase tracking-tight text-navy-premium mb-3 group-hover:text-primary transition-colors">
+          AI Powered Toolkit
+        </h3>
+        <p class="text-sm text-text-muted leading-relaxed font-light">
+          Proprietary automation scripts that reduce manual overhead by up to 40%.
+        </p>
+      </div>
+
+      <!-- Strategic Staffing -->
+      <div class="lg:col-span-2 bg-gradient-to-r from-navy-premium to-[#1E3A8A] rounded-xl p-8 md:p-10 shadow-lg transition-all duration-500 group relative overflow-hidden scroll-reveal">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+        <div class="relative z-10 flex flex-col md:flex-row gap-8 items-start md:items-center">
+          <div class="w-16 h-16 rounded-full bg-white/10 border border-white/20 flex items-center justify-center shrink-0">
+            <span class="material-symbols-outlined text-3xl text-white font-light">group_add</span>
+          </div>
+          <div>
+            <h3 class="text-xl md:text-2xl font-display uppercase tracking-tight text-white mb-3">
+              Strategic Staffing
+            </h3>
+            <p class="text-sm text-slate-300 leading-relaxed max-w-lg font-light">
+              We don't just find employees; we headhunt the top 1% of technical talent aligned with your specific cultural and architectural needs.
+            </p>
+          </div>
+          <div class="ml-auto">
+            <button class="bg-white text-navy-premium px-6 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-primary hover:text-white transition-colors">
+              Find Talent
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- CTA -->
+  <section class="bg-vapor-white py-32 px-6 border-t border-gray-100 relative overflow-hidden">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-gradient-to-b from-soft-azure to-transparent rounded-full blur-3xl -z-10 opacity-60"></div>
+    
+    <div class="max-w-5xl mx-auto text-center relative z-10 scroll-reveal">
+      <span class="text-[11px] uppercase tracking-widest text-primary mb-6 block font-bold bg-white inline-block px-4 py-2 rounded-full shadow-sm border border-gray-100">
+        Ready to Transform
+      </span>
+      <h2 class="font-display text-5xl md:text-7xl uppercase text-navy-premium mb-12 leading-[0.9]">
+        Let's Secure Your <span class="italic font-serif text-primary lowercase">Future</span>
+      </h2>
+      <button class="btn-primary mx-auto">
+        Get Started Today
+      </button>
+    </div>
+  </section>
+</Layout>
