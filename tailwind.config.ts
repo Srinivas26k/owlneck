@@ -1,7 +1,7 @@
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
-  darkMode: ['class'],
+  darkMode: 'class',
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -11,55 +11,61 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: 'hsl(var(--background))',
-        foreground: 'hsl(var(--foreground))',
+        // Vibrant Color Palette - Client Approved
+        background: '#F5F1DC',  // Cream background instead of white
+        foreground: '#1a1a2e',  // Dark text for readability
+
+        // Primary - Vibrant Blue
+        primary: {
+          DEFAULT: '#0046FF',  // rgb(0, 70, 255)
+          foreground: '#ffffff',
+        },
+
+        // Secondary - Teal
+        secondary: {
+          DEFAULT: '#73C8D2',  // rgb(115, 200, 210)
+          foreground: '#1a1a2e',
+        },
+
+        // Accent - Orange
+        accent: {
+          DEFAULT: '#FF9013',  // rgb(255, 144, 19)
+          foreground: '#ffffff',
+        },
+
+        // Supporting Colors
+        'navy-premium': '#1a1a2e',  // Darker navy for text (not black)
+        'vapor-white': '#F5F1DC',   // Cream (same as background)
+        'soft-azure': '#E8F4F8',    // Light teal tint
+        'silver-divider': '#d4d1c0', // Cream-tinted divider
+        'text-main': '#1a1a2e',
+        'text-muted': '#6b6b7d',
+
         card: {
-          DEFAULT: 'hsl(var(--card))',
-          foreground: 'hsl(var(--card-foreground))',
+          DEFAULT: '#ffffff',
+          foreground: '#1a1a2e',
         },
         popover: {
-          DEFAULT: 'hsl(var(--popover))',
-          foreground: 'hsl(var(--popover-foreground))',
-        },
-        primary: {
-          DEFAULT: 'hsl(var(--primary))',
-          foreground: 'hsl(var(--primary-foreground))',
-        },
-        secondary: {
-          DEFAULT: 'hsl(var(--secondary))',
-          foreground: 'hsl(var(--secondary-foreground))',
+          DEFAULT: '#ffffff',
+          foreground: '#1a1a2e',
         },
         muted: {
-          DEFAULT: 'hsl(var(--muted))',
-          foreground: 'hsl(var(--muted-foreground))',
-        },
-        accent: {
-          DEFAULT: 'hsl(var(--accent))',
-          foreground: 'hsl(var(--accent-foreground))',
+          DEFAULT: '#E8F4F8',
+          foreground: '#6b6b7d',
         },
         destructive: {
-          DEFAULT: 'hsl(var(--destructive))',
-          foreground: 'hsl(var(--destructive-foreground))',
+          DEFAULT: '#ef4444',
+          foreground: '#ffffff',
         },
-        border: 'hsl(var(--border))',
-        input: 'hsl(var(--input))',
-        ring: 'hsl(var(--ring))',
+        border: '#d4d1c0',
+        input: '#d4d1c0',
+        ring: '#0046FF',
         chart: {
-          '1': 'hsl(var(--chart-1))',
-          '2': 'hsl(var(--chart-2))',
-          '3': 'hsl(var(--chart-3))',
-          '4': 'hsl(var(--chart-4))',
-          '5': 'hsl(var(--chart-5))',
-        },
-        sidebar: {
-          DEFAULT: 'hsl(var(--sidebar-background))',
-          foreground: 'hsl(var(--sidebar-foreground))',
-          primary: 'hsl(var(--sidebar-primary))',
-          'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-          accent: 'hsl(var(--sidebar-accent))',
-          'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-          border: 'hsl(var(--sidebar-border))',
-          ring: 'hsl(var(--sidebar-ring))',
+          '1': '#0046FF',  // Primary blue
+          '2': '#73C8D2',  // Teal
+          '3': '#FF9013',  // Orange
+          '4': '#F5F1DC',  // Cream
+          '5': '#6b6b7d',  // Muted
         },
       },
       borderRadius: {
@@ -94,3 +100,4 @@ const config: Config = {
   plugins: [require('tailwindcss-animate')],
 }
 export default config
+

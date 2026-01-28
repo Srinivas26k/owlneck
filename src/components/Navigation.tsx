@@ -34,10 +34,13 @@ export default function Navigation({ currentPage = 'home' }: NavigationProps) {
       <nav className="fixed top-0 left-0 right-0 z-50 flex justify-between items-start p-6 md:p-10 transition-all duration-300">
         <div className="glass-effect absolute inset-x-4 top-4 bottom-0 rounded-2xl -z-10 shadow-sm opacity-90 h-20 md:h-24"></div>
 
-        {/* Logo / Location Info */}
-        <a href="/" className="flex flex-col gap-1 relative z-20">
-          <span className="text-[10px] uppercase tracking-widest font-semibold text-navy-premium">CyberArcMSP</span>
-          <span className="text-[10px] uppercase tracking-widest text-text-muted">New York, USA</span>
+        {/* Logo */}
+        <a href="/" className="flex items-center relative z-20">
+          <img
+            src="/logo.png"
+            alt="CyberArcMSP"
+            className="h-12 md:h-14 w-auto object-contain"
+          />
         </a>
 
         {/* Desktop Links */}
