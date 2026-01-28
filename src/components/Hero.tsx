@@ -57,7 +57,7 @@ export default function Hero({
             Our Mission
           </span>
           <h1 className="font-serif font-medium text-4xl md:text-6xl lg:text-7xl leading-[1.15] tracking-tight text-navy-premium max-w-5xl mx-auto drop-shadow-sm">
-            "To empower organizations with <span className="italic text-primary">intelligent, compliant</span>, and <span className="italic text-primary">future‑proof</span> cybersecurity—delivered as a seamless, fully managed service."
+            "To empower organizations with <span className="italic text-primary">intelligent, compliant</span>, and <span className="italic text-primary">future‑proof</span> cybersecurity delivered as a seamless, fully managed service."
           </h1>
           <div className="mt-12 flex justify-center">
             <div className="h-16 w-[1px] bg-gradient-to-b from-primary to-transparent"></div>
