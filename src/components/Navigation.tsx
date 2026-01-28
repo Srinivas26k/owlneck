@@ -31,25 +31,25 @@ export default function Navigation({ currentPage = 'home' }: NavigationProps) {
   return (
     <>
       {/* Main Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 flex justify-between items-start p-6 md:p-10 transition-all duration-300">
-        <div className="glass-effect absolute inset-x-4 top-4 bottom-0 rounded-2xl -z-10 shadow-sm opacity-90 h-20 md:h-24"></div>
+      <nav className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center p-6 md:p-8 transition-all duration-300">
+        <div className="glass-effect absolute inset-x-4 top-4 h-20 md:h-24 rounded-2xl -z-10 shadow-sm opacity-90"></div>
 
         {/* Logo */}
-        <a href="/" className="flex items-center relative z-20">
+        <a href="/" className="flex items-center relative z-20 pl-4">
           <img
             src="/logo.png"
             alt="CyberArcMSP"
-            className="h-12 md:h-14 w-auto object-contain"
+            className="h-10 md:h-12 w-auto object-contain"
           />
         </a>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex gap-12 absolute left-1/2 -translate-x-1/2 top-10 relative z-20">
+        <div className="hidden md:flex gap-10 absolute left-1/2 top-[60px] -translate-x-1/2 -translate-y-1/2 z-20">
           {navItems.map(item => (
             <a
               key={item.key}
               href={item.href}
-              className={`text-[11px] uppercase tracking-widest font-semibold transition-colors ${currentPage === item.key
+              className={`text-xs lg:text-sm uppercase tracking-widest font-bold transition-colors ${currentPage === item.key
                 ? 'text-primary relative after:content-[\'\'] after:absolute after:-bottom-2 after:left-1/2 after:-translate-x-1/2 after:w-1 after:h-1 after:bg-primary after:rounded-full'
                 : 'text-navy-premium hover:text-primary'
                 }`}
@@ -59,8 +59,8 @@ export default function Navigation({ currentPage = 'home' }: NavigationProps) {
           ))}
         </div>
 
-        {/* Menu Button */}
-        <div className="flex flex-col items-end gap-1 relative z-20">
+        {/* Menu Button - Visible only on mobile */}
+        <div className="flex flex-col items-end gap-1 relative z-20 md:hidden pr-4">
           <button
             onClick={() => setIsMenuOpen(true)}
             className="group flex items-center gap-2"
