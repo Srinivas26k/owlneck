@@ -109,7 +109,7 @@ export default function Footer() {
                             </li>
                             <li className="text-sm text-text-muted font-light flex items-start gap-2">
                                 <span className="material-symbols-outlined text-base text-primary mt-0.5">location_on</span>
-                                <span>123 Security Blvd<br />Enterprise City, EC 12345</span>
+                                <span>Jubliee Hills, Hyderabad<br />Telangana, India</span>
                             </li>
                         </ul>
 
