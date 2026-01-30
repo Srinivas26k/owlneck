@@ -6,6 +6,14 @@ import { formatWhatsAppUrl } from 'omni-storefront';
 
 const SERVICES = [
     {
+        id: 'cybersecurity',
+        slug: 'cybersecurity-services',
+        heading: 'Cybersecurity Services',
+        description: 'End-to-end cybersecurity solutions to protect infrastructure, data, and digital assets.',
+        imgSrc: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1260',
+        price: 5000,
+    },
+    {
         id: 'aiml',
         slug: 'aiml-services',
         heading: 'AIML Services',
