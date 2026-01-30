@@ -97,6 +97,28 @@ const bgImage =
                 <Content />
             </div>
 
+            {
+                entry.data.capabilities && (
+                    <div class="mt-20">
+                        <h2 class="font-display text-3xl text-navy-premium mb-10 text-center">
+                            Exclusive Capabilities
+                        </h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {entry.data.capabilities.map((cap) => (
+                                <div class="bg-slate-50/50 rounded-xl p-6 border border-slate-200/60 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 group">
+                                    <h3 class="font-display text-lg text-navy-premium mb-3 group-hover:text-primary transition-colors">
+                                        {cap.title}
+                                    </h3>
+                                    <p class="text-sm text-text-muted font-light leading-relaxed">
+                                        {cap.description}
+                                    </p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                )
+            }
+
             <!-- CTA Box -->
             <div
                 class="mt-16 bg-soft-azure/30 rounded-2xl p-8 md:p-12 border border-primary/10 flex flex-col md:flex-row items-center justify-between gap-8"

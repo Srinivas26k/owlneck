@@ -1,28 +1,49 @@
 ---
 title: Cloud Computing
 slug: cloud-computing
-description: Scalable, secure, and resilient cloud architectures built for modern enterprises.
+description: Elastic, scalable serverless architectures designed for high-availability and global reach.
+capabilities:
+  - title: AI-Guided Cloud Strategy & Migration
+    description: Seamless cloud migrations to AWS, Azure, or GCP with AI-driven downtime reduction and predictive planning.
+  - title: Scalable Infrastructure as a Service (IaaS)
+    description: Elastic compute, storage, and networking with AI‑powered auto-scaling and cost optimization.
+  - title: Accelerated Development with PaaS
+    description: Rapid application deployment via containerized environments and intelligent CI/CD pipelines.
+  - title: Cloud-Native Security & Compliance
+    description: AI-enhanced threat detection, compliance enforcement, and continuous risk assessment.
+  - title: Automated Backup & Disaster Recovery
+    description: AI-driven backup automation with geo-redundant storage and instant restore capabilities.
+  - title: Cloud Cost Intelligence & Optimization
+    description: Predictive cost modeling and automated right-sizing to improve cloud spend efficiency.
+  - title: Certified Cloud Specialists
+    description: Expertise in AWS, Azure, and GCP environments tailored to your business needs.
+  - title: Continuous Compliance & Governance
+    description: Real-time compliance monitoring, audit readiness, and regulatory alignment.
+  - title: 24/7 Smart Monitoring
+    description: Around-the-clock cloud observability and automated incident resolution powered by AI.
+  - title: Business-Aligned Scalability
+    description: Flexible cloud services that grow and adapt with your enterprise strategy.
 ---
 
 ## Overview
 
-We architect and manage cloud-native infrastructures that scale seamlessly with your business. Our solutions prioritize reliability, security, and performance across global deployments.
+We build elastic, scalable serverless architectures designed for high-availability and global reach. Whether you are migrating to the cloud or optimizing your existing infrastructure, we ensure your cloud environment is secure, efficient, and cost-effective.
 
 ## What We Deliver
 
-- Serverless and microservices architectures  
-- Cloud migration and modernization  
-- High-availability and disaster recovery setups  
-- Cost-optimized infrastructure design  
-- Secure multi-cloud and hybrid environments  
+-   Cloud Migration Strategy & Execution
+-   Serverless Architecture Design
+-   Multi-Cloud Management
+-   DevOps & CI/CD Pipeline Implementation
+-   Cloud Cost Optimization
 
 ## Why It Matters
 
-Cloud infrastructure is the backbone of digital transformation. We ensure your systems are resilient, cost-efficient, and future-proof.
+The cloud is the backbone of modern digital business. A well-architected cloud environment ensures you can scale rapidly, innovate faster, and maintain operational resilience.
 
 ## Outcomes
 
-- Reduced infrastructure costs  
-- Improved uptime and performance  
-- Faster deployment cycles  
-- Global scalability without complexity  
+-   Global reach and high availability
+-   Reduced IT infrastructure costs
+-   Accelerated time-to-market for new features
+-   Enhanced disaster recovery capabilities

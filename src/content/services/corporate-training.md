@@ -1,28 +1,37 @@
 ---
 title: Corporate Training
 slug: corporate-training
-description: Workforce upskilling programs focused on cybersecurity, AI, and modern tools.
+description: Upskilling workforces with cybersecurity awareness and modern toolset proficiency.
+capabilities:
+  - title: Cybersecurity Awareness & Compliance
+    description: Security best practices, phishing defense, ISO 27001/GDPR compliance, and incident response protocols.
+  - title: Artificial Intelligence & Machine Learning
+    description: From foundations to real-world workshops in AI/ML, data analysis, and business decision-making with smart tools.
+  - title: IT & Cloud Technologies
+    description: AWS, Azure, GCP basics, DevOps, system/network fundamentals, and IT project lifecycle training.
+  - title: Soft Skills & Professional Development
+    description: Interview skills, team collaboration, leadership, time management, and client interaction training.
 ---
 
 ## Overview
 
-We empower teams with practical, role-based training programs that align skills with modern technological demands.
+We upskill workforces with cybersecurity awareness and modern toolset proficiency. Our corporate training programs are designed to bridge skill gaps and foster a culture of continuous learning and security mindfulness.
 
 ## What We Deliver
 
-- Cybersecurity awareness training  
-- AI and automation fundamentals  
-- Secure development best practices  
-- Toolchain and productivity training  
-- Custom workshops for technical teams  
+-   Customized Training Workshops
+-   Cybersecurity Awareness Drills
+-   Technical Certification Prep
+-   Leadership & Soft Skills Coaching
+-   Interactive E-Learning Modules
 
 ## Why It Matters
 
-Technology is only as strong as the people using it. Our training programs reduce human risk and improve organizational capability.
+Your workforce is your greatest asset—and potentially your biggest vulnerability. empowering them with knowledge is the most effective way to strengthen your organization.
 
 ## Outcomes
 
-- Reduced security incidents caused by human error  
-- Increased workforce productivity  
-- Faster adoption of modern tools  
-- Stronger internal technical culture  
+-   Reduced human error in security incidents
+-   Increased adoption of new technologies
+-   Higher employee engagement and retention
+-   A more agile and capable workforce
