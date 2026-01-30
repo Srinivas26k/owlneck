@@ -26,7 +26,7 @@ export default function Hero({
       <header className="relative pt-48 pb-24 px-6 md:px-12 w-full flex items-center justify-center overflow-hidden mesh-gradient">
         <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px] -z-10 animate-pulse"></div>
         <div className="absolute top-20 right-1/4 w-[400px] h-[400px] bg-soft-azure rounded-full blur-[80px] -z-10"></div>
-        
+
         <div className="max-w-[1400px] w-full relative z-10 text-center scroll-reveal">
           <span className="inline-block py-1 px-3 rounded-full bg-white border border-silver-divider text-[10px] uppercase tracking-widest font-bold text-primary mb-6 shadow-sm">
             Elite Capabilities
@@ -51,7 +51,7 @@ export default function Hero({
         </div>
         <div className="absolute top-1/3 left-10 w-64 h-64 bg-white/40 rounded-full blur-3xl z-0 animate-pulse"></div>
         <div className="absolute bottom-1/3 right-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl z-0"></div>
-        
+
         <div className="relative z-20 w-full px-6 md:px-12 max-w-[1400px] mx-auto text-center scroll-reveal">
           <span className="inline-block py-1 px-3 rounded-full border border-primary/20 bg-white/50 backdrop-blur-sm text-[10px] font-bold uppercase tracking-widest text-primary mb-8 shadow-sm">
             Our Mission
@@ -85,19 +85,16 @@ export default function Hero({
       <div className="absolute bottom-1/4 right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl z-0"></div>
 
       <div className="relative z-10 w-full px-6 md:px-12 flex flex-col items-center justify-center h-full">
-        <div className={`text-center w-full max-w-[1400px] relative transition-all duration-1000 ${
-          mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-        }`}>
+        <div className={`text-center w-full max-w-[1400px] relative transition-all duration-1000 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}>
           <h1 className="font-display font-bold text-[16vw] leading-[0.8] tracking-tighter text-glossy uppercase select-none opacity-90 drop-shadow-sm">
             CYBER
           </h1>
           <div className="relative inline-block w-full">
+
             <h1 className="font-display font-bold text-[16vw] leading-[0.8] tracking-tighter text-glossy uppercase select-none relative z-10">
               ARC<span className="text-primary text-[16vw] leading-[0.8] animate-pulse">.</span>MSP
             </h1>
-            <div className="absolute -top-[1vw] right-[8vw] size-[5vw] min-w-[50px] min-h-[50px] bg-white/60 backdrop-blur-md border border-white/50 shadow-lg rounded-full flex items-center justify-center transform rotate-12 hover:rotate-0 transition-transform duration-500">
-              <span className="text-primary font-bold text-[2vw]">R</span>
-            </div>
           </div>
         </div>
 

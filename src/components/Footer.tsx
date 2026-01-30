@@ -91,20 +91,20 @@ export default function Footer() {
                         <ul className="space-y-4">
                             <li>
                                 <a
-                                    href="mailto:contact@cyberarc.msp"
+                                    href="mailto:contact@cyberarcmsp.com"
                                     className="text-sm text-text-muted hover:text-primary transition-colors duration-300 font-light flex items-center gap-2"
                                 >
                                     <span className="material-symbols-outlined text-base text-primary">mail</span>
-                                    contact@cyberarc.msp
+                                    contact@cyberarcmsp.com
                                 </a>
                             </li>
                             <li>
                                 <a
-                                    href="tel:+1234567890"
+                                    href="tel:+91 7842325201"
                                     className="text-sm text-text-muted hover:text-primary transition-colors duration-300 font-light flex items-center gap-2"
                                 >
                                     <span className="material-symbols-outlined text-base text-primary">phone</span>
-                                    +1 (234) 567-890
+                                    +91 7842325201
                                 </a>
                             </li>
                             <li className="text-sm text-text-muted font-light flex items-start gap-2">

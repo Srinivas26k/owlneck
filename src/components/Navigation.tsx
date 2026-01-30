@@ -130,10 +130,10 @@ export default function Navigation({ currentPage = 'home' }: NavigationProps) {
               Direct Contact
             </p>
             <a
-              href="mailto:hello@cyberarcmsp.com"
+              href="mailto:contact@cyberarcmsp.com"
               className="font-serif text-xl md:text-2xl text-navy-premium hover:text-primary transition-colors block"
             >
-              hello@cyberarcmsp.com
+              contact@cyberarcmsp.com
             </a>
             <p className="text-sm text-text-muted font-light">
               New York, USA · EST Timezone
