@@ -6,7 +6,7 @@ description: Custom AI and ML solutions that transform operational data into str
 
 ## Overview
 
-We design and deploy bespoke AI and machine learning systems tailored to real-world business problems. Our models go beyond experimentation — they are production-ready, scalable, and measurable.
+We design and deploy bespoke AI and machine learning systems tailored to real-world business problems. Our models go beyond experimentation they are production-ready, scalable, and measurable.
 
 ## What We Deliver
 

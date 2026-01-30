@@ -117,26 +117,26 @@ const Card = ({ id, slug, heading, description, imgSrc, isSelected, onToggle }: 
             className={`group relative h-96 w-full overflow-hidden bg-slate-100 rounded-2xl transition-all duration-300 ${isSelected ? 'ring-4 ring-primary ring-offset-2' : ''}`}
         >
             <div
-                className="absolute inset-0 saturate-0 transition-all duration-500 group-hover:scale-110 group-hover:saturate-100"
+                className="absolute inset-0 saturate-100 md:saturate-0 transition-all duration-500 group-hover:scale-110 group-hover:saturate-100"
                 style={{
                     backgroundImage: `url(${imgSrc})`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                 }}
             />
-            {/* Overlay for text readability */}
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black/90 opacity-60 transition-opacity duration-500 group-hover:opacity-80"></div>
+            {/* Overlay for text readability - Stronger gradient for better contrast */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/70 to-black/95 opacity-80 transition-opacity duration-500 group-hover:opacity-90"></div>
 
             <div className="relative z-20 flex h-full flex-col justify-between p-6 text-slate-300 transition-colors duration-500 group-hover:text-white">
 
                 {/* Top Content: Heading & Description */}
                 <div>
-                    <h4 className="mb-4 font-display text-2xl font-bold uppercase tracking-tight text-white">
+                    <h4 className="mb-4 font-display text-2xl font-bold uppercase tracking-tight text-white drop-shadow-lg">
                         {heading.split("").map((letter, index) => (
                             <AnimatedLetter letter={letter} key={index} />
                         ))}
                     </h4>
-                    <p className="text-sm font-light leading-relaxed text-slate-200 line-clamp-3 mb-6">{description}</p>
+                    <p className="text-sm font-medium leading-relaxed text-slate-100 line-clamp-3 mb-6 drop-shadow-md">{description}</p>
                 </div>
 
                 {/* Bottom Actions: Two Explicit Buttons */}
