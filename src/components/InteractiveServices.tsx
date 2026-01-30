@@ -12,7 +12,7 @@ import {
     Plus
 } from 'lucide-react';
 import { formatWhatsAppUrl } from 'omni-storefront';
-import './index.css';
+
 
 const SERVICES = [
     {
