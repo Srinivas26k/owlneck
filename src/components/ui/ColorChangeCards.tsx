@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import type { Variants } from "framer-motion";
 import { FiArrowRight, FiCheck } from "react-icons/fi";
+import { formatWhatsAppUrl } from 'omni-storefront';
 
 const SERVICES = [
     {
@@ -10,6 +11,7 @@ const SERVICES = [
         heading: 'AIML Services',
         description: 'Deploying bespoke machine learning models that analyze operational data to predict market shifts.',
         imgSrc: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1260',
+        // price: 2500,
     },
     {
         id: 'cloud',
@@ -17,6 +19,7 @@ const SERVICES = [
         heading: 'Cloud Computing',
         description: 'Elastic, scalable serverless architectures designed for high-availability and global reach.',
         imgSrc: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1260',
+        // price: 1500,
     },
     {
         id: 'audit',
@@ -24,6 +27,7 @@ const SERVICES = [
         heading: 'Audit & Compliance',
         description: 'Precision regulatory frameworks covering HIPAA, GDPR, and ISO standards.',
         imgSrc: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1260',
+        // price: 3000,
     },
     {
         id: 'finance',
@@ -31,6 +35,7 @@ const SERVICES = [
         heading: 'Financial Reports',
         description: 'Real-time data visualization of IT spend versus ROI for transparent fiscal governance.',
         imgSrc: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1260',
+        // price: 1200,
     },
     {
         id: 'training',
@@ -38,6 +43,7 @@ const SERVICES = [
         heading: 'Corporate Training',
         description: 'Upskilling workforces with cybersecurity awareness and modern toolset proficiency.',
         imgSrc: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=1260',
+        // price: 800,
     },
     {
         id: 'toolkit',
@@ -45,6 +51,7 @@ const SERVICES = [
         heading: 'AI Powered Toolkit',
         description: 'Proprietary automation scripts that reduce manual overhead by up to 40%.',
         imgSrc: 'https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?auto=format&fit=crop&q=80&w=1260',
+        // price: 500,
     },
     {
         id: 'staffing',
@@ -52,6 +59,7 @@ const SERVICES = [
         heading: 'Strategic Staffing',
         description: 'We don\'t just find employees; we headhunt the top 1% of technical talent.',
         imgSrc: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=1260',
+        // price: 2000,
     },
 ];
 
@@ -87,10 +95,21 @@ const ColorChangeCards = () => {
                         <span className="font-bold text-primary">{selected.length}</span>
                         <span className="text-sm ml-2 text-slate-300">Services Selected</span>
                     </div>
-                    <button className="bg-primary hover:bg-white hover:text-primary text-white px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all flex items-center gap-2">
+                    <a
+                        href={(() => {
+                            const selectedServices = SERVICES.filter(s => selected.includes(s.id));
+                            const total = selectedServices.reduce((acc, s) => acc + s.price, 0);
+                            const items = selectedServices.map(s => `• ${s.heading} ($${s.price})`).join('\n');
+                            const message = `Hello *Owlneck*, I'd like to get a quote for:\n----------------\n${items}\n----------------\n*Total Estimate: $${total}*\n\nPlease confirm availability.`;
+                            return formatWhatsAppUrl("917842325201", message);
+                        })()}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-primary hover:bg-white hover:text-primary text-white px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all flex items-center gap-2 cursor-pointer no-underline"
+                    >
                         Get Quote
                         <FiArrowRight className="w-4 h-4" />
-                    </button>
+                    </a>
                 </div>
             </div>
 
