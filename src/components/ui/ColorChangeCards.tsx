@@ -11,7 +11,7 @@ const SERVICES = [
         heading: 'Cybersecurity Services',
         description: 'End-to-end cybersecurity solutions to protect infrastructure, data, and digital assets.',
         imgSrc: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1260',
-        price: 5000,
+        // price: 5000,
     },
     {
         id: 'aiml',
@@ -106,9 +106,8 @@ const ColorChangeCards = () => {
                     <a
                         href={(() => {
                             const selectedServices = SERVICES.filter(s => selected.includes(s.id));
-                            const total = selectedServices.reduce((acc, s) => acc + s.price, 0);
-                            const items = selectedServices.map(s => `• ${s.heading} ($${s.price})`).join('\n');
-                            const message = `Hello *Owlneck*, I'd like to get a quote for:\n----------------\n${items}\n----------------\n*Total Estimate: $${total}*\n\nPlease confirm availability.`;
+                            const items = selectedServices.map(s => `👉 *${s.heading}*`).join('\n');
+                            const message = `👋 *Hello Owlneck Team*,\n\nI am interested in a consultation for the following enterprise services:\n\n${items}\n\n----------------\n\n❓ *Action Requested:* Please share a quote or schedule a preliminary discussion.\n\nThank you!`;
                             return formatWhatsAppUrl("917842325201", message);
                         })()}
                         target="_blank"
