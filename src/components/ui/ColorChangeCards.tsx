@@ -70,11 +70,11 @@ const SERVICES = [
         // price: 2000,
     },
     {
-        id: 'staffing',
-        slug: 'strategic-staffing',
-        heading: 'Strategic Staffing',
-        description: 'We don\'t just find employees; we headhunt the top 1% of technical talent.',
-        imgSrc: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=1260',
+        id: 'managed',
+        slug: 'managed-services',
+        heading: 'Managed Services',
+        description: 'Scalable IT support with 24/7 monitoring, SOC operations, and proactive maintenance.',
+        imgSrc: 'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=1260',
         // price: 2000,
     },
 ];

@@ -1,57 +1,58 @@
 ---
 title: Audit & Compliance
 slug: audit-compliance
-description: Precision regulatory frameworks covering HIPAA, GDPR, and ISO standards.
+description: Comprehensive GRC, IAM, and regulatory compliance services ensuring governance, risk mitigation, and asset protection against evolving threats.
 capabilities:
-  - title: Payment Card Industry Data Security Standard (PCI DSS)
+  - title: GRC Strategy & Advisory
+    description: Governance, Risk, and Compliance strategy development with tailored frameworks for your enterprise.
+  - title: Security Audits & Threat Assessments
+    description: Comprehensive security evaluations, vulnerability assessments, and readiness reviews.
+  - title: Identity & Access Management (IAM)
+    description: Enterprise IAM implementation including SSO, MFA, RBAC, and privileged access management.
+  - title: Secure Architecture Design
+    description: Security-first architecture consulting for cloud, hybrid, and on-premises environments.
+  - title: Cloud Security Assessments
+    description: Evaluate and harden cloud security posture across AWS, Azure, and GCP.
+  - title: SOC 1 & SOC 2 Compliance
+    description: Demonstrate controls for security, availability, processing integrity, confidentiality, and privacy.
+  - title: PCI DSS Compliance
     description: Protect cardholder data and ensure secure payment processing systems.
-  - title: System Organization Control (SOC 1 & SOC 2)
-    description: Demonstrate controls relevant to security, availability, processing integrity, confidentiality, and privacy.
-  - title: Sarbanes-Oxley (SOX) Services
-    description: Support financial transparency and internal controls for publicly traded companies.
-  - title: California Consumer Privacy Act (CCPA)
-    description: Enable privacy rights and consumer control over personal data for California residents.
-  - title: California Privacy Rights Act (CPRA)
-    description: Extend and enhance CCPA compliance with stricter data protection rules.
-  - title: Health Insurance Portability and Accountability Act (HIPAA)
+  - title: HIPAA Compliance
     description: Safeguard protected health information (PHI) in healthcare systems.
-  - title: National Institute of Standards and Technology (NIST)
-    description: Implement security frameworks to reduce cybersecurity risks in organizations.
-  - title: General Data Protection Regulation (GDPR)
-    description: Ensure lawful data processing for EU residents with strong privacy protections.
-  - title: NIS 2 Directive
-    description: Strengthen network and information systems security across critical sectors in the EU.
+  - title: GDPR & CCPA Compliance
+    description: Privacy rights and data protection for EU and California residents.
+  - title: NIST Framework Implementation
+    description: Implement security frameworks to reduce cybersecurity risks.
+  - title: ISO 27001 Certification
+    description: Establish and maintain an Information Security Management System (ISMS).
+  - title: PIPA & NIS 2 Compliance
+    description: Meet personal data protection and network security requirements across jurisdictions.
+  - title: FedRAMP Authorization
+    description: Achieve federal security standards for cloud service providers.
   - title: SEBI & RBI Regulations
-    description: Stay aligned with India's financial regulatory frameworks for cybersecurity and governance.
-  - title: UK Data Protection Act 2018
-    description: Uphold privacy rights and data security for individuals under UK law.
-  - title: Australian Prudential Regulation Authority (APRA)
-    description: Meet operational resilience and cybersecurity obligations in Australia’s financial sector.
-  - title: Australian Cyber Security Centre (ASD)
-    description: Follow Essential Eight and ASD guidelines to enhance cyber resilience.
-  - title: Fedramp Audit
-    description: FedRAMP Audit ensures cloud service providers meet strict federal security standards, enabling trusted partnerships with U.S. government agencies.
+    description: Align with India's financial regulatory frameworks for cybersecurity and governance.
 ---
 
 ## Overview
 
-We provide precision regulatory frameworks covering HIPAA, GDPR, ISO standards, and more. Our audit and compliance services ensure you meet all legal requirements while maintaining a robust security posture.
+We provide robust Security, GRC, and IAM solutions ensuring compliance, mitigating risks, and safeguarding assets with tailored advisory and implementation services to protect against evolving IT threats.
 
 ## What We Deliver
 
--   Regulatory Compliance Assessments (GDPR, HIPAA, PCI-DSS)
--   Internal & External Audit Preparation
--   Policy Development & Governance
--   Third-Party Risk Management
--   Compliance Automation Solutions
+-   GRC Strategy & Implementation
+-   Security Audits, Threat Assessments, and Readiness
+-   Identity & Access Management Solutions
+-   Regulatory Compliance (SOC 2, PCI DSS, HIPAA, GDPR, ISO 27001)
+-   Cloud Security Assessment & Hardening
 
 ## Why It Matters
 
-Non-compliance can lead to hefty fines, legal trouble, and reputational damage. We navigate the complex landscape of regulations so you can focus on your business.
+Non-compliance can lead to hefty fines, legal trouble, and reputational damage. A proactive GRC and IAM strategy protects your organization while enabling secure business growth.
 
 ## Outcomes
 
--   Full regulatory compliance
--   Reduced legal and financial risk
--   Streamlined audit processes
+-   Full regulatory compliance across all applicable frameworks
+-   Reduced legal, financial, and operational risk
+-   Streamlined audit processes and continuous readiness
+-   Strong identity governance and access controls
 -   Demonstrable commitment to security and privacy

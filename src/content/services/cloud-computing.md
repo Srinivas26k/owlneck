@@ -1,49 +1,58 @@
 ---
 title: Cloud Computing
 slug: cloud-computing
-description: Elastic, scalable serverless architectures designed for high-availability and global reach.
+description: Modernize IT infrastructure with Cloud and DevSecOps services for secure, scalable, and optimized cloud solutions.
 capabilities:
-  - title: AI-Guided Cloud Strategy & Migration
-    description: Seamless cloud migrations to AWS, Azure, or GCP with AI-driven downtime reduction and predictive planning.
-  - title: Scalable Infrastructure as a Service (IaaS)
-    description: Elastic compute, storage, and networking with AI‑powered auto-scaling and cost optimization.
-  - title: Accelerated Development with PaaS
-    description: Rapid application deployment via containerized environments and intelligent CI/CD pipelines.
-  - title: Cloud-Native Security & Compliance
+  - title: Cloud Strategy & Roadmap
+    description: Define cloud adoption strategy with comprehensive assessment and migration planning.
+  - title: Cloud Platform Evaluation
+    description: Assess AWS, Azure, and GCP to identify the optimal platform for your workloads.
+  - title: Cloud Health Check
+    description: Audit existing cloud environments for security, cost, and performance optimization opportunities.
+  - title: Cloud Migration Factory
+    description: Industrialized migration approach for large-scale, rapid cloud transitions with minimal risk.
+  - title: DevSecOps Implementation
+    description: Integrate security into CI/CD pipelines with automated testing, scanning, and compliance gates.
+  - title: Cloud Application Refactoring
+    description: Re-architect legacy applications for cloud-native performance and scalability.
+  - title: Cloud Native Development
+    description: Build applications using containers, serverless, and microservices from the ground up.
+  - title: Cost Management & FinOps
+    description: Cloud cost optimization, budget management, and resource right-sizing for maximum ROI.
+  - title: Multi-Cloud Management
+    description: Unified management across AWS, Azure, and GCP with consistent governance and security.
+  - title: Infrastructure as Code (IaC)
+    description: Automate infrastructure provisioning with Terraform, CloudFormation, and Ansible.
+  - title: Container Orchestration
+    description: Kubernetes and container platform implementation for scalable microservices deployment.
+  - title: Cloud Security & Compliance
     description: AI-enhanced threat detection, compliance enforcement, and continuous risk assessment.
-  - title: Automated Backup & Disaster Recovery
-    description: AI-driven backup automation with geo-redundant storage and instant restore capabilities.
-  - title: Cloud Cost Intelligence & Optimization
-    description: Predictive cost modeling and automated right-sizing to improve cloud spend efficiency.
-  - title: Certified Cloud Specialists
-    description: Expertise in AWS, Azure, and GCP environments tailored to your business needs.
-  - title: Continuous Compliance & Governance
-    description: Real-time compliance monitoring, audit readiness, and regulatory alignment.
-  - title: 24/7 Smart Monitoring
-    description: Around-the-clock cloud observability and automated incident resolution powered by AI.
-  - title: Business-Aligned Scalability
-    description: Flexible cloud services that grow and adapt with your enterprise strategy.
+  - title: Disaster Recovery & Backup
+    description: Geo-redundant backup automation with instant restore and business continuity planning.
+  - title: 24/7 Cloud Monitoring
+    description: Round-the-clock cloud observability and automated incident resolution.
 ---
 
 ## Overview
 
-We build elastic, scalable serverless architectures designed for high-availability and global reach. Whether you are migrating to the cloud or optimizing your existing infrastructure, we ensure your cloud environment is secure, efficient, and cost-effective.
+We modernize IT infrastructure, optimize cloud investments, and ensure secure, scalable solutions through seamless migrations, agile DevSecOps processes, and resilient systems designed to adapt to evolving business needs.
 
 ## What We Deliver
 
--   Cloud Migration Strategy & Execution
--   Serverless Architecture Design
--   Multi-Cloud Management
--   DevOps & CI/CD Pipeline Implementation
--   Cloud Cost Optimization
+-   Cloud Strategy, Roadmap & Migration Factory
+-   DevSecOps & CI/CD Pipeline Implementation
+-   Cloud Native Application Development
+-   Cost Management & FinOps Optimization
+-   Multi-Cloud Management & Governance
 
 ## Why It Matters
 
-The cloud is the backbone of modern digital business. A well-architected cloud environment ensures you can scale rapidly, innovate faster, and maintain operational resilience.
+The cloud is the backbone of modern digital business. A well-architected cloud environment with integrated DevSecOps ensures you can scale rapidly, innovate faster, and maintain security and operational resilience.
 
 ## Outcomes
 
--   Global reach and high availability
--   Reduced IT infrastructure costs
--   Accelerated time-to-market for new features
--   Enhanced disaster recovery capabilities
+-   Rapid, secure cloud migrations with minimal disruption
+-   Reduced IT infrastructure and operational costs
+-   Accelerated time-to-market with DevSecOps practices
+-   Optimized cloud spend through FinOps
+-   Enhanced disaster recovery and business continuity

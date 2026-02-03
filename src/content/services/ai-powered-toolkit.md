@@ -15,7 +15,7 @@ capabilities:
     description: Predictive vulnerability management.
   - title: Qualys
     description: Cloud-based compliance and vulnerability scanning.
-  - title: Vanta / Drata
+  - title: Compliance Group, Scrut Automation
     description: AI-assisted SOC 2, ISO 27001 compliance automation.
   - title: Datadog
     description: AI-powered full-stack observability and incident detection.

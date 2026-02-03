@@ -1,50 +1,54 @@
 ---
 title: SaaS Services
 slug: saas-services
-description: End-to-end Software as a Service solutions delivering scalable, secure, and cost-effective cloud applications for modern enterprises.
+description: End-to-end Software as a Service solutions including ERP/CRM implementation, application development, and scalable cloud platforms for modern enterprises.
 capabilities:
+  - title: ERP Implementation & Consulting
+    description: Full-cycle ERP deployment including SAP, Oracle, and cloud-native solutions with governance and program management.
+  - title: CRM Strategy & Transformation
+    description: Customer relationship platform design and implementation to enhance engagement and drive revenue growth.
   - title: Custom SaaS Development
     description: Bespoke cloud application development tailored to your unique business processes and workflows.
+  - title: Application Modernization
+    description: Legacy system transformation through re-platforming, refactoring, and cloud-native architecture adoption.
+  - title: Customer Experience Design
+    description: UI/UX design services creating intuitive interfaces and seamless customer journeys.
+  - title: Product & Platform Engineering
+    description: End-to-end product development from ideation to deployment with scalable architecture.
+  - title: API-First Integration
+    description: RESTful and GraphQL APIs enabling seamless integrations with existing enterprise systems.
+  - title: Application Portfolio Rationalization
+    description: Assessment and optimization of your application landscape to reduce complexity and costs.
   - title: Multi-Tenant Architecture
-    description: Secure, isolated environments for multiple clients with efficient resource utilization and cost sharing.
-  - title: API-First Design
-    description: RESTful and GraphQL APIs enabling seamless integrations with your existing enterprise systems.
+    description: Secure, isolated environments for multiple clients with efficient resource utilization.
   - title: White-Label Solutions
-    description: Fully brandable SaaS platforms that can be deployed under your company identity.
-  - title: SaaS Security & Compliance
-    description: SOC2, GDPR, and HIPAA compliant infrastructure with encryption at rest and in transit.
+    description: Fully brandable SaaS platforms deployable under your company identity.
+  - title: System Upgrades & Conversion
+    description: Seamless ERP/CRM version upgrades and platform migrations with minimal business disruption.
   - title: Subscription & Billing Management
     description: Automated recurring billing, usage-based pricing, and subscription lifecycle management.
-  - title: Performance Monitoring & Analytics
-    description: Real-time dashboards tracking user engagement, system health, and business KPIs.
-  - title: Scalable Infrastructure
-    description: Auto-scaling architecture that handles traffic spikes and grows with your user base.
-  - title: 24/7 Managed Support
-    description: Round-the-clock monitoring, incident response, and proactive maintenance.
-  - title: Continuous Updates & Maintenance
-    description: Zero-downtime deployments with automated testing and rollback capabilities.
 ---
 
 ## Overview
 
-We deliver comprehensive Software as a Service solutions that enable businesses to leverage powerful cloud applications without the burden of infrastructure management. From custom SaaS development to white-label platforms, we help you bring your software vision to life.
+We deliver comprehensive Software as a Service solutions that span ERP/CRM implementation, custom application development, and modern cloud platforms. From legacy modernization to greenfield development, we help you transform your digital landscape.
 
 ## What We Deliver
 
--   Custom SaaS Application Development
--   Multi-Tenant Platform Architecture
--   API Development & Integration
--   White-Label SaaS Solutions
--   Subscription Management Systems
+-   ERP & CRM Implementation (SAP, Oracle, Cloud Solutions)
+-   Custom Application Development & Modernization
+-   Customer Experience Transformation
+-   API Development & Enterprise Integration
+-   White-Label & Multi-Tenant SaaS Platforms
 
 ## Why It Matters
 
-SaaS has become the dominant software delivery model, offering flexibility, scalability, and reduced total cost of ownership. A well-architected SaaS solution enables rapid deployment, easier updates, and better user experiences.
+Modern enterprises need integrated systems that streamline operations, enhance customer relationships, and drive scalable growth. Our SaaS services deliver efficient, future-ready solutions aligned with evolving business needs.
 
 ## Outcomes
 
--   Faster time-to-market for new software products
+-   Streamlined operations through integrated ERP/CRM systems
+-   Enhanced customer relationships and engagement
+-   Faster time-to-market for new digital products
 -   Reduced infrastructure and maintenance costs
 -   Scalable architecture that grows with your business
--   Enhanced security and compliance posture
--   Improved customer retention through continuous updates
