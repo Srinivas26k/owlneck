@@ -17,7 +17,7 @@ export default function Footer() {
                     <div className="lg:col-span-1">
                         <div className="mb-6">
                             <h3 className="font-display text-2xl font-bold tracking-tight text-navy-premium mb-2">
-                                CYBERARC.MSP
+                                CYBERARCMSP
                             </h3>
                             <p className="text-sm text-text-muted leading-relaxed font-light">
                                 Elite Standards, Institutional Grade Architecture
@@ -143,7 +143,7 @@ export default function Footer() {
                 {/* Bottom Bar */}
                 <div className="mt-16 pt-8 border-t border-silver-divider flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-xs text-text-muted font-light">
-                        © {currentYear} CyberArc.MSP. All rights reserved.
+                        © {currentYear} CyberArcMSP. All rights reserved.
                     </p>
                     <div className="flex gap-6 text-xs text-text-muted font-light">
                         <a href="#" className="hover:text-primary transition-colors duration-300">

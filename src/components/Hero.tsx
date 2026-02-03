@@ -10,7 +10,7 @@ interface HeroProps {
 }
 
 export default function Hero({
-  title = 'CYBERARC.MSP',
+  title = 'CYBERARCMSP',
   subtitle = 'Elite Standards, Institutional Grade Architecture',
   backgroundImage,
   variant = 'home'
@@ -93,7 +93,7 @@ export default function Hero({
           <div className="relative inline-block w-full">
 
             <h1 className="font-display font-bold text-[16vw] leading-[0.8] tracking-tighter text-glossy uppercase select-none relative z-10">
-              ARC<span className="text-primary text-[16vw] leading-[0.8] animate-pulse">.</span>MSP
+              ARC<span className="text-primary text-[16vw] leading-[0.8] animate-pulse"></span>MSP
             </h1>
           </div>
         </div>

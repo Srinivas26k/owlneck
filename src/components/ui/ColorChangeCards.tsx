@@ -107,7 +107,7 @@ const ColorChangeCards = () => {
                         href={(() => {
                             const selectedServices = SERVICES.filter(s => selected.includes(s.id));
                             const items = selectedServices.map(s => `👉 *${s.heading}*`).join('\n');
-                            const message = `👋 *Hello Owlneck Team*,\n\nI am interested in a consultation for the following enterprise services:\n\n${items}\n\n----------------\n\n❓ *Action Requested:* Please share a quote or schedule a preliminary discussion.\n\nThank you!`;
+                            const message = `👋 *Hello Cyberarcmsp Team*,\n\nI am interested in a consultation for the following enterprise services:\n\n${items}\n\n----------------\n\n Please share a quote or schedule a preliminary discussion. \n\nThank you!`;
                             return formatWhatsAppUrl("917842325201", message);
                         })()}
                         target="_blank"
