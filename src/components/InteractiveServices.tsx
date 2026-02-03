@@ -151,7 +151,7 @@ export default function InteractiveServices() {
 
                                 {/* Learn More Link - Proper clickable element */}
                                 <div className={`mt-4 md:mt-0 pointer-events-auto`}>
-                                    <a href={`#${service.slug}`} className={`
+                                    <a href={`/services/${service.slug}`} className={`
                         inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest px-4 py-2 rounded-full border transition-all hover:scale-105
                         ${isDark
                                             ? 'border-white/20 text-white hover:bg-white hover:text-slate-900'
