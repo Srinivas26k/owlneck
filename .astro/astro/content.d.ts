@@ -146,56 +146,63 @@ declare module 'astro:content' {
   slug: "ai-powered-toolkit";
   body: string;
   collection: "services";
-  data: InferEntrySchema<"services">
+  data: any
 } & { render(): Render[".md"] };
 "aiml-services.md": {
 	id: "aiml-services.md";
   slug: "aiml-services";
   body: string;
   collection: "services";
-  data: InferEntrySchema<"services">
+  data: any
 } & { render(): Render[".md"] };
 "audit-compliance.md": {
 	id: "audit-compliance.md";
   slug: "audit-compliance";
   body: string;
   collection: "services";
-  data: InferEntrySchema<"services">
+  data: any
 } & { render(): Render[".md"] };
 "cloud-computing.md": {
 	id: "cloud-computing.md";
   slug: "cloud-computing";
   body: string;
   collection: "services";
-  data: InferEntrySchema<"services">
+  data: any
 } & { render(): Render[".md"] };
 "corporate-training.md": {
 	id: "corporate-training.md";
   slug: "corporate-training";
   body: string;
   collection: "services";
-  data: InferEntrySchema<"services">
+  data: any
 } & { render(): Render[".md"] };
 "cybersecurity-services.md": {
 	id: "cybersecurity-services.md";
   slug: "cybersecurity-services";
   body: string;
   collection: "services";
-  data: InferEntrySchema<"services">
+  data: any
 } & { render(): Render[".md"] };
 "financial-reports.md": {
 	id: "financial-reports.md";
   slug: "financial-reports";
   body: string;
   collection: "services";
-  data: InferEntrySchema<"services">
+  data: any
+} & { render(): Render[".md"] };
+"saas-services.md": {
+	id: "saas-services.md";
+  slug: "saas-services";
+  body: string;
+  collection: "services";
+  data: any
 } & { render(): Render[".md"] };
 "strategic-staffing.md": {
 	id: "strategic-staffing.md";
   slug: "strategic-staffing";
   body: string;
   collection: "services";
-  data: InferEntrySchema<"services">
+  data: any
 } & { render(): Render[".md"] };
 };
 
@@ -207,5 +214,5 @@ declare module 'astro:content' {
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-	export type ContentConfig = typeof import("../../src/content/config.js");
+	export type ContentConfig = never;
 }

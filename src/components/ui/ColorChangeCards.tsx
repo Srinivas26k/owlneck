@@ -62,6 +62,14 @@ const SERVICES = [
         // price: 500,
     },
     {
+        id: 'saas',
+        slug: 'saas-services',
+        heading: 'SaaS Services',
+        description: 'End-to-end Software as a Service solutions delivering scalable, secure cloud applications.',
+        imgSrc: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1260',
+        // price: 2000,
+    },
+    {
         id: 'staffing',
         slug: 'strategic-staffing',
         heading: 'Strategic Staffing',

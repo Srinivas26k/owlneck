@@ -9,7 +9,8 @@ import {
     Users,
     CheckCircle2,
     ArrowRight,
-    Plus
+    Plus,
+    Layers
 } from 'lucide-react';
 import { formatWhatsAppUrl } from 'omni-storefront';
 
@@ -70,13 +71,22 @@ const SERVICES = [
         colSpan: 1,
     },
     {
+        id: 'saas',
+        slug: 'saas-services',
+        title: 'SaaS Services',
+        description: 'End-to-end Software as a Service solutions delivering scalable, secure cloud applications.',
+        icon: Layers,
+        color: 'bg-white',
+        colSpan: 1,
+    },
+    {
         id: 'staffing',
         slug: 'strategic-staffing',
         title: 'Strategic Staffing',
         description: 'We don\'t just find employees; we headhunt the top 1% of technical talent.',
         icon: Users,
-        color: 'bg-slate-900 text-white', // Replaced bg-navy-premium
-        colSpan: 2,
+        color: 'bg-slate-900 text-white',
+        colSpan: 1,
         dark: true,
     },
 ];
