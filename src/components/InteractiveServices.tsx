@@ -85,9 +85,8 @@ const SERVICES = [
         title: 'C-Level Advisory & Managed Services',
         description: 'Enterprise-grade IT governance, cybersecurity leadership, and cloud financial optimization designed for executive-level risk management and scalable business growth.',
         icon: Users,
-        color: 'bg-slate-900 text-white',
+        color: 'bg-white',
         colSpan: 1,
-        dark: true,
     },
 ];
 
@@ -105,7 +104,6 @@ export default function InteractiveServices() {
             <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                 {SERVICES.map((service) => {
                     const isSelected = selected.includes(service.id);
-                    const isDark = service.dark;
 
                     return (
                         <div
@@ -114,13 +112,10 @@ export default function InteractiveServices() {
                 relative rounded-2xl p-8 transition-all duration-300 group border
                 ${service.colSpan === 2 ? 'lg:col-span-2' : ''}
                 ${isSelected
-                                    ? 'ring-2 ring-blue-600 border-blue-600 transform scale-[1.02] shadow-xl' // Replaced primary
+                                    ? 'ring-2 ring-blue-600 border-blue-600 transform scale-[1.02] shadow-xl'
                                     : 'hover:shadow-lg hover:-translate-y-1 border-transparent'
                                 }
-                ${isDark
-                                    ? 'bg-gradient-to-r from-slate-900 to-blue-900 text-white shadow-lg' // Replaced navy-premium
-                                    : 'bg-white text-slate-900 shadow-sm border-slate-100'
-                                }
+                bg-white text-slate-900 shadow-sm border-slate-100
               `}
                         >
                             {/* Click handler for selection on the card background */}
@@ -136,38 +131,29 @@ export default function InteractiveServices() {
                                         <CheckCircle2 className="w-5 h-5" />
                                     </div>
                                 ) : (
-                                    <div className={`rounded-full p-1 border ${isDark ? 'border-white/30' : 'border-slate-300'}`}>
-                                        <Plus className={`w-5 h-5 ${isDark ? 'text-white' : 'text-slate-400'}`} />
+                                    <div className="rounded-full p-1 border border-slate-300">
+                                        <Plus className="w-5 h-5 text-slate-400" />
                                     </div>
                                 )}
                             </div>
 
                             <div className={`flex flex-col ${service.colSpan === 2 && 'md:flex-row md:items-center'} gap-6 relative z-10 pointer-events-none`}>
-                                <div className={`
-                  w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 transition-transform duration-500 group-hover:scale-110
-                  ${isDark ? 'bg-white/10 text-white' : 'bg-sky-50 text-blue-600'} 
-                `}>
+                                <div className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 transition-transform duration-500 group-hover:scale-110 bg-sky-50 text-blue-600">
                                     <service.icon className="w-7 h-7" strokeWidth={1.5} />
                                 </div>
 
                                 <div className="flex-1">
-                                    <h3 className={`text-xl font-bold uppercase tracking-tight mb-2 ${isDark ? 'text-white' : 'text-slate-900'}`}>
+                                    <h3 className="text-xl font-bold uppercase tracking-tight mb-2 text-slate-900">
                                         {service.title}
                                     </h3>
-                                    <p className={`text-sm leading-relaxed font-light ${isDark ? 'text-slate-300' : 'text-slate-500'}`}>
+                                    <p className="text-sm leading-relaxed font-light text-slate-500">
                                         {service.description}
                                     </p>
                                 </div>
 
                                 {/* Learn More Link - Proper clickable element */}
-                                <div className={`mt-4 md:mt-0 pointer-events-auto`}>
-                                    <a href={`/services/${service.slug}`} className={`
-                        inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest px-4 py-2 rounded-full border transition-all hover:scale-105
-                        ${isDark
-                                            ? 'border-white/20 text-white hover:bg-white hover:text-slate-900'
-                                            : 'border-slate-200 text-slate-900 hover:border-blue-600 hover:text-blue-600'
-                                        }
-                    `}>
+                                <div className="mt-4 md:mt-0 pointer-events-auto">
+                                    <a href={`/services/${service.slug}`} className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest px-4 py-2 rounded-full border transition-all hover:scale-105 border-slate-200 text-slate-900 hover:border-blue-600 hover:text-blue-600">
                                         Details
                                         <ArrowRight className="w-3 h-3" />
                                     </a>
