@@ -27,8 +27,8 @@ const SERVICES = [
     },
     {
         id: 'cloud',
-        slug: 'cloud-computing',
-        title: 'Cloud Computing',
+        slug: 'cloud-devsecops',
+        title: 'Cloud & DevSecOps',
         description: 'Elastic, scalable serverless architectures designed for high-availability and global reach.',
         icon: Cloud,
         color: 'bg-white',

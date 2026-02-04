@@ -171,7 +171,7 @@ declare module 'astro:content' {
 } & { render(): Render[".md"] };
 "cloud-computing.md": {
 	id: "cloud-computing.md";
-  slug: "cloud-computing";
+  slug: "cloud-devsecops";
   body: string;
   collection: "services";
   data: InferEntrySchema<"services">

@@ -112,9 +112,9 @@ export default function Hero({
             <span className="flex items-center gap-2"><span className="w-2 h-2 bg-primary/70 rounded-full"></span>Infrastructure</span>
             <span className="flex items-center gap-2"><span className="w-2 h-2 bg-primary/40 rounded-full"></span>Compliance</span>
           </div>
-          <div className="text-[11px] uppercase tracking-widest text-right font-medium leading-relaxed text-white/60">
+          <div className="text-[11px] uppercase tracking-widest text-right font-medium leading-relaxed text-black">
             <span>Trusted by Enterprises</span><br />
-            <span className="text-white/90">Worldwide</span>
+            <span className="text-black">Worldwide</span>
           </div>
         </div>
       </div>

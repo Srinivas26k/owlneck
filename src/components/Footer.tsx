@@ -67,24 +67,24 @@ export default function Footer() {
                     {/* Company Info */}
                     <div className="lg:col-span-1">
                         <div className="mb-3">
-                            <h3 className="font-display text-xl font-bold tracking-tight text-navy-premium mb-1" itemProp="name">
+                            <h3 className="font-display text-2xl font-bold tracking-tight text-navy-premium mb-1" itemProp="name">
                                 CYBERARCMSP
                             </h3>
-                            <p className="text-[10px] text-text-muted leading-relaxed font-light" itemProp="slogan">
+                            <p className="text-lg text-text-muted leading-relaxed font-light" itemProp="slogan">
                                 Elite Standards, Institutional Grade Architecture
                             </p>
                         </div>
-                        <p className="text-[10px] text-text-muted leading-relaxed max-w-sm" itemProp="description">
+                        <p className="text-lg text-text-muted leading-relaxed max-w-sm" itemProp="description">
                             Delivering enterprise-grade cybersecurity solutions.
                         </p>
                     </div>
 
                     {/* Quick Links */}
                     <div>
-                        <h4 className="text-[9px] font-bold uppercase tracking-widest mb-3 text-navy-premium opacity-70">
+                        <h4 className="text-2xl font-bold uppercase tracking-widest mb-3 text-navy-premium opacity-70">
                             Quick Links
                         </h4>
-                        <ul className="space-y-1.5">
+                        <ul className="space-y-1.5 text-lg ">
                             <li><a href="/" className="text-text-muted hover:text-primary transition-colors duration-300 font-light">Home</a></li>
                             <li><a href="/about" className="text-text-muted hover:text-primary transition-colors duration-300 font-light">About Us</a></li>
                             <li><a href="/services" className="text-text-muted hover:text-primary transition-colors duration-300 font-light">Services</a></li>
@@ -94,24 +94,33 @@ export default function Footer() {
 
                     {/* Services */}
                     <div>
-                        <h4 className="text-[9px] font-bold uppercase tracking-widest mb-3 text-navy-premium opacity-70">
+                        <h4 className="text-2xl font-bold uppercase tracking-widest mb-3 text-navy-premium opacity-70 flex justify-center">
                             Our Services
                         </h4>
-                        <ul className="space-y-1.5">
-                            <li><a href="/services/cybersecurity-services" className="text-text-muted hover:text-primary transition-colors font-light">Cybersecurity</a></li>
-                            <li><a href="/services/aiml-services" className="text-text-muted hover:text-primary transition-colors font-light">AI/ML Services</a></li>
-                            <li><a href="/services/cloud-computing" className="text-text-muted hover:text-primary transition-colors font-light">Cloud & DevSecOps</a></li>
-                            <li><a href="/services/audit-compliance" className="text-text-muted hover:text-primary transition-colors font-light">GRC & Compliance</a></li>
-                            <li><a href="/services/managed-services" className="text-text-muted hover:text-primary transition-colors font-light">Managed Services</a></li>
-                        </ul>
+                        <div className='flex gap-8'>
+                            <ul className="space-y-1.5 text-lg">
+                                <li><a href="/services/cybersecurity-services" className="text-text-muted hover:text-primary transition-colors font-light">Cybersecurity Services</a></li>
+                                <li><a href="/services/aiml-services" className="text-text-muted hover:text-primary transition-colors font-light">AIML Services</a></li>
+                                <li><a href="/services/cloud-devsecops" className="text-text-muted hover:text-primary transition-colors font-light">Cloud & DevSecOps</a></li>
+                                <li><a href="/services/audit-compliance" className="text-text-muted hover:text-primary transition-colors font-light">Audit & Compliance</a></li>
+                                <li><a href="/services/financial-reports" className="text-text-muted hover:text-primary transition-colors font-light">Financial Reports</a></li>
+                            </ul>
+                            <ul className="space-y-1.5 text-lg">
+                                <li><a href="/services/corporate-training" className="text-text-muted hover:text-primary transition-colors font-light">Corporate Training</a></li>
+                                <li><a href="/services/ai-powered-toolkit" className="text-text-muted hover:text-primary transition-colors font-light">AI Powered Toolkit</a></li>
+                                <li><a href="/services/saas-services" className="text-text-muted hover:text-primary transition-colors font-light">SaaS Services</a></li>
+                                <li><a href="/services/c-level-services" className="text-text-muted hover:text-primary transition-colors font-light">C-Level Advisory</a></li>
+                            </ul>
+                        </div>
+
                     </div>
 
                     {/* Contact Info */}
                     <div>
-                        <h4 className="text-[9px] font-bold uppercase tracking-widest mb-3 text-navy-premium opacity-70">
+                        <h4 className="text-2xl font-bold uppercase tracking-widest mb-3 text-navy-premium opacity-70">
                             Get In Touch
                         </h4>
-                        <ul className="space-y-2">
+                        <ul className="space-y-2 text-lg">
                             <li>
                                 <a href="mailto:contact@cyberarcmsp.com" className="text-text-muted hover:text-primary transition-colors duration-300 font-light flex items-center gap-2" itemProp="email">
                                     <span className="material-symbols-outlined text-sm text-primary">mail</span>
@@ -136,7 +145,7 @@ export default function Footer() {
 
                 {/* Global Offices Section */}
                 <div className="mt-8 pt-6 border-t border-silver-divider/50">
-                    <h4 className="text-[9px] font-bold uppercase tracking-widest mb-4 text-navy-premium text-center opacity-50">
+                    <h4 className="text-xl font-bold uppercase tracking-widest mb-4 text-navy-premium text-center opacity-50">
                         Global Presence
                     </h4>
 
@@ -149,14 +158,14 @@ export default function Footer() {
                                 itemScope
                                 itemType="https://schema.org/Place"
                             >
-                                <span className="text-sm grayscale group-hover:grayscale-0 transition-all">{office.flag}</span>
+                                <span className="text-lg grayscale group-hover:grayscale-0 transition-all">{office.flag}</span>
                                 <div className="text-left">
-                                    <span className="text-[10px] font-bold uppercase tracking-wide text-navy-premium block leading-none">
+                                    <span className="text-lg font-bold uppercase tracking-wide text-navy-premium block leading-none">
                                         {office.city}
-                                        {office.isHQ && <span className="ml-1 text-[8px] text-primary">• HQ</span>}
+                                        {office.isHQ && <span className="ml-1 text-base text-primary">• HQ</span>}
                                     </span>
                                     <p
-                                        className="text-[9px] text-text-muted font-light truncate max-w-[120px]"
+                                        className="text-base text-text-muted font-light truncate max-w-[120px]"
                                         itemProp="address"
                                         itemScope
                                         itemType="https://schema.org/PostalAddress"
@@ -171,11 +180,11 @@ export default function Footer() {
                 </div>
 
                 {/* Bottom Bar */}
-                <div className="mt-6 pt-6 border-t border-silver-divider/50 flex flex-col md:flex-row justify-between items-center gap-3">
-                    <p className="text-[10px] text-text-muted font-light">
+                <div className="mt-6 pt-6 border-t border-silver-divider/50 flex flex-col md:flex-row justify-between items-center gap-3 text-base text-xl">
+                    <p className="text-base text-text-muted font-light">
                         © {currentYear} CyberArcMSP. All rights reserved.
                     </p>
-                    <div className="flex gap-4 text-[10px] text-text-muted font-light">
+                    <div className="flex gap-4 text-base text-text-muted font-light">
                         <a href="#" className="hover:text-primary transition-colors duration-300">Privacy</a>
                         <a href="#" className="hover:text-primary transition-colors duration-300">Terms</a>
                         <a href="#" className="hover:text-primary transition-colors duration-300">Cookies</a>

@@ -1,6 +1,6 @@
 ---
-title: Cloud Computing
-slug: cloud-computing
+title: Cloud & DevSecOps Services
+slug: cloud-devsecops
 description: Modernize IT infrastructure with Cloud and DevSecOps services for secure, scalable, and optimized cloud solutions.
 capabilities:
   - title: Cloud Strategy & Roadmap

@@ -23,8 +23,8 @@ const SERVICES = [
     },
     {
         id: 'cloud',
-        slug: 'cloud-computing',
-        heading: 'Cloud Computing',
+        slug: 'cloud-devsecops',
+        heading: 'Cloud & DevSecOps',
         description: 'Elastic, scalable serverless architectures designed for high-availability and global reach.',
         imgSrc: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1260',
         // price: 1500,
