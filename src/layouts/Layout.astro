@@ -2,8 +2,11 @@
 import "../styles/globals.css"
 import Footer from "../components/Footer";
 
-const { title, description = "CyberArcMSP - Elite Cybersecurity Solutions" } =
-  Astro.props;
+const { 
+  title, 
+  description = "CyberArcMSP - Elite Cybersecurity Solutions",
+  keywords = "CyberArcMSP, cyberarcmsp, cyber arc msp, cybersecurity, managed security services, SOC as a Service, penetration testing, cloud security, DevSecOps, AI ML services, machine learning, HIPAA compliance, GDPR compliance, SOC 2 audit, ISO 27001, virtual CISO, IT managed services, cybersecurity Hyderabad, cybersecurity India, cybersecurity USA, enterprise security solutions"
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -13,6 +16,7 @@ const { title, description = "CyberArcMSP - Elite Cybersecurity Solutions" } =
     <meta name="google-site-verification" content="PASTE_YOUR_CODE_HERE" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
 
     <title>{title} | CyberArcMSP</title>
 
