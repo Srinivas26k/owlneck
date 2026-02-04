@@ -92,12 +92,14 @@ export default function ContactForm() {
                 >
                     <option value="">Select a service</option>
                     <option value="cybersecurity">Cybersecurity Services</option>
-                    <option value="aiml">AIML Services</option>
-                    <option value="cloud">Cloud Computing</option>
-                    <option value="audit-compliance">Audit & Compliance</option>
-                    <option value="saas">SaaS Services</option>
-                    <option value="managed-services">Managed Services</option>
-                    <option value="consultation">General Consultation</option>
+                    <option value="cybersecurity">AIML Services</option>
+                    <option value="aiml">Cloud & DevSecOps</option>
+                    <option value="cloud">Audit & Compliance</option>
+                    <option value="audit-compliance">Financial Reports</option>
+                    <option value="saas">Corporate Training</option>
+                    <option value="managed-services">AI Powered Toolkit</option>
+                    <option value="consultation">SaaS Services</option>
+                    <option value="consultation">Virtual C-Level Advisory & Managed Services</option>
                 </select>
             </div>
 

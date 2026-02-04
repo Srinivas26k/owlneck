@@ -82,7 +82,7 @@ const SERVICES = [
     {
         id: 'managed',
         slug: 'c-level-services',
-        title: 'C-Level Advisory & Managed Services',
+        title: 'Virtual C-Level Advisory & Managed Services',
         description: 'Enterprise-grade IT governance, cybersecurity leadership, and cloud financial optimization designed for executive-level risk management and scalable business growth.',
         icon: Users,
         color: 'bg-white',

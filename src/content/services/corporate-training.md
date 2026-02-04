@@ -27,7 +27,7 @@ We upskill workforces with cybersecurity awareness and modern toolset proficienc
 
 ## Why It Matters
 
-Your workforce is your greatest asset—and potentially your biggest vulnerability. empowering them with knowledge is the most effective way to strengthen your organization.
+Your workforce is your greatest asset and potentially your biggest vulnerability. empowering them with knowledge is the most effective way to strengthen your organization.
 
 ## Outcomes
 

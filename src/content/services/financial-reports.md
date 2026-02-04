@@ -22,7 +22,7 @@ capabilities:
   - title: Regulatory Alignment
     description: Compliance with SOX, SOC, HIPAA, GDPR, ISO 27001, and more.
   - title: Attestation Made Simple
-    description: Support throughout the attestation journey—partnering directly with auditors or CPAs.
+    description: Support throughout the attestation journey partnering directly with auditors or CPAs.
 ---
 
 ## Overview
