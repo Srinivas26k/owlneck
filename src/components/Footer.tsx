@@ -57,85 +57,80 @@ export default function Footer() {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="relative bg-vapor-white border-t border-silver-divider overflow-hidden text-xs" itemScope itemType="https://schema.org/Organization">
+        <footer className="relative bg-vapor-white border-t border-silver-divider overflow-hidden" itemScope itemType="https://schema.org/Organization">
             {/* Decorative gradient blur */}
             <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10"></div>
             <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-soft-azure rounded-full blur-3xl -z-10"></div>
 
-            <div className="max-w-[1800px] mx-auto px-6 md:px-12 lg:px-20 py-8 lg:py-10">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+            <div className="max-w-[1800px] mx-auto px-6 md:px-12 lg:px-20 py-10 lg:py-14">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12">
                     {/* Company Info */}
-                    <div className="lg:col-span-1">
-                        <div className="mb-3">
-                            <h3 className="font-display text-2xl font-bold tracking-tight text-navy-premium mb-1" itemProp="name">
+                    <div className="sm:col-span-2 lg:col-span-3">
+                        <div className="mb-4">
+                            <h3 className="font-display text-2xl font-bold tracking-tight text-navy-premium mb-2" itemProp="name">
                                 CYBERARCMSP
                             </h3>
-                            <p className="text-lg text-text-muted leading-relaxed font-light" itemProp="slogan">
+                            <p className="text-base text-text-muted leading-relaxed font-light" itemProp="slogan">
                                 Elite Standards, Institutional Grade Architecture
                             </p>
                         </div>
-                        <p className="text-lg text-text-muted leading-relaxed max-w-sm" itemProp="description">
+                        <p className="text-base text-text-muted leading-relaxed max-w-sm" itemProp="description">
                             Delivering enterprise-grade cybersecurity solutions.
                         </p>
                     </div>
 
                     {/* Quick Links */}
-                    <div>
-                        <h4 className="text-2xl font-bold uppercase tracking-widest mb-3 text-navy-premium opacity-70">
+                    <div className="lg:col-span-2">
+                        <h4 className="text-sm font-bold uppercase tracking-widest mb-4 text-navy-premium opacity-70">
                             Quick Links
                         </h4>
-                        <ul className="space-y-1.5 text-lg ">
-                            <li><a href="/" className="text-text-muted hover:text-primary transition-colors duration-300 font-light">Home</a></li>
-                            <li><a href="/about" className="text-text-muted hover:text-primary transition-colors duration-300 font-light">About Us</a></li>
-                            <li><a href="/services" className="text-text-muted hover:text-primary transition-colors duration-300 font-light">Services</a></li>
-                            <li><a href="/contact" className="text-text-muted hover:text-primary transition-colors duration-300 font-light">Contact</a></li>
+                        <ul className="space-y-2">
+                            <li><a href="/" className="text-base text-text-muted hover:text-primary transition-colors duration-300 font-light">Home</a></li>
+                            <li><a href="/about" className="text-base text-text-muted hover:text-primary transition-colors duration-300 font-light">About Us</a></li>
+                            <li><a href="/services" className="text-base text-text-muted hover:text-primary transition-colors duration-300 font-light">Services</a></li>
+                            <li><a href="/contact" className="text-base text-text-muted hover:text-primary transition-colors duration-300 font-light">Contact</a></li>
                         </ul>
                     </div>
 
                     {/* Services */}
-                    <div>
-                        <h4 className="text-2xl font-bold uppercase tracking-widest mb-3 text-navy-premium opacity-70 flex justify-center">
+                    <div className="sm:col-span-2 lg:col-span-4">
+                        <h4 className="text-sm font-bold uppercase tracking-widest mb-4 text-navy-premium opacity-70">
                             Our Services
                         </h4>
-                        <div className='flex gap-8'>
-                            <ul className="space-y-1.5 text-lg">
-                                <li><a href="/services/cybersecurity-services" className="text-text-muted hover:text-primary transition-colors font-light">Cybersecurity Services</a></li>
-                                <li><a href="/services/aiml-services" className="text-text-muted hover:text-primary transition-colors font-light">AIML Services</a></li>
-                                <li><a href="/services/cloud-devsecops" className="text-text-muted hover:text-primary transition-colors font-light">Cloud & DevSecOps</a></li>
-                                <li><a href="/services/audit-compliance" className="text-text-muted hover:text-primary transition-colors font-light">Audit & Compliance</a></li>
-                                <li><a href="/services/financial-reports" className="text-text-muted hover:text-primary transition-colors font-light">Financial Reports</a></li>
-                            </ul>
-                            <ul className="space-y-1.5 text-lg">
-                                <li><a href="/services/corporate-training" className="text-text-muted hover:text-primary transition-colors font-light">Corporate Training</a></li>
-                                <li><a href="/services/ai-powered-toolkit" className="text-text-muted hover:text-primary transition-colors font-light">AI Powered Toolkit</a></li>
-                                <li><a href="/services/saas-services" className="text-text-muted hover:text-primary transition-colors font-light">SaaS Services</a></li>
-                                <li><a href="/services/c-level-services" className="text-text-muted hover:text-primary transition-colors font-light">C-Level Advisory</a></li>
-                            </ul>
+                        <div className='grid grid-cols-2 gap-x-6 gap-y-2'>
+                            <a href="/services/cybersecurity-services" className="text-base text-text-muted hover:text-primary transition-colors font-light">Cybersecurity Services</a>
+                            <a href="/services/corporate-training" className="text-base text-text-muted hover:text-primary transition-colors font-light">Corporate Training</a>
+                            <a href="/services/aiml-services" className="text-base text-text-muted hover:text-primary transition-colors font-light">AIML Services</a>
+                            <a href="/services/ai-powered-toolkit" className="text-base text-text-muted hover:text-primary transition-colors font-light">AI Powered Toolkit</a>
+                            <a href="/services/cloud-devsecops" className="text-base text-text-muted hover:text-primary transition-colors font-light">Cloud & DevSecOps</a>
+                            <a href="/services/saas-services" className="text-base text-text-muted hover:text-primary transition-colors font-light">SaaS Services</a>
+                            <a href="/services/audit-compliance" className="text-base text-text-muted hover:text-primary transition-colors font-light">Audit & Compliance</a>
+                            <a href="/services/c-level-services" className="text-base text-text-muted hover:text-primary transition-colors font-light">C-Level Advisory</a>
+                            <a href="/services/financial-reports" className="text-base text-text-muted hover:text-primary transition-colors font-light">Financial Reports</a>
                         </div>
-
                     </div>
 
                     {/* Contact Info */}
-                    <div>
-                        <h4 className="text-2xl font-bold uppercase tracking-widest mb-3 text-navy-premium opacity-70">
+                    <div className="lg:col-span-3">
+                        <h4 className="text-sm font-bold uppercase tracking-widest mb-4 text-navy-premium opacity-70">
                             Get In Touch
                         </h4>
-                        <ul className="space-y-2 text-lg">
+                        <ul className="space-y-3">
                             <li>
-                                <a href="mailto:contact@cyberarcmsp.com" className="text-text-muted hover:text-primary transition-colors duration-300 font-light flex items-center gap-2" itemProp="email">
-                                    <span className="material-symbols-outlined text-sm text-primary">mail</span>
+                                <a href="mailto:contact@cyberarcmsp.com" className="text-base text-text-muted hover:text-primary transition-colors duration-300 font-light flex items-center gap-2" itemProp="email">
+                                    <span className="material-symbols-outlined text-base text-primary">mail</span>
                                     contact@cyberarcmsp.com
                                 </a>
                             </li>
                             <li>
-                                <a href="tel:+917842325201" className="text-text-muted hover:text-primary transition-colors duration-300 font-light flex items-center gap-2" itemProp="telephone">
-                                    <span className="material-symbols-outlined text-sm text-primary">phone</span>
+                                <a href="tel:+917842325201" className="text-base text-text-muted hover:text-primary transition-colors duration-300 font-light flex items-center gap-2" itemProp="telephone">
+                                    <span className="material-symbols-outlined text-base text-primary">phone</span>
                                     +91 7842325201
                                 </a>
                             </li>
                             <li>
-                                <a href="https://x.com/cyberarcmsp" target="_blank" rel="noopener noreferrer" className="text-text-muted hover:text-primary transition-colors duration-300 font-light flex items-center gap-2">
-                                    <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 text-primary fill-current" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+                                <a href="https://x.com/cyberarcmsp" target="_blank" rel="noopener noreferrer" className="text-base text-text-muted hover:text-primary transition-colors duration-300 font-light flex items-center gap-2">
+                                    <svg viewBox="0 0 24 24" className="w-4 h-4 text-primary fill-current" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
                                     Follow on X
                                 </a>
                             </li>
@@ -144,12 +139,12 @@ export default function Footer() {
                 </div>
 
                 {/* Global Offices Section */}
-                <div className="mt-8 pt-6 border-t border-silver-divider/50">
-                    <h4 className="text-xl font-bold uppercase tracking-widest mb-4 text-navy-premium text-center opacity-50">
+                <div className="mt-10 pt-8 border-t border-silver-divider/50">
+                    <h4 className="text-xs font-bold uppercase tracking-widest mb-6 text-navy-premium text-center opacity-50">
                         Global Presence
                     </h4>
 
-                    <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 text-center">
+                    <div className="flex flex-wrap justify-center gap-x-8 gap-y-4">
                         {GLOBAL_OFFICES.map((office) => (
                             <div
                                 key={office.city}
@@ -160,12 +155,12 @@ export default function Footer() {
                             >
                                 <span className="text-lg grayscale group-hover:grayscale-0 transition-all">{office.flag}</span>
                                 <div className="text-left">
-                                    <span className="text-lg font-bold uppercase tracking-wide text-navy-premium block leading-none">
+                                    <span className="text-sm font-bold uppercase tracking-wide text-navy-premium block leading-none">
                                         {office.city}
-                                        {office.isHQ && <span className="ml-1 text-base text-primary">• HQ</span>}
+                                        {office.isHQ && <span className="ml-1 text-xs text-primary">• HQ</span>}
                                     </span>
                                     <p
-                                        className="text-base text-text-muted font-light truncate max-w-[120px]"
+                                        className="text-xs text-text-muted font-light truncate max-w-[120px]"
                                         itemProp="address"
                                         itemScope
                                         itemType="https://schema.org/PostalAddress"
@@ -180,11 +175,11 @@ export default function Footer() {
                 </div>
 
                 {/* Bottom Bar */}
-                <div className="mt-6 pt-6 border-t border-silver-divider/50 flex flex-col md:flex-row justify-between items-center gap-3 text-base text-xl">
-                    <p className="text-base text-text-muted font-light">
+                <div className="mt-8 pt-6 border-t border-silver-divider/50 flex flex-col sm:flex-row justify-between items-center gap-4">
+                    <p className="text-sm text-text-muted font-light">
                         © {currentYear} CyberArcMSP. All rights reserved.
                     </p>
-                    <div className="flex gap-4 text-base text-text-muted font-light">
+                    <div className="flex gap-6 text-sm text-text-muted font-light">
                         <a href="#" className="hover:text-primary transition-colors duration-300">Privacy</a>
                         <a href="#" className="hover:text-primary transition-colors duration-300">Terms</a>
                         <a href="#" className="hover:text-primary transition-colors duration-300">Cookies</a>
