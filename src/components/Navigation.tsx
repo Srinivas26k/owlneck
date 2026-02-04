@@ -31,11 +31,11 @@ export default function Navigation({ currentPage = 'home' }: NavigationProps) {
   return (
     <>
       {/* Main Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center p-6 md:p-8 transition-all duration-300">
-        <div className="glass-effect absolute inset-x-4 top-4 h-20 md:h-24 rounded-2xl -z-10 shadow-sm opacity-90"></div>
+      <nav className="fixed top-4 left-4 right-4 z-50 h-20 md:h-24 flex justify-between items-center px-6 md:px-8 transition-all duration-300">
+        <div className="glass-effect absolute inset-0 rounded-2xl -z-10 shadow-sm opacity-90"></div>
 
         {/* Logo */}
-        <a href="/" className="flex items-center relative z-20 pl-4">
+        <a href="/" className="flex items-center relative z-20">
           <img
             src="/logo.png"
             alt="CyberArcMSP"
@@ -44,7 +44,7 @@ export default function Navigation({ currentPage = 'home' }: NavigationProps) {
         </a>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex gap-10 absolute left-1/2 top-[60px] -translate-x-1/2 -translate-y-1/2 z-20">
+        <div className="hidden md:flex gap-10 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
           {navItems.map(item => (
             <a
               key={item.key}
@@ -60,7 +60,7 @@ export default function Navigation({ currentPage = 'home' }: NavigationProps) {
         </div>
 
         {/* Menu Button - Visible only on mobile */}
-        <div className="flex flex-col items-end gap-1 relative z-20 md:hidden pr-4">
+        <div className="flex items-center gap-1 relative z-20 md:hidden">
           <button
             onClick={() => setIsMenuOpen(true)}
             className="group flex items-center gap-2"

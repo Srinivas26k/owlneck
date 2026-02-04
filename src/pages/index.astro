@@ -54,74 +54,79 @@ import Hero from "../components/Hero";
             > reigns, allowing enterprises to surrender to growth.
           </h2>
 
-          <div
-            class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 pt-12 border-t border-silver-divider"
-          >
-            <div class="scroll-reveal">
-              {/* Vibrant Blue Button */}
-              <button
-                class="bg-primary hover:bg-primary/90 text-white text-[11px] font-bold uppercase tracking-widest px-8 py-5 rounded-full shadow-lg shadow-primary/20 hover:shadow-xl transition-all mb-10 transform hover:-translate-y-1"
-                ><a href="/about">Learn More About Us</a></button
-              >
+          <div class="mt-12 pt-12 border-t border-silver-divider">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
+              {/* Vision */}
+              <div class="scroll-reveal group">
+                <h3
+                  class="text-[11px] font-bold uppercase tracking-widest mb-6 text-primary flex items-center gap-3"
+                >
+                  <span class="w-8 h-[1px] bg-primary"></span>
+                  Our Vision
+                </h3>
+                <p class="text-lg leading-relaxed text-navy-premium font-light">
+                  To build secure, intelligent digital infrastructure that empowers businesses to scale with confidence.
+                </p>
+              </div>
+
+              {/* Mission */}
+              <div class="scroll-reveal group delay-100">
+                <h3
+                  class="text-[11px] font-bold uppercase tracking-widest mb-6 text-primary flex items-center gap-3"
+                >
+                  <span class="w-8 h-[1px] bg-primary"></span>
+                  Our Mission
+                </h3>
+                <p class="text-lg leading-relaxed text-navy-premium font-light">
+                  Creating digital security and infrastructure that puts trust at the center of every client relationship.
+                </p>
+              </div>
             </div>
-            <h3
-              class="text-[11px] font-bold uppercase tracking-widest mb-4 text-primary"
-            >
-              Our Vision
-            </h3>
-            <p
-              class="text-base leading-relaxed text-text-muted font-light max-w-sm"
-            >
-              Whether you're looking for professional infrastructure
-              management,Professional IT Management, Data Security Compliance,
-              or creative security architecture designed for the modern age.
-            </p>
-          </div>
 
-          <div class="scroll-reveal">
-            <h3
-              class="text-[11px] font-bold uppercase tracking-widest mb-4 text-primary"
+            {/* Stats and CTA */}
+            <div
+              class="mt-16 flex flex-col md:flex-row items-start md:items-end justify-between gap-12"
             >
-              Our Mission
-            </h3>
-            <p
-              class="text-base leading-relaxed text-text-muted font-light max-w-sm"
-            >
-              Your data story to be told beautifully. We create warm, candid,
-              and heartfelt protocols that reflect the connection between you
-              and your clients.
-            </p>
+              <div class="grid grid-cols-3 gap-8 md:gap-12 scroll-reveal">
+                <div class="pl-4 border-l-2 border-primary/20">
+                  <span
+                    class="block font-display text-4xl md:text-5xl font-bold text-navy-premium"
+                    >99%</span
+                  >
+                  <span
+                    class="text-[10px] font-bold uppercase tracking-widest text-text-muted mt-2 block"
+                    >Retention</span
+                  >
+                </div>
+                <div class="pl-4 border-l-2 border-primary/20">
+                  <span
+                    class="block font-display text-4xl md:text-5xl font-bold text-navy-premium"
+                    >411</span
+                  >
+                  <span
+                    class="text-[10px] font-bold uppercase tracking-widest text-text-muted mt-2 block"
+                    >Footprint</span
+                  >
+                </div>
+                <div class="pl-4 border-l-2 border-primary/20">
+                  <span
+                    class="block font-display text-4xl md:text-5xl font-bold text-navy-premium"
+                    >90+</span
+                  >
+                  <span
+                    class="text-[10px] font-bold uppercase tracking-widest text-text-muted mt-2 block"
+                    >Clients</span
+                  >
+                </div>
+              </div>
 
-            <div class="mt-16 grid grid-cols-3 gap-8">
-              <div class="border-l border-silver-divider pl-6">
-                <span
-                  class="block font-display text-4xl font-bold text-navy-premium"
-                  >99%</span
+              <div class="scroll-reveal">
+                <a
+                  href="/about"
+                  class="inline-block bg-primary hover:bg-primary/90 text-white text-[11px] font-bold uppercase tracking-widest px-8 py-4 rounded-full shadow-lg shadow-primary/20 hover:shadow-xl transition-all transform hover:-translate-y-1"
                 >
-                <span
-                  class="text-[10px] uppercase tracking-widest text-text-muted mt-1 block"
-                  >Retention</span
-                >
-              </div>
-              <div class="border-l border-silver-divider pl-6">
-                <span
-                  class="block font-display text-4xl font-bold text-navy-premium"
-                  >411</span
-                >
-                <span
-                  class="text-[10px] uppercase tracking-widest text-text-muted mt-1 block"
-                  >Footprint</span
-                >
-              </div>
-              <div class="border-l border-silver-divider pl-6">
-                <span
-                  class="block font-display text-4xl font-bold text-navy-premium"
-                  >90+</span
-                >
-                <span
-                  class="text-[10px] uppercase tracking-widest text-text-muted mt-1 block"
-                  >Clients</span
-                >
+                  Learn More About Us
+                </a>
               </div>
             </div>
           </div>
@@ -131,7 +136,7 @@ import Hero from "../components/Hero";
       {/* Clients Marquee */}
       <div class="mt-24 pt-12 border-t border-silver-divider">
         <p
-          class="text-center text-[11px] font-bold uppercase tracking-widest text-text-muted mb-10"
+          class="text-center text-xl font-bold uppercase tracking-widest text-text-muted mb-10"
         >
           Trusted Clients
         </p>
@@ -197,7 +202,7 @@ import Hero from "../components/Hero";
       {/* Partners Marquee */}
       <div class="mt-12 pb-8">
         <p
-          class="text-center text-[11px] font-bold uppercase tracking-widest text-text-muted mb-10"
+          class="text-center text-xl font-bold uppercase tracking-widest text-text-muted mb-10"
         >
           Strategic Partners
         </p>

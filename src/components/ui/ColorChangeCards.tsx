@@ -71,9 +71,9 @@ const SERVICES = [
     },
     {
         id: 'managed',
-        slug: 'managed-services',
-        heading: 'Managed Services',
-        description: 'Scalable IT support with 24/7 monitoring, SOC operations, and proactive maintenance.',
+        slug: 'c-level-services',
+        heading: 'C-Level Advisory & Managed Services',
+        description: 'Enterprise-grade IT governance, cybersecurity leadership, and cloud financial optimization designed for executive-level risk management and scalable business growth.',
         imgSrc: 'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=1260',
         // price: 2000,
     },
@@ -151,15 +151,15 @@ const Card = ({ id, slug, heading, description, imgSrc, isSelected, onToggle }: 
             className={`group relative h-96 w-full overflow-hidden bg-slate-100 rounded-2xl transition-all duration-300 ${isSelected ? 'ring-4 ring-primary ring-offset-2' : ''}`}
         >
             <div
-                className="absolute inset-0 saturate-100 md:saturate-0 transition-all duration-500 group-hover:scale-110 group-hover:saturate-100"
+                className="absolute inset-0 brightness-[0.7] transition-all duration-500 group-hover:scale-110 group-hover:brightness-100"
                 style={{
                     backgroundImage: `url(${imgSrc})`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                 }}
             />
-            {/* Overlay for text readability - Stronger gradient for better contrast */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/70 to-black/95 opacity-80 transition-opacity duration-500 group-hover:opacity-90"></div>
+            {/* Overlay for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/40 to-black/70 transition-opacity duration-500 group-hover:from-black/20 group-hover:via-black/30 group-hover:to-black/60"></div>
 
             <div className="relative z-20 flex h-full flex-col justify-between p-6 text-slate-300 transition-colors duration-500 group-hover:text-white">
 

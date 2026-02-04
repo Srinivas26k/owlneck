@@ -99,6 +99,19 @@
     }
   }
 
+  @keyframes gradient-x {
+    0%, 100% {
+      background-position: 0% 50%;
+      background-size: 200% 200%;
+    }
+    50% {
+      background-position: 100% 50%;
+      background-size: 200% 200%;
+    }
+  }
+
+  --animate-gradient-x: gradient-x 3s ease infinite;
+
   /* Border Radius */
   --radius: 0.5rem;
   --radius-lg: var(--radius);

@@ -87,26 +87,34 @@ export default function Hero({
       <div className="relative z-10 w-full px-6 md:px-12 flex flex-col items-center justify-center h-full">
         <div className={`text-center w-full max-w-[1400px] relative transition-all duration-1000 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}>
-          <h1 className="font-display font-bold text-[16vw] leading-[0.8] tracking-tighter text-glossy uppercase select-none opacity-90 drop-shadow-sm">
-            CYBER
-          </h1>
-          <div className="relative inline-block w-full">
-
-            <h1 className="font-display font-bold text-[16vw] leading-[0.8] tracking-tighter text-glossy uppercase select-none relative z-10">
-              ARC<span className="text-primary text-[16vw] leading-[0.8] animate-pulse"></span>MSP
+          {/* Unified brand name with clean, professional styling */}
+          <div className="relative">
+            {/* Subtle ambient glow */}
+            <div className="absolute inset-0 blur-3xl opacity-30 bg-gradient-to-b from-white/20 via-primary/30 to-transparent scale-150 -z-10"></div>
+            
+            <h1 className="font-display font-bold text-[14vw] md:text-[12vw] leading-[0.85] tracking-tight uppercase select-none text-white drop-shadow-[0_4px_24px_rgba(0,0,0,0.5)]">
+              CYBER
+            </h1>
+            <h1 className="font-display font-bold text-[14vw] md:text-[12vw] leading-[0.85] tracking-tight uppercase select-none text-white drop-shadow-[0_4px_24px_rgba(0,0,0,0.5)]">
+              ARC<span className="text-primary">MSP</span>
             </h1>
           </div>
+          
+          {/* Tagline */}
+          <p className="mt-8 text-white text-l antialiased font-semibold text-sm md:text-base font-light tracking-[0.2em] uppercase">
+            Elite Standards • Institutional Grade Architecture
+          </p>
         </div>
 
-        <div className="absolute bottom-12 left-0 right-0 px-6 md:px-12 flex justify-between items-end text-navy-premium">
-          <div className="hidden md:flex gap-8 text-[11px] uppercase tracking-widest font-medium">
-            <span className="flex items-center gap-2"><span className="w-2 h-2 bg-primary rounded-full"></span>Security</span>
-            <span className="flex items-center gap-2"><span className="w-2 h-2 bg-primary rounded-full opacity-50"></span>Infrastructure</span>
-            <span className="flex items-center gap-2"><span className="w-2 h-2 bg-primary rounded-full opacity-25"></span>Compliance</span>
+        <div className="absolute bottom-12 left-0 right-0 px-6 md:px-12 flex justify-between items-end ">
+          <div className="hidden md:flex gap-8 text-[11px] uppercase tracking-widest font-medium oklch(58.5% 0.233 277.117) ">
+            <span className="flex items-center gap-2"><span className="w-2 h-2 bg-primary rounded-full shadow-[0_0_8px_rgba(0,70,255,0.6)]"></span>Security</span>
+            <span className="flex items-center gap-2"><span className="w-2 h-2 bg-primary/70 rounded-full"></span>Infrastructure</span>
+            <span className="flex items-center gap-2"><span className="w-2 h-2 bg-primary/40 rounded-full"></span>Compliance</span>
           </div>
-          <div className="text-[11px] uppercase tracking-widest text-right font-medium leading-relaxed">
-            <span className="opacity-60">Elite Standards</span><br />
-            Institutional Grade Architecture
+          <div className="text-[11px] uppercase tracking-widest text-right font-medium leading-relaxed text-white/60">
+            <span>Trusted by Enterprises</span><br />
+            <span className="text-white/90">Worldwide</span>
           </div>
         </div>
       </div>

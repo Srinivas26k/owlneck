@@ -81,9 +81,9 @@ const SERVICES = [
     },
     {
         id: 'managed',
-        slug: 'managed-services',
-        title: 'Managed Services',
-        description: 'Scalable IT support with 24/7 monitoring, SOC operations, and proactive maintenance.',
+        slug: 'c-level-services',
+        title: 'C-Level Advisory & Managed Services',
+        description: 'Enterprise-grade IT governance, cybersecurity leadership, and cloud financial optimization designed for executive-level risk management and scalable business growth.',
         icon: Users,
         color: 'bg-slate-900 text-white',
         colSpan: 1,

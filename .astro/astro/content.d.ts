@@ -162,6 +162,13 @@ declare module 'astro:content' {
   collection: "services";
   data: InferEntrySchema<"services">
 } & { render(): Render[".md"] };
+"c-level-services.md": {
+	id: "c-level-services.md";
+  slug: "c-level-services";
+  body: string;
+  collection: "services";
+  data: InferEntrySchema<"services">
+} & { render(): Render[".md"] };
 "cloud-computing.md": {
 	id: "cloud-computing.md";
   slug: "cloud-computing";
@@ -186,13 +193,6 @@ declare module 'astro:content' {
 "financial-reports.md": {
 	id: "financial-reports.md";
   slug: "financial-reports";
-  body: string;
-  collection: "services";
-  data: InferEntrySchema<"services">
-} & { render(): Render[".md"] };
-"managed-services.md": {
-	id: "managed-services.md";
-  slug: "managed-services";
   body: string;
   collection: "services";
   data: InferEntrySchema<"services">
