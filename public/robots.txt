@@ -1,0 +1,91 @@
+# robots.txt for CyberArcMSP
+# https://cyberarcmsp.com
+
+User-agent: *
+Allow: /
+
+# Sitemap Location
+Sitemap: https://cyberarcmsp.com/sitemap-index.xml
+
+# ================================================
+# AI Crawlers & LLM Bots - Full Access Granted
+# ================================================
+
+# OpenAI
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Anthropic (Claude)
+User-agent: Claude-Web
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Anthropic-AI
+Allow: /
+
+# Google AI
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+# Microsoft / Bing
+User-agent: Bingbot
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+# Apple
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Cohere
+User-agent: cohere-ai
+Allow: /
+
+# Meta / Facebook
+User-agent: FacebookBot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: meta-externalfetcher
+Allow: /
+
+# ByteDance
+User-agent: Bytespider
+Allow: /
+
+# Common Crawl
+User-agent: CCBot
+Allow: /
+
+# You.com
+User-agent: YouBot
+Allow: /
+
+# Amazon
+User-agent: Amazonbot
+Allow: /
+
+# ================================================
+# LLM Resource Files for AI Assistants
+# ================================================
+# For AI assistants seeking structured information:
+# - /llms.txt - Concise company and services overview
+# - /llms-full.txt - Complete detailed documentation

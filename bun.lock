@@ -5,7 +5,7 @@
       "name": "cyberarc-msp",
       "dependencies": {
         "@astrojs/react": "^3.0.0",
-        "@astrojs/sitemap": "^3.7.0",
+        "@astrojs/sitemap": "3.2.0",
         "@astrojs/tailwind": "^5.0.0",
         "@formspree/react": "^3.0.0",
         "@heroui/react": "^2.0.0",
@@ -90,7 +90,7 @@
 
     "@astrojs/react": ["@astrojs/react@3.6.3", "", { "dependencies": { "@vitejs/plugin-react": "4.7.0", "ultrahtml": "1.6.0", "vite": "5.4.21" }, "peerDependencies": { "@types/react": "19.2.10", "@types/react-dom": "19.2.3", "react": "19.2.4", "react-dom": "19.2.4" } }, "sha512-5ihLQDH5Runddug5AZYlnp/Q5T81QxhwnWJXA9rchBAdh11c6UhBbv9Kdk7b2PkXoEU70CGWBP9hSh0VCR58eA=="],
 
-    "@astrojs/sitemap": ["@astrojs/sitemap@3.7.0", "", { "dependencies": { "sitemap": "^8.0.2", "stream-replace-string": "^2.0.0", "zod": "^3.25.76" } }, "sha512-+qxjUrz6Jcgh+D5VE1gKUJTA3pSthuPHe6Ao5JCxok794Lewx8hBFaWHtOnN0ntb2lfOf7gvOi9TefUswQ/ZVA=="],
+    "@astrojs/sitemap": ["@astrojs/sitemap@3.2.0", "", { "dependencies": { "sitemap": "^8.0.0", "stream-replace-string": "^2.0.0", "zod": "^3.23.8" } }, "sha512-SkrOCL3Z6HxdiXreZ1+aPBWgnBMJ31EgPdcscgQeLqI2Gqk/4EKLuw9q0SqKU9MmHpcPXXtcd0odfCk4barPoA=="],
 
     "@astrojs/tailwind": ["@astrojs/tailwind@5.1.5", "", { "dependencies": { "autoprefixer": "10.4.23", "postcss": "8.5.6", "postcss-load-config": "4.0.2" }, "peerDependencies": { "astro": "4.16.19", "tailwindcss": "3.4.19" } }, "sha512-1diguZEau7FZ9vIjzE4BwavGdhD3+JkdS8zmibl1ene+EHgIU5hI0NMgRYG3yea+Niaf7cyMwjeWeLvzq/maxg=="],
 
