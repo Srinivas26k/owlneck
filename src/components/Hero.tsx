@@ -23,19 +23,21 @@ export default function Hero({
 
   if (variant === 'services') {
     return (
-      <header className="relative pt-48 pb-24 px-6 md:px-12 w-full flex items-center justify-center overflow-hidden mesh-gradient">
+      <header className="relative pt-48 pb-24 px-6 md:px-12 w-full flex items-center justify-center overflow-hidden mesh-gradient" role="banner">
         <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px] -z-10 animate-pulse"></div>
         <div className="absolute top-20 right-1/4 w-[400px] h-[400px] bg-soft-azure rounded-full blur-[80px] -z-10"></div>
 
         <div className="max-w-[1400px] w-full relative z-10 text-center scroll-reveal">
           <span className="inline-block py-1 px-3 rounded-full bg-white border border-silver-divider text-[10px] uppercase tracking-widest font-bold text-primary mb-6 shadow-sm">
-            Elite Capabilities
+            Enterprise Technology Services
           </span>
+          {/* AI/SEO: Primary heading for services page */}
           <h1 className="font-serif font-medium text-5xl md:text-7xl lg:text-8xl text-navy-premium tracking-tight mb-8">
             Our Capabilities
           </h1>
+          {/* AI/SEO: Quotable authority statement */}
           <p className="max-w-2xl mx-auto text-text-muted font-light text-lg leading-relaxed">
-            We orchestrate digital resilience through high-fidelity infrastructure and institutional-grade security architectures.
+            AI/ML, Cloud Infrastructure, SaaS Development, and Managed Security Services for global enterprises.
           </p>
         </div>
       </header>
@@ -44,7 +46,7 @@ export default function Hero({
 
   if (variant === 'about') {
     return (
-      <header className="relative w-full min-h-[85vh] flex items-center justify-center overflow-hidden bg-vapor-white pt-32 pb-20">
+      <header className="relative w-full min-h-[85vh] flex items-center justify-center overflow-hidden bg-vapor-white pt-32 pb-20" role="banner">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/40 to-vapor-white z-10"></div>
           <div className="absolute inset-0 mesh-gradient-header z-10 mix-blend-soft-light"></div>
@@ -56,8 +58,9 @@ export default function Hero({
           <span className="inline-block py-1 px-3 rounded-full border border-primary/20 bg-white/50 backdrop-blur-sm text-[10px] font-bold uppercase tracking-widest text-primary mb-8 shadow-sm">
             Our Mission
           </span>
+          {/* AI/SEO: Quotable mission statement for LLM extraction */}
           <h1 className="font-serif font-medium text-4xl md:text-6xl lg:text-7xl leading-[1.15] tracking-tight text-navy-premium max-w-5xl mx-auto drop-shadow-sm">
-            "To empower organizations with <span className="italic text-primary">intelligent, compliant</span>, and <span className="italic text-primary">future‑proof</span> cybersecurity delivered as a seamless, fully managed service."
+            "To accelerate enterprise innovation through <span className="italic text-primary">AI-powered solutions</span>, <span className="italic text-primary">cloud excellence</span>, and <span className="italic text-primary">secure digital transformation</span>."
           </h1>
           <div className="mt-12 flex justify-center">
             <div className="h-16 w-[1px] bg-gradient-to-b from-primary to-transparent"></div>
@@ -100,9 +103,9 @@ export default function Hero({
             </h1>
           </div>
           
-          {/* Tagline */}
+          {/* AI/SEO: Tagline with full service authority signals */}
           <p className="mt-8 text-white text-l antialiased font-semibold text-sm md:text-base font-light tracking-[0.2em] uppercase">
-            Elite Standards • Institutional Grade Architecture
+            AI/ML Solutions • Cloud & DevSecOps • Enterprise Technology
           </p>
         </div>
 

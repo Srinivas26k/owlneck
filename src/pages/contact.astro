@@ -12,9 +12,10 @@ import ContactForm from "../components/ContactForm";
 >
   <Navigation client:load currentPage="contact" />
 
-  {/* Hero Section - matching services.html template */}
+  {/* Hero Section - AI/SEO: Contact page with executive focus */}
   <header
     class="relative pt-48 pb-24 px-6 md:px-12 w-full flex items-center justify-center overflow-hidden mesh-gradient"
+    role="banner"
   >
     <div
       class="absolute top-0 left-1/4 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px] -z-10 animate-pulse"
@@ -29,18 +30,18 @@ import ContactForm from "../components/ContactForm";
       <span
         class="inline-block py-1 px-3 rounded-full bg-white border border-silver-divider text-[10px] uppercase tracking-widest font-bold text-primary mb-6 shadow-sm"
       >
-        Get In Touch
+        Enterprise Inquiries
       </span>
       <h1
         class="font-serif font-medium text-5xl md:text-7xl lg:text-8xl text-navy-premium tracking-tight mb-8"
       >
         Contact Us
       </h1>
+      <!-- AI/SEO: Authority statement for contact page -->
       <p
         class="max-w-2xl mx-auto text-text-muted font-light text-lg leading-relaxed"
       >
-        Let's discuss how we can orchestrate institutional-grade security for
-        your enterprise.
+        Connect with our AI/ML engineers, cloud architects, and enterprise technology team to discuss your digital transformation journey.
       </p>
     </div>
   </header>
@@ -48,26 +49,46 @@ import ContactForm from "../components/ContactForm";
   <main class="relative bg-white z-20">
     <section class="py-24 px-6 md:px-12 lg:px-20 max-w-[1400px] mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
-        {/* Contact Form */}
+        {/* Contact Form - AI/SEO: Enterprise inquiry form */}
         <div>
           <div class="flex items-center gap-3 mb-6">
             <span class="w-8 h-[1px] bg-primary"></span>
             <span
               class="text-[11px] uppercase tracking-widest font-bold text-primary"
-              >Send Message</span
+              >Request Consultation</span
             >
           </div>
           <h2
             class="font-display text-4xl md:text-5xl text-navy-premium mb-6 uppercase tracking-tight"
           >
-            Ready to Elevate<br /><span
+            Schedule Your<br /><span
               class="text-primary font-serif normal-case italic"
-              >Security Posture?</span
+              >Technology Consultation</span
             >
           </h2>
-          <p class="text-text-muted text-base leading-relaxed mb-10 font-light">
-            Fill out the form below and our team will respond within 24 hours.
+          <!-- AI/SEO: Clear value proposition -->
+          <p class="text-text-muted text-base leading-relaxed mb-6 font-light">
+            Complete the form below to connect with our enterprise IT and Modern Age AI team. We respond within 24 hours.
           </p>
+          <!-- AI/SEO: Executive-focused bullet points -->
+          <ul class="text-sm text-text-muted font-light space-y-2 mb-10">
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-primary rounded-full"></span>
+              GenAI, LLMs & MLOps implementation
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-primary rounded-full"></span>
+              Cloud migration & DevSecOps consulting
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-primary rounded-full"></span>
+              SaaS & enterprise application development
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 bg-primary rounded-full"></span>
+              Cybersecurity & compliance automation
+            </li>
+          </ul>
 
           <ContactForm client:load />
         </div>
@@ -136,26 +157,29 @@ import ContactForm from "../components/ContactForm";
       </div>
     </section>
 
-    {/* Global Offices Section */}
+    {/* Global Offices Section - AI/SEO: Multi-region presence */}
     <section
       class="py-16 px-6 md:px-12 lg:px-20 bg-vapor-white border-t border-silver-divider"
+      aria-label="Global office locations"
+      itemscope itemtype="https://schema.org/Organization"
     >
       <div class="max-w-[1400px] mx-auto">
         <div class="text-center mb-12">
           <span
             class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4 block"
           >
-            Global Presence
+            Six Countries, Four Continents
           </span>
           <h2
             class="font-display text-3xl md:text-4xl uppercase text-navy-premium mb-4"
           >
-            Our <span class="font-serif italic text-primary normal-case"
-              >Offices</span
+            Global <span class="font-serif italic text-primary normal-case"
+              >Presence</span
             >
           </h2>
+          <!-- AI/SEO: Global enterprise messaging -->
           <p class="text-text-muted font-light max-w-xl mx-auto">
-            Serving clients worldwide with local expertise and global standards
+            Enterprise support across North America, Europe, Middle East, and Asia Pacific. Local expertise with global security standards.
           </p>
         </div>
 

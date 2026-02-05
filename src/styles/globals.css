@@ -136,6 +136,31 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
   }
+
+  /* Enhanced Typography for Better Visibility */
+  h2 {
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  h3 {
+    font-weight: 600;
+    letter-spacing: -0.005em;
+  }
+
+  h4 {
+    font-weight: 600;
+  }
+
+  /* Links with better visibility */
+  a {
+    font-weight: 500;
+  }
+
+  /* Spans in headings and key areas */
+  h1 span, h2 span, h3 span, h4 span {
+    font-weight: inherit;
+  }
 }
 
 /* Utilities */

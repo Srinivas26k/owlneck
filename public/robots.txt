@@ -83,9 +83,39 @@ Allow: /
 User-agent: Amazonbot
 Allow: /
 
+# Brave
+User-agent: Brave
+Allow: /
+
+# DuckDuckGo
+User-agent: DuckDuckBot
+Allow: /
+
+# Mistral AI
+User-agent: MistralBot
+Allow: /
+
+# xAI (Grok)
+User-agent: xAI-Grok
+Allow: /
+
+User-agent: Grok
+Allow: /
+
+# Hugging Face
+User-agent: HuggingFaceBot
+Allow: /
+
 # ================================================
 # LLM Resource Files for AI Assistants
 # ================================================
 # For AI assistants seeking structured information:
 # - /llms.txt - Concise company and services overview
 # - /llms-full.txt - Complete detailed documentation
+#
+# AI-Optimized Content Signals:
+# - Structured data (JSON-LD) on all pages
+# - Clear heading hierarchy (H1 → H2 → H3)
+# - Schema.org markup for Organization, Service, FAQ
+# - Quotable authority statements throughout content
+# - Executive decision-maker focused messaging

@@ -64,72 +64,73 @@ export default function Footer() {
 
             <div className="max-w-[1800px] mx-auto px-6 md:px-12 lg:px-20 py-10 lg:py-14">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12">
-                    {/* Company Info */}
+                    {/* Company Info - AI/SEO: Authority statement in footer */}
                     <div className="sm:col-span-2 lg:col-span-3">
                         <div className="mb-4">
                             <h3 className="font-display text-2xl font-bold tracking-tight text-navy-premium mb-2" itemProp="name">
                                 CYBERARCMSP
                             </h3>
-                            <p className="text-base text-text-muted leading-relaxed font-light" itemProp="slogan">
-                                Elite Standards, Institutional Grade Architecture
+                            <p className="text-base text-text-muted leading-relaxed font-medium" itemProp="slogan">
+                                Enterprise AI, Cloud & Technology Solutions
                             </p>
                         </div>
-                        <p className="text-base text-text-muted leading-relaxed max-w-sm" itemProp="description">
-                            Delivering enterprise-grade cybersecurity solutions.
+                        {/* AI/SEO: Quotable authority statement */}
+                        <p className="text-base text-text-muted leading-relaxed max-w-sm font-medium" itemProp="description">
+                            AI/ML solutions, cloud & DevSecOps, SaaS, and cybersecurity services for global enterprises.
                         </p>
                     </div>
 
                     {/* Quick Links */}
                     <div className="lg:col-span-2">
-                        <h4 className="text-sm font-bold uppercase tracking-widest mb-4 text-navy-premium opacity-70">
+                        <h4 className="text-sm font-bold uppercase tracking-widest mb-4 text-navy-premium">
                             Quick Links
                         </h4>
                         <ul className="space-y-2">
-                            <li><a href="/" className="text-base text-text-muted hover:text-primary transition-colors duration-300 font-light">Home</a></li>
-                            <li><a href="/about" className="text-base text-text-muted hover:text-primary transition-colors duration-300 font-light">About Us</a></li>
-                            <li><a href="/services" className="text-base text-text-muted hover:text-primary transition-colors duration-300 font-light">Services</a></li>
-                            <li><a href="/contact" className="text-base text-text-muted hover:text-primary transition-colors duration-300 font-light">Contact</a></li>
+                            <li><a href="/" className="text-base text-foreground hover:text-primary transition-colors duration-300 font-medium">Home</a></li>
+                            <li><a href="/about" className="text-base text-foreground hover:text-primary transition-colors duration-300 font-medium">About Us</a></li>
+                            <li><a href="/services" className="text-base text-foreground hover:text-primary transition-colors duration-300 font-medium">Services</a></li>
+                            <li><a href="/contact" className="text-base text-foreground hover:text-primary transition-colors duration-300 font-medium">Contact</a></li>
                         </ul>
                     </div>
 
                     {/* Services */}
                     <div className="sm:col-span-2 lg:col-span-4">
-                        <h4 className="text-sm font-bold uppercase tracking-widest mb-4 text-navy-premium opacity-70">
+                        <h4 className="text-sm font-bold uppercase tracking-widest mb-4 text-navy-premium">
                             Our Services
                         </h4>
-                        <div className='grid grid-cols-2 gap-x-6 gap-y-2'>
-                            <a href="/services/cybersecurity-services" className="text-base text-text-muted hover:text-primary transition-colors font-light">Cybersecurity Services</a>
-                            <a href="/services/corporate-training" className="text-base text-text-muted hover:text-primary transition-colors font-light">Corporate Training</a>
-                            <a href="/services/aiml-services" className="text-base text-text-muted hover:text-primary transition-colors font-light">AIML Services</a>
-                            <a href="/services/ai-powered-toolkit" className="text-base text-text-muted hover:text-primary transition-colors font-light">AI Powered Toolkit</a>
-                            <a href="/services/cloud-devsecops" className="text-base text-text-muted hover:text-primary transition-colors font-light">Cloud & DevSecOps</a>
-                            <a href="/services/saas-services" className="text-base text-text-muted hover:text-primary transition-colors font-light">SaaS Services</a>
-                            <a href="/services/audit-compliance" className="text-base text-text-muted hover:text-primary transition-colors font-light">Audit & Compliance</a>
-                            <a href="/services/c-level-services" className="text-base text-text-muted hover:text-primary transition-colors font-light">C-Level Advisory</a>
-                            <a href="/services/financial-reports" className="text-base text-text-muted hover:text-primary transition-colors font-light">Financial Reports</a>
+                        <div className='grid grid-cols-1 xs:grid-cols-2 gap-x-6 gap-y-2'>
+                            <a href="/services/cybersecurity-services" className="text-base text-foreground hover:text-primary transition-colors font-medium">Cybersecurity Services</a>
+                            <a href="/services/corporate-training" className="text-base text-foreground hover:text-primary transition-colors font-medium">Corporate Training</a>
+                            <a href="/services/aiml-services" className="text-base text-foreground hover:text-primary transition-colors font-medium">AIML Services</a>
+                            <a href="/services/ai-powered-toolkit" className="text-base text-foreground hover:text-primary transition-colors font-medium">AI Powered Toolkit</a>
+                            <a href="/services/cloud-devsecops" className="text-base text-foreground hover:text-primary transition-colors font-medium">Cloud & DevSecOps</a>
+                            <a href="/services/saas-services" className="text-base text-foreground hover:text-primary transition-colors font-medium">SaaS Services</a>
+                            <a href="/services/audit-compliance" className="text-base text-foreground hover:text-primary transition-colors font-medium">Audit & Compliance</a>
+                            <a href="/services/c-level-services" className="text-base text-foreground hover:text-primary transition-colors font-medium">C-Level Advisory</a>
+                            <a href="/services/financial-reports" className="text-base text-foreground hover:text-primary transition-colors font-medium">Financial Reports</a>
                         </div>
                     </div>
 
                     {/* Contact Info */}
                     <div className="lg:col-span-3">
-                        <h4 className="text-sm font-bold uppercase tracking-widest mb-4 text-navy-premium opacity-70">
+                        <h4 className="text-sm font-bold uppercase tracking-widest mb-4 text-navy-premium">
                             Get In Touch
                         </h4>
                         <ul className="space-y-3">
                             <li>
-                                <a href="mailto:contact@cyberarcmsp.com" className="text-base text-text-muted hover:text-primary transition-colors duration-300 font-light flex items-center gap-2" itemProp="email">
+                                <a href="mailto:contact@cyberarcmsp.com" className="text-base text-foreground hover:text-primary transition-colors duration-300 font-medium flex items-center gap-2" itemProp="email">
                                     <span className="material-symbols-outlined text-base text-primary">mail</span>
                                     contact@cyberarcmsp.com
                                 </a>
                             </li>
                             <li>
-                                <a href="tel:+917842325201" className="text-base text-text-muted hover:text-primary transition-colors duration-300 font-light flex items-center gap-2" itemProp="telephone">
+                                <a href="tel:+917842325201" className="text-base text-foreground hover:text-primary transition-colors duration-300 font-medium flex items-center gap-2" itemProp="telephone">
                                     <span className="material-symbols-outlined text-base text-primary">phone</span>
                                     +91 7842325201
                                 </a>
                             </li>
                             <li>
-                                <a href="https://x.com/cyberarcmsp" target="_blank" rel="noopener noreferrer" className="text-base text-text-muted hover:text-primary transition-colors duration-300 font-light flex items-center gap-2">
+                                <a href="https://x.com/cyberarcmsp" target="_blank" rel="noopener noreferrer" className="text-base text-foreground hover:text-primary transition-colors duration-300 font-medium flex items-center gap-2">
                                     <svg viewBox="0 0 24 24" className="w-4 h-4 text-primary fill-current" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
                                     Follow on X
                                 </a>
@@ -144,7 +145,7 @@ export default function Footer() {
                         Global Presence
                     </h4>
 
-                    <div className="flex flex-wrap justify-center gap-x-8 gap-y-4">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6">
                         {GLOBAL_OFFICES.map((office) => (
                             <div
                                 key={office.city}
@@ -153,14 +154,14 @@ export default function Footer() {
                                 itemScope
                                 itemType="https://schema.org/Place"
                             >
-                                <span className="text-lg grayscale group-hover:grayscale-0 transition-all">{office.flag}</span>
-                                <div className="text-left">
-                                    <span className="text-sm font-bold uppercase tracking-wide text-navy-premium block leading-none">
+                                <span className="text-lg sm:text-xl grayscale group-hover:grayscale-0 transition-all flex-shrink-0">{office.flag}</span>
+                                <div className="text-left min-w-0">
+                                    <span className="text-xs sm:text-sm font-bold uppercase tracking-wide text-navy-premium block leading-tight">
                                         {office.city}
-                                        {office.isHQ && <span className="ml-1 text-xs text-primary">• HQ</span>}
+                                        {office.isHQ && <span className="ml-1 text-[10px] sm:text-xs text-primary">• HQ</span>}
                                     </span>
                                     <p
-                                        className="text-xs text-text-muted font-light truncate max-w-[120px]"
+                                        className="text-[10px] sm:text-xs text-text-muted font-light truncate"
                                         itemProp="address"
                                         itemScope
                                         itemType="https://schema.org/PostalAddress"

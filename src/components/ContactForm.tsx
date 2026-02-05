@@ -13,7 +13,7 @@ export default function ContactForm() {
                 <h3 className="font-display text-2xl text-navy-premium mb-4 uppercase">
                     Message Sent!
                 </h3>
-                <p className="text-text-muted font-light max-w-md mx-auto">
+                <p className="text-foreground font-medium max-w-md mx-auto">
                     Thank you for reaching out. Our team will respond within 24 hours.
                 </p>
             </div>

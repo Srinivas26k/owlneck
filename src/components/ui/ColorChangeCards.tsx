@@ -4,78 +4,70 @@ import type { Variants } from "framer-motion";
 import { FiArrowRight, FiCheck } from "react-icons/fi";
 import { formatWhatsAppUrl } from 'omni-storefront';
 
+// AI/SEO: Service cards with enterprise-focused messaging
 const SERVICES = [
     {
         id: 'cybersecurity',
         slug: 'cybersecurity-services',
-        heading: 'Cybersecurity Services',
-        description: 'End-to-end cybersecurity solutions to protect infrastructure, data, and digital assets.',
+        heading: 'Managed Security Services',
+        description: '24/7 SOC as a Service with AI-powered threat detection. Enterprise-grade protection for regulated industries.',
         imgSrc: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1260',
-        // price: 5000,
     },
     {
         id: 'aiml',
         slug: 'aiml-services',
-        heading: 'AIML Services',
-        description: 'Deploying bespoke machine learning models that analyze operational data to predict market shifts.',
+        heading: 'AI/ML & Data Analytics',
+        description: 'Enterprise AI solutions including GenAI, LLMs, and predictive analytics for data-driven decision making.',
         imgSrc: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1260',
-        // price: 2500,
     },
     {
         id: 'cloud',
         slug: 'cloud-devsecops',
         heading: 'Cloud & DevSecOps',
-        description: 'Elastic, scalable serverless architectures designed for high-availability and global reach.',
+        description: 'Multi-cloud governance across AWS, Azure, and GCP with DevSecOps integration and FinOps optimization.',
         imgSrc: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1260',
-        // price: 1500,
     },
     {
         id: 'audit',
         slug: 'audit-compliance',
-        heading: 'Audit & Compliance',
-        description: 'Precision regulatory frameworks covering HIPAA, GDPR, and ISO standards.',
+        heading: 'Compliance Automation',
+        description: 'SOC 2 Type II, ISO 27001, HIPAA, and GDPR audit preparation with continuous compliance monitoring.',
         imgSrc: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1260',
-        // price: 3000,
     },
     {
         id: 'finance',
         slug: 'financial-reports',
-        heading: 'Financial Reports',
-        description: 'Real-time data visualization of IT spend versus ROI for transparent fiscal governance.',
+        heading: 'IT Financial Governance',
+        description: 'Real-time IT spend visualization and ROI tracking for CFOs and IT budget stakeholders.',
         imgSrc: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1260',
-        // price: 1200,
     },
     {
         id: 'training',
         slug: 'corporate-training',
-        heading: 'Corporate Training',
-        description: 'Upskilling workforces with cybersecurity awareness and modern toolset proficiency.',
+        heading: 'Security Awareness Training',
+        description: 'Enterprise cybersecurity training with phishing simulation for workforce security upskilling.',
         imgSrc: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=1260',
-        // price: 800,
     },
     {
         id: 'toolkit',
         slug: 'ai-powered-toolkit',
-        heading: 'AI Powered Toolkit',
-        description: 'Proprietary automation scripts that reduce manual overhead by up to 40%.',
+        heading: 'AI Automation Toolkit',
+        description: 'Proprietary automation reducing manual security overhead by up to 40% for enterprise IT teams.',
         imgSrc: 'https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?auto=format&fit=crop&q=80&w=1260',
-        // price: 500,
     },
     {
         id: 'saas',
         slug: 'saas-services',
-        heading: 'SaaS Services',
-        description: 'End-to-end Software as a Service solutions delivering scalable, secure cloud applications.',
+        heading: 'Enterprise SaaS Solutions',
+        description: 'Secure, scalable SaaS development with multi-tenant architecture for B2B applications.',
         imgSrc: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1260',
-        // price: 2000,
     },
     {
         id: 'managed',
         slug: 'c-level-services',
-        heading: 'C-Level Advisory & Managed Services',
-        description: 'Enterprise-grade IT governance, cybersecurity leadership, and cloud financial optimization designed for executive-level risk management and scalable business growth.',
+        heading: 'vCISO & Executive Advisory',
+        description: 'Virtual CISO services providing executive-level security leadership for enterprises without dedicated security officers.',
         imgSrc: 'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=1260',
-        // price: 2000,
     },
 ];
 
@@ -165,12 +157,12 @@ const Card = ({ id, slug, heading, description, imgSrc, isSelected, onToggle }: 
 
                 {/* Top Content: Heading & Description */}
                 <div>
-                    <h4 className="mb-4 font-display text-2xl font-bold uppercase tracking-tight text-white drop-shadow-lg">
+                    <h4 className="mb-4 font-display text-lg sm:text-xl font-bold uppercase tracking-tight text-white drop-shadow-lg leading-tight whitespace-normal break-words hyphens-none">
                         {heading.split("").map((letter, index) => (
                             <AnimatedLetter letter={letter} key={index} />
                         ))}
                     </h4>
-                    <p className="text-sm font-medium leading-relaxed text-slate-100 line-clamp-3 mb-6 drop-shadow-md">{description}</p>
+                    <p className="text-sm font-semibold leading-relaxed text-slate-100 line-clamp-3 mb-6 drop-shadow-md">{description}</p>
                 </div>
 
                 {/* Bottom Actions: Two Explicit Buttons */}

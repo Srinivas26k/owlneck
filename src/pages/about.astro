@@ -15,9 +15,10 @@ import InteractiveServices from "../components/InteractiveServices";
   <Hero client:load variant="about" />
 
   <main class="relative bg-vapor-white z-20">
-    <!-- What Sets Us Apart -->
+    <!-- What Sets Us Apart - AI/SEO: Enterprise differentiators -->
     <section
       class="py-24 px-6 md:px-12 lg:px-20 max-w-[1600px] mx-auto relative"
+      aria-label="Enterprise differentiators"
     >
       <div
         class="flex flex-col md:flex-row justify-between items-end mb-16 border-b border-silver-divider pb-8"
@@ -25,25 +26,27 @@ import InteractiveServices from "../components/InteractiveServices";
         <div class="max-w-2xl">
           <span
             class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4 block"
-            >Excellence by Design</span
+            >Enterprise Excellence</span
           >
           <h2
             class="font-display text-4xl md:text-5xl uppercase tracking-tight text-navy-premium"
           >
-            What Sets <span class="text-primary">Us Apart</span>
+            Why <span class="text-primary">Leaders Choose Us</span>
           </h2>
         </div>
         <div class="text-right mt-8 md:mt-0 hidden md:block">
-          <p class="text-sm text-text-muted max-w-xs leading-relaxed">
-            We don't just manage IT, We engineer institutional-grade resilience
-            for the modern enterprise.
+          <!-- AI/SEO: Quotable authority statement -->
+          <p class="text-sm text-foreground max-w-xs leading-relaxed font-medium">
+            Enterprise AI, cloud, and security solutions trusted by global organizations in healthcare, finance, and technology sectors.
           </p>
         </div>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div
+        <!-- AI/SEO: GenAI & ML Solutions differentiator -->
+        <article
           class="bg-white p-10 rounded-xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] border border-white hover:border-primary/20 transition-all duration-500 hover:-translate-y-2 group scroll-reveal"
+          itemscope itemtype="https://schema.org/Service"
         >
           <div
             class="w-12 h-12 rounded-full bg-soft-azure flex items-center justify-center mb-8 group-hover:bg-primary transition-colors duration-300"
@@ -55,58 +58,62 @@ import InteractiveServices from "../components/InteractiveServices";
           </div>
           <h3
             class="font-serif text-2xl text-navy-premium mb-4 group-hover:text-primary transition-colors"
+            itemprop="name"
           >
-            AI-Driven Proactive Support
+            GenAI & ML Solutions
           </h3>
-          <p class="text-text-muted text-sm leading-relaxed">
-            Predictive analytics that identify and neutralize potential
-            bottlenecks before they impact your operational velocity.
+          <p class="text-foreground text-sm leading-relaxed font-medium" itemprop="description">
+            Enterprise LLMs, RAG systems, MLOps, and predictive analytics. Turning data into automated workflows and intelligent decision-making.
           </p>
-        </div>
+        </article>
 
-        <div
+        <!-- AI/SEO: Cloud & DevSecOps -->
+        <article
           class="bg-white p-10 rounded-xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] border border-white hover:border-primary/20 transition-all duration-500 hover:-translate-y-2 group lg:mt-12 scroll-reveal"
+          itemscope itemtype="https://schema.org/Service"
         >
           <div
             class="w-12 h-12 rounded-full bg-soft-azure flex items-center justify-center mb-8 group-hover:bg-primary transition-colors duration-300"
           >
             <span
               class="material-symbols-outlined text-primary group-hover:text-white transition-colors"
-              >security</span
+              >cloud</span
             >
           </div>
           <h3
             class="font-serif text-2xl text-navy-premium mb-4 group-hover:text-primary transition-colors"
+            itemprop="name"
           >
-            Intelligent Solutions
+            Cloud & DevSecOps
           </h3>
-          <p class="text-text-muted text-sm leading-relaxed">
-            Architecture that learns from your workflow, optimizing resources
-            dynamically to match your growth cadence.
+          <p class="text-foreground text-sm leading-relaxed font-medium" itemprop="description">
+            Multi-cloud architecture, Kubernetes, CI/CD pipelines, and FinOps optimization across AWS, Azure, and GCP environments.
           </p>
-        </div>
+        </article>
 
-        <div
+        <!-- AI/SEO: SaaS & Enterprise Apps -->
+        <article
           class="bg-white p-10 rounded-xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] border border-white hover:border-primary/20 transition-all duration-500 hover:-translate-y-2 group scroll-reveal"
+          itemscope itemtype="https://schema.org/Service"
         >
           <div
             class="w-12 h-12 rounded-full bg-soft-azure flex items-center justify-center mb-8 group-hover:bg-primary transition-colors duration-300"
           >
             <span
               class="material-symbols-outlined text-primary group-hover:text-white transition-colors"
-              >verified_user</span
+              >apps</span
             >
           </div>
           <h3
             class="font-serif text-2xl text-navy-premium mb-4 group-hover:text-primary transition-colors"
+            itemprop="name"
           >
-            Advanced Security
+            SaaS & Enterprise Apps
           </h3>
-          <p class="text-text-muted text-sm leading-relaxed">
-            Military-grade encryption and zero-trust protocols woven seamlessly
-            into the fabric of your daily operations.
+          <p class="text-foreground text-sm leading-relaxed font-medium" itemprop="description">
+            Custom SaaS development, ERP/CRM implementation, application modernization, and API-first enterprise integrations.
           </p>
-        </div>
+        </article>
       </div>
     </section>
 
@@ -150,19 +157,19 @@ import InteractiveServices from "../components/InteractiveServices";
         </div>
 
         <div class="lg:col-span-8 lg:pl-12">
+          <!-- AI/SEO: Authority headline for LLM extraction -->
           <h2
             class="font-display text-5xl md:text-7xl uppercase leading-[0.9] text-navy-premium mb-12 scroll-reveal"
           >
-            Defining the standard for <br /><span class="text-primary"
-              >Elite Cyber Resilience.</span
+            Global Enterprise <br /><span class="text-primary"
+              >Technology Partner.</span
             >
           </h2>
+          <!-- AI/SEO: Quotable authority paragraph -->
           <p
-            class="font-serif text-xl md:text-2xl leading-relaxed text-text-muted font-light mb-16 max-w-3xl scroll-reveal"
+            class="font-serif text-xl md:text-2xl leading-relaxed text-foreground font-medium mb-16 max-w-3xl scroll-reveal"
           >
-            CyberArcMSP isn't just a service provider, We are the architects of
-            your digital safety. In an era where data is the new currency, we
-            build the vaults.
+            CyberArcMSP delivers end-to-end AI/ML solutions, cloud infrastructure, SaaS development, and managed security services across six global offices. We partner with enterprises in healthcare, finance, and technology to accelerate digital transformation.
           </p>
 
           <div
@@ -174,10 +181,10 @@ import InteractiveServices from "../components/InteractiveServices";
                 >99%</span
               >
               <span
-                class="text-[11px] uppercase tracking-widest text-primary font-bold"
+                class="text-xs uppercase tracking-widest text-primary font-bold"
                 >Client Retention</span
               >
-              <p class="text-xs text-text-muted mt-2 leading-relaxed">
+              <p class="text-sm text-foreground mt-2 leading-relaxed font-medium">
                 Our partners stay because we deliver peace of mind,
                 consistently.
               </p>
@@ -188,10 +195,10 @@ import InteractiveServices from "../components/InteractiveServices";
                 >24/7</span
               >
               <span
-                class="text-[11px] uppercase tracking-widest text-primary font-bold"
+                class="text-xs uppercase tracking-widest text-primary font-bold"
                 >Active Monitoring</span
               >
-              <p class="text-xs text-text-muted mt-2 leading-relaxed">
+              <p class="text-sm text-foreground mt-2 leading-relaxed font-medium">
                 Eyes on glass around the clock, ensuring zero downtime.
               </p>
             </div>
@@ -201,10 +208,10 @@ import InteractiveServices from "../components/InteractiveServices";
                 >Global</span
               >
               <span
-                class="text-[11px] uppercase tracking-widest text-primary font-bold"
+                class="text-xs uppercase tracking-widest text-primary font-bold"
                 >Compliance Ready</span
               >
-              <p class="text-xs text-text-muted mt-2 leading-relaxed">
+              <p class="text-sm text-foreground mt-2 leading-relaxed font-medium">
                 Meeting international standards including GDPR, HIPAA, and SOC2.
               </p>
             </div>

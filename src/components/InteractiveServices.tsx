@@ -143,10 +143,10 @@ export default function InteractiveServices() {
                                 </div>
 
                                 <div className="flex-1">
-                                    <h3 className="text-xl font-bold uppercase tracking-tight mb-2 text-slate-900">
+                                    <h3 className="text-lg sm:text-xl font-bold uppercase tracking-tight mb-2 text-slate-900 leading-tight">
                                         {service.title}
                                     </h3>
-                                    <p className="text-sm leading-relaxed font-light text-slate-500">
+                                    <p className="text-sm leading-relaxed font-medium text-slate-600">
                                         {service.description}
                                     </p>
                                 </div>
